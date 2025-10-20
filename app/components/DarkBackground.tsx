@@ -47,7 +47,7 @@ export default function DarkBackground() {
 
   {/* Gradient blobs (multiple layers with different palettes) — MUCH LARGER */}
       <div
-        className={`absolute -left-96 -top-80 w-[2100px] h-[2100px] rounded-full opacity-75 bg-blob blob-1 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute -left-96 -top-80 w-[2400px] h-[2400px] rounded-full opacity-75 bg-blob blob-1 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
           background: 'radial-gradient(closest-corner at 28% 28%, rgba(25,35,75,0.88), rgba(40,100,200,0.82) 10%, rgba(100,160,255,0.48) 24%, rgba(150,200,255,0.12) 44%, transparent 80%)'
@@ -55,7 +55,7 @@ export default function DarkBackground() {
       />
 
       <div
-        className={`absolute -right-96 -bottom-72 w-[1950px] h-[1950px] rounded-full opacity-72 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute -right-96 -bottom-72 w-[2250px] h-[2250px] rounded-full opacity-72 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
           background: 'radial-gradient(closest-corner at 25% 22%, rgba(35,20,60,0.88), rgba(180,60,100,0.45) 8%, rgba(200,100,180,0.35) 18%, rgba(180,120,255,0.32) 28%, rgba(150,180,255,0.08) 48%, transparent 78%)'
