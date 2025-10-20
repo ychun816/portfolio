@@ -47,18 +47,18 @@ export default function DarkBackground() {
 
   {/* Gradient blobs (multiple layers with different palettes) — MUCH LARGER */}
       <div
-        className={`absolute -left-96 -top-80 w-[1800px] h-[1800px] rounded-full opacity-80 bg-blob blob-1 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute -left-96 -top-80 w-[2100px] h-[2100px] rounded-full opacity-75 bg-blob blob-1 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 28% 28%, rgba(25,35,75,0.88), rgba(40,100,200,0.82) 12%, rgba(100,160,255,0.52) 28%, rgba(150,200,255,0.18) 48%, transparent 68%)'
+          background: 'radial-gradient(closest-corner at 28% 28%, rgba(25,35,75,0.88), rgba(40,100,200,0.82) 10%, rgba(100,160,255,0.48) 24%, rgba(150,200,255,0.12) 44%, transparent 80%)'
         }}
       />
 
       <div
-        className={`absolute -right-96 -bottom-72 w-[1600px] h-[1600px] rounded-full opacity-76 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute -right-96 -bottom-72 w-[1950px] h-[1950px] rounded-full opacity-72 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 25% 22%, rgba(30,20,70,0.88), rgba(100,80,220,0.62) 10%, rgba(180,120,255,0.42) 26%, rgba(150,180,255,0.12) 52%, transparent 70%)'
+          background: 'radial-gradient(closest-corner at 25% 22%, rgba(30,20,70,0.88), rgba(100,80,220,0.58) 9%, rgba(180,120,255,0.38) 22%, rgba(150,180,255,0.08) 48%, transparent 78%)'
         }}
       />
 
