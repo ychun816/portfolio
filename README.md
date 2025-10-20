@@ -32,3 +32,43 @@ module.exports = {
 @tailwind components;
 @tailwind utilities;
 ```
+
+## Local development
+
+To run the scaffolded Next.js app locally (the app lives in the `app/` folder):
+
+1. Install dependencies and start the dev server:
+
+```bash
+cd app
+npm install
+npm run dev
+# open http://localhost:3000
+```
+
+2. Tailwind is already configured (`app/tailwind.config.js`, `app/postcss.config.js`, and `app/app/globals.css`). If you change the Tailwind config, restart the dev server.
+
+## Automated deploys (Vercel)
+
+The recommended way to host a Next.js app is Vercel. There are two simple options:
+
+- Connect the GitHub repo to Vercel using the Vercel dashboard (recommended):
+  1. Go to https://vercel.com/new and import your GitHub repository.
+  2. Vercel will detect the Next.js app inside the `app/` directory — set the Root Directory to `app` if needed.
+ 3. Every push to `master` will trigger a deployment automatically.
+
+- Or use the included GitHub Actions workflow (below) to deploy with the Vercel Action. You must add these repository secrets in GitHub:
+  - `VERCEL_TOKEN` — a personal token from https://vercel.com/account/tokens
+  - `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` — available from your Vercel project settings
+
+After adding secrets, pushes to `master` will trigger the workflow and deploy to Vercel.
+
+## GitHub Actions (optional)
+
+There's a ready workflow at `.github/workflows/deploy-to-vercel.yml` which:
+
+- Installs dependencies inside `app/`.
+- Builds the Next app.
+- Uses the Vercel Action to deploy (requires the secrets above).
+
+If you prefer deploying elsewhere or need help configuring Vercel, tell me and I can add a CI workflow for your target platform.
