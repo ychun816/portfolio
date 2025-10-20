@@ -1,0 +1,22 @@
+/* Starter recife.css - place corresponding .woff2/.woff files alongside this file */
+
+@font-face {
+  font-family: 'Recife';
+  src: url('Recife-Regular.woff2') format('woff2'), url('Recife-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recife';
+  src: url('Recife-Medium.woff2') format('woff2'), url('Recife-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --recife-regular: 'Recife', sans-serif;
+  --recife-medium: 'Recife', sans-serif;
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import DarkBackground from '../components/DarkBackground';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +25,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload local fonts and load local font stylesheet. If local fonts fail, a small fallback will load the CDN after 1.5s. */}
+  <link rel="preload" href="/fonts/clash-display/ClashDisplay-Medium.woff2" as="font" type="font/woff2" crossOrigin="" />
+  <link rel="preload" href="/fonts/clash-display/ClashDisplay-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="stylesheet" href="/fonts/clash-display/clash-display.css" />
+  {/* Optional Recife local font - place Recife woff2 files in /public/fonts/recife/ */}
+  <link rel="preload" href="/fonts/recife/Recife-Medium.woff2" as="font" type="font/woff2" crossOrigin="" />
+  <link rel="preload" href="/fonts/recife/Recife-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
+  <link rel="stylesheet" href="/fonts/recife/recife.css" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          setTimeout(() => {
+            try {
+              if (!document.fonts || !document.fonts.check('1rem ClashDisplay')) {
+                const s = document.createElement('link');
+                s.rel = 'stylesheet';
+                s.href = 'https://api.fontshare.com/css?f[]=clash-display@700,500,400&display=swap';
+                document.head.appendChild(s);
+              }
+            } catch (e) { }
+          }, 1500);
+        ` }} />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased clash-font`}
       >
+        <DarkBackground />
         {children}
       </body>
     </html>

@@ -1,0 +1,42 @@
+/* Starter clash-display.css - place corresponding .woff2/.woff files alongside this file */
+
+@font-face {
+  font-family: 'ClashDisplay-Regular';
+  src: url('ClashDisplay-Regular.woff2') format('woff2'), url('ClashDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('ClashDisplay-Medium.woff2') format('woff2'), url('ClashDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('ClashDisplay-Bold.woff2') format('woff2'), url('ClashDisplay-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optional variable font face (if you have it) */
+@font-face {
+  font-family: 'ClashDisplay-Variable';
+  src: url('ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Convenience aliases to use in CSS */
+:root {
+  --clash-regular: 'ClashDisplay-Regular', sans-serif;
+  --clash-medium: 'ClashDisplay-Medium', sans-serif;
+  --clash-bold: 'ClashDisplay-Bold', sans-serif;
+  --clash-var: 'ClashDisplay-Variable', sans-serif;
+}
