@@ -47,49 +47,50 @@ export default function DarkBackground() {
 
   {/* Gradient blobs (multiple layers with different palettes) — MUCH LARGER */}
       <div
-        className={`absolute -left-96 -top-80 w-[1800px] h-[1800px] rounded-full opacity-78 bg-blob blob-1 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute -left-96 -top-80 w-[1800px] h-[1800px] rounded-full opacity-80 bg-blob blob-1 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 28% 28%, rgba(30,45,80,0.88), rgba(50,90,160,0.72) 12%, rgba(80,140,200,0.32) 28%, rgba(100,150,220,0.12) 48%, transparent 68%)'
+          background: 'radial-gradient(closest-corner at 28% 28%, rgba(25,35,75,0.88), rgba(40,100,200,0.82) 12%, rgba(100,160,255,0.52) 28%, rgba(150,200,255,0.18) 48%, transparent 68%)'
         }}
       />
 
       <div
-        className={`absolute -right-96 -bottom-72 w-[1600px] h-[1600px] rounded-full opacity-72 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute -right-96 -bottom-72 w-[1600px] h-[1600px] rounded-full opacity-76 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 25% 22%, rgba(20,15,45,0.88), rgba(60,100,170,0.48) 10%, rgba(130,110,200,0.28) 26%, rgba(100,160,240,0.08) 52%, transparent 70%)'
+          background: 'radial-gradient(closest-corner at 25% 22%, rgba(30,20,70,0.88), rgba(100,80,220,0.62) 10%, rgba(180,120,255,0.42) 26%, rgba(150,180,255,0.12) 52%, transparent 70%)'
         }}
       />
 
       <div
-        className={`absolute left-1/2 top-1/4 -translate-x-1/2 w-[1700px] h-[1700px] rounded-full opacity-60 bg-blob blob-3 ${reduced ? '' : 'rotate-slow'}`}
+        className={`absolute left-1/2 top-1/4 -translate-x-1/2 w-[1700px] h-[1700px] rounded-full opacity-68 bg-blob blob-3 ${reduced ? '' : 'rotate-slow'}`}
         style={{
-          background: 'radial-gradient(closest-corner at 45% 45%, rgba(15,12,35,0.92), rgba(70,90,160,0.32) 14%, rgba(120,140,200,0.18) 32%, rgba(90,130,180,0.06) 56%, transparent 72%)'
+          mixBlendMode: 'screen',
+          background: 'radial-gradient(closest-corner at 45% 45%, rgba(20,15,55,0.92), rgba(80,120,200,0.48) 14%, rgba(150,170,255,0.32) 32%, rgba(120,180,255,0.10) 56%, transparent 72%)'
         }}
       />
 
       {/* Blob 4 - right side, lower position */}
       <div
-        className={`absolute -right-72 top-1/3 w-[1500px] h-[1500px] rounded-full opacity-65 bg-blob blob-4 ${reduced ? '' : ''}`}
+        className={`absolute -right-72 top-1/3 w-[1500px] h-[1500px] rounded-full opacity-70 bg-blob blob-4 ${reduced ? '' : ''}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 30% 35%, rgba(25,20,55,0.86), rgba(80,110,180,0.40) 12%, rgba(110,130,200,0.22) 30%, rgba(90,140,200,0.08) 55%, transparent 70%)'
+          background: 'radial-gradient(closest-corner at 30% 35%, rgba(35,25,80,0.86), rgba(120,140,220,0.58) 12%, rgba(160,180,255,0.35) 30%, rgba(130,190,255,0.10) 55%, transparent 70%)'
         }}
       />
 
       {/* Blob 5 - left side, bottom area */}
       <div
-        className={`absolute -left-80 bottom-0 w-[1550px] h-[1550px] rounded-full opacity-62 bg-blob blob-5 ${reduced ? '' : ''}`}
+        className={`absolute -left-80 bottom-0 w-[1550px] h-[1550px] rounded-full opacity-68 bg-blob blob-5 ${reduced ? '' : ''}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 35% 40%, rgba(18,25,50,0.88), rgba(70,100,170,0.38) 14%, rgba(100,140,210,0.20) 32%, rgba(80,130,190,0.06) 58%, transparent 72%)'
+          background: 'radial-gradient(closest-corner at 35% 40%, rgba(25,30,75,0.88), rgba(100,140,230,0.52) 14%, rgba(150,180,255,0.32) 32%, rgba(120,170,240,0.08) 58%, transparent 72%)'
         }}
       />
 
       {/* small animated highlights for refined sophistication */}
-  <div className={`absolute -top-8 left-[16%] w-[240px] h-[240px] rounded-full opacity-90 blur-[40px] mix-blend-screen highlight-1 ${reduced ? '' : 'blob-1'}`} style={{ background: 'linear-gradient(45deg, rgba(80,120,180,0.72), rgba(100,150,220,0.48))', transform: 'translateZ(0)' }} />
-  <div className={`absolute bottom-[10%] right-[12%] w-[180px] h-[180px] rounded-full opacity-85 blur-[32px] mix-blend-screen highlight-2 ${reduced ? '' : 'blob-2'}`} style={{ background: 'linear-gradient(135deg, rgba(100,80,160,0.65), rgba(80,140,200,0.45))', transform: 'translateZ(0)' }} />
+  <div className={`absolute -top-8 left-[16%] w-[240px] h-[240px] rounded-full opacity-95 blur-[40px] mix-blend-screen highlight-1 ${reduced ? '' : 'blob-1'}`} style={{ background: 'linear-gradient(45deg, rgba(100,150,255,0.85), rgba(150,200,255,0.65))', transform: 'translateZ(0)' }} />
+  <div className={`absolute bottom-[10%] right-[12%] w-[180px] h-[180px] rounded-full opacity-92 blur-[32px] mix-blend-screen highlight-2 ${reduced ? '' : 'blob-2'}`} style={{ background: 'linear-gradient(135deg, rgba(150,100,255,0.82), rgba(120,180,255,0.62))', transform: 'translateZ(0)' }} />
 
       {/* Animated SVG noise overlay (feTurbulence) — lightweight and GPU-friendly */}
       {/* layered noise: base coarse + finer grain for premium textured feel */}
