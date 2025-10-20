@@ -58,7 +58,7 @@ export default function DarkBackground() {
         className={`absolute -right-96 -bottom-72 w-[1950px] h-[1950px] rounded-full opacity-72 bg-blob blob-2 ${reduced ? '' : 'rotate-slow'}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 25% 22%, rgba(30,20,70,0.88), rgba(100,80,220,0.58) 9%, rgba(180,120,255,0.38) 22%, rgba(150,180,255,0.08) 48%, transparent 78%)'
+          background: 'radial-gradient(closest-corner at 25% 22%, rgba(35,20,60,0.88), rgba(180,60,100,0.45) 8%, rgba(200,100,180,0.35) 18%, rgba(180,120,255,0.32) 28%, rgba(150,180,255,0.08) 48%, transparent 78%)'
         }}
       />
 
@@ -75,7 +75,7 @@ export default function DarkBackground() {
         className={`absolute -right-72 top-1/3 w-[1500px] h-[1500px] rounded-full opacity-70 bg-blob blob-4 ${reduced ? '' : ''}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 30% 35%, rgba(35,25,80,0.86), rgba(120,140,220,0.58) 12%, rgba(160,180,255,0.35) 30%, rgba(130,190,255,0.10) 55%, transparent 70%)'
+          background: 'radial-gradient(closest-corner at 30% 35%, rgba(45,30,70,0.86), rgba(200,80,140,0.50) 11%, rgba(180,120,200,0.38) 25%, rgba(160,180,255,0.15) 45%, transparent 70%)'
         }}
       />
 
@@ -84,7 +84,7 @@ export default function DarkBackground() {
         className={`absolute -left-80 bottom-0 w-[1550px] h-[1550px] rounded-full opacity-68 bg-blob blob-5 ${reduced ? '' : ''}`}
         style={{
           mixBlendMode: 'screen',
-          background: 'radial-gradient(closest-corner at 35% 40%, rgba(25,30,75,0.88), rgba(100,140,230,0.52) 14%, rgba(150,180,255,0.32) 32%, rgba(120,170,240,0.08) 58%, transparent 72%)'
+          background: 'radial-gradient(closest-corner at 35% 40%, rgba(35,25,70,0.88), rgba(150,100,180,0.48) 12%, rgba(170,140,220,0.35) 28%, rgba(150,180,255,0.12) 48%, transparent 72%)'
         }}
       />
 
