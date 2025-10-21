@@ -2,10 +2,15 @@
 
 import { useTheme } from '@/context/ThemeContext';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { useEffect } from 'react';
 
 export default function NavBar() {
   const { theme } = useTheme();
   const activeSection = useActiveSection();
+
+  useEffect(() => {
+    console.log('Current active section:', activeSection);
+  }, [activeSection]);
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
