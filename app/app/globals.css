@@ -57,13 +57,14 @@ body {
 
   /* H1 specific sizing for hero titles */
   h1 {
-    font-size: 70px;
+    font-size: 60px;
     line-height: 1.1;
+    margin-bottom: 2rem; /* Reduced from default mb-12 (3rem) to 2rem (8px smaller) */
   }
 
   @media (max-width: 768px) {
     h1 {
-      font-size: 56px;
+      font-size: 35px;
     }
   }
 }

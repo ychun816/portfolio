@@ -35,7 +35,7 @@ export default function ProjectsSection(){
   return (
     <section id="projects" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-7xl">
-        <h1 className="mb-16" style={{ fontSize: '70px', lineHeight: '1.1' }}>Projects</h1>
+        <h1 className="mb-16" style={{ fontSize: '60px', lineHeight: '1.1' }}>Projects</h1>
         
         {/* Horizontal Scrolling Container */}
         <div className="overflow-x-auto scroll-smooth">
@@ -82,12 +82,12 @@ export default function ProjectsSection(){
                     >
                       {project.name}
                     </h3>
-                    <p className="text-[color:var(--foreground)] opacity-70 mt-2 text-xs leading-tight line-clamp-2 flex-1">
+                    <p className="text-[color:var(--foreground)] opacity-70 mt-2 text-sm leading-tight line-clamp-2 flex-1">
                       {project.description}
                     </p>
                     
                     {/* GitHub Link Indicator */}
-                    <div className="mt-2 flex items-center text-[color:var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold">
+                    <div className="mt-2 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: 'rgba(57, 255, 20, 0.4)' }}>
                       <span>View on GitHub</span>
                       <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

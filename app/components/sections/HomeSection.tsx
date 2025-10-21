@@ -2,15 +2,15 @@ import SocialLinks from '../SocialLinks';
 
 export default function HomeSection(){
   return (
-    <section id="home" className="min-h-screen snap-start flex items-center justify-center px-4">
-      <div className="text-center max-w-4xl">
+    <section id="home" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
+      <div className="text-center max-w-4xl w-full">
         {/* Main Title */}
-        <h1 className="text-[70px] md:text-[70px] mb-12 md:mb-16" style={{ fontSize: '70px', lineHeight: '1.1' }}>
+        <h1 className="text-[60px] md:text-[60px]" style={{ fontSize: '60px', lineHeight: '1.1' }}>
           Hello! I'm <span className="text-[color:var(--accent)]">Yichun LIN</span>
         </h1>
-        <br />
+        
         {/* Subtitle / Description */}
-        <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
+        <p className="text-base md:text-lg leading-relaxed mb-6 text-[color:var(--foreground)] opacity-90">
           I'm a Junior Cloud/DevOps Software Engineer from{' '}
           <a 
             href="https://42.fr" 
@@ -23,8 +23,8 @@ export default function HomeSection(){
           </a>
           , eager to adapt to any new challenges to create effective solutions.
         </p>
-        <br />
-        <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
+        
+        <p className="text-base md:text-lg leading-relaxed mb-6 text-[color:var(--foreground)] opacity-90">
           Please check out my{' '}
           <a 
             href="#projects" 
@@ -34,7 +34,8 @@ export default function HomeSection(){
             PROJECTS!
           </a>
         </p>
-        <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
+        
+        <p className="text-base md:text-lg leading-relaxed mb-12 text-[color:var(--foreground)] opacity-90">
            Or {' '}
           <a 
             href="mailto:ychun8lin@gmail.com"

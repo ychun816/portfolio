@@ -2,7 +2,7 @@ export default function ResumeSection(){
   return (
     <section id="resume" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
       <div className="max-w-4xl w-full">
-        <h1 className="mb-12" style={{ fontSize: '70px', lineHeight: '1.1' }}>Resume</h1>
+        <h1 className="mb-12" style={{ fontSize: '60px', lineHeight: '1.1' }}>Resume</h1>
         
         {/* Resume PDF Viewer */}
         <div className="mb-4 rounded-lg overflow-hidden bg-white/5 border border-white/10 p-8">
@@ -27,8 +27,8 @@ export default function ResumeSection(){
 
         {/* Footer Text */}
         <div className="text-center">
-          <p className="text-lg md:text-xl leading-relaxed text-[color:var(--foreground)] opacity-90">
-            Feel free to reach out through the{' '}
+          <p className="text-base md:text-lg leading-relaxed text-[color:var(--foreground)] opacity-90">
+            Feel free to reach out via {' '}
             <a 
               href="#contact" 
               className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
@@ -36,7 +36,7 @@ export default function ResumeSection(){
             >
               contact form
             </a>
-            {' '}or directly{' '}
+            {' '}or{' '}
             <a 
               href="mailto:ychun8lin@gmail.com"
               className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
