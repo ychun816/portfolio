@@ -23,12 +23,12 @@ export default function HomeSection(){
             onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
-            Ecole 42 in Paris
+            Ecole 42 Paris
           </a>
-          , eager to adapt to any new challenges to create effective solutions.
+          , eager to adapt to new challenges and create effective solutions.
         </p>
         
-        <p className="text-base md:text-lg leading-relaxed mb-6 text-[color:var(--foreground)] opacity-90">
+        <p className="text-base md:text-lg leading-relaxed mb-12 text-[color:var(--foreground)] opacity-90">
           Please check out my{' '}
           <a 
             href="#projects" 
@@ -37,20 +37,17 @@ export default function HomeSection(){
             onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
-            PROJECTS!
+            projects
           </a>
-        </p>
-        
-        <p className="text-base md:text-lg leading-relaxed mb-12 text-[color:var(--foreground)] opacity-90">
-           Or {' '}
+          , or{' '}
           <a 
-            href="mailto:ychun8lin@gmail.com"
+            href="#resume" 
             className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
             style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
             onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
-            EMAIL ME
+            resume
           </a>
           !
         </p>

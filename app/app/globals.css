@@ -30,7 +30,7 @@ html[data-theme="day"] {
 }
 
 html[data-theme="night"] {
-  --foreground: #d1d5db; /* light grey for night */
+  --foreground: #e5e7eb; /* lighter grey for night */
 }
 
 @media (prefers-color-scheme: dark) {
