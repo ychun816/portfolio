@@ -1,6 +1,10 @@
+"use client";
+
+import SectionWrapper from '../SectionWrapper';
+
 export default function ContactSection(){
   return (
-    <section id="contact" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
+    <SectionWrapper id="contact">
       <div className="max-w-2xl w-full">
         <h1 style={{ fontSize: '60px', lineHeight: '1.1' }}>Contact</h1>
         <form className="mt-4 flex flex-col gap-3">
@@ -50,7 +54,7 @@ export default function ContactSection(){
           </a>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   )
 }
 

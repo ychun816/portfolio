@@ -1,9 +1,11 @@
 "use client";
 
 import { useTheme } from '@/context/ThemeContext';
+import { useActiveSection } from '@/hooks/useActiveSection';
 
 export default function NavBar() {
   const { theme } = useTheme();
+  const activeSection = useActiveSection();
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
@@ -21,7 +23,8 @@ export default function NavBar() {
           color: rgba(120, 80, 200, 0.95);
         }
 
-        .nav-link-day:hover {
+        .nav-link-day:hover,
+        .nav-link-day.active {
           color: rgba(100, 50, 180, 1);
           transform: scale(1.2);
           font-size: 1.7rem;
@@ -33,7 +36,8 @@ export default function NavBar() {
           color: rgba(100, 180, 240, 0.8);
         }
 
-        .nav-link-night:hover {
+        .nav-link-night:hover,
+        .nav-link-night.active {
           color: rgba(100, 180, 240, 1);
           transform: scale(1.2);
           font-size: 1.7rem;
@@ -46,7 +50,7 @@ export default function NavBar() {
         <li>
           <a 
             href="#home" 
-            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'}`}
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'home' ? 'active' : ''}`}
           >
             Home
           </a>
@@ -54,7 +58,7 @@ export default function NavBar() {
         <li>
           <a 
             href="#intro" 
-            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'}`}
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'intro' ? 'active' : ''}`}
           >
             Intro
           </a>
@@ -62,7 +66,7 @@ export default function NavBar() {
         <li>
           <a 
             href="#projects" 
-            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'}`}
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'projects' ? 'active' : ''}`}
           >
             Projects
           </a>
@@ -70,7 +74,7 @@ export default function NavBar() {
         <li>
           <a 
             href="#resume" 
-            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'}`}
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'resume' ? 'active' : ''}`}
           >
             Resume
           </a>
@@ -78,7 +82,7 @@ export default function NavBar() {
         <li>
           <a 
             href="#contact" 
-            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'}`}
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'contact' ? 'active' : ''}`}
           >
             Contact
           </a>

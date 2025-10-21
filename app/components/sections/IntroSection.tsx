@@ -1,8 +1,10 @@
 "use client";
 
+import SectionWrapper from '../SectionWrapper';
+
 export default function IntroSection(){
   return (
-    <section id="intro" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
+    <SectionWrapper id="intro">
       <div className="max-w-4xl w-full">
         <h1 className="text-[60px] md:text-[60px]" style={{ fontSize: '60px', lineHeight: '1.1' }}>About Me</h1>
         <div className="space-y-6 text-base md:text-lg leading-relaxed text-[color:var(--foreground)] opacity-90">
@@ -49,6 +51,6 @@ export default function IntroSection(){
           </p>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   )
 }

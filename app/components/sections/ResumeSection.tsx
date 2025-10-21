@@ -1,8 +1,10 @@
 "use client";
 
+import SectionWrapper from '../SectionWrapper';
+
 export default function ResumeSection(){
   return (
-    <section id="resume" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
+    <SectionWrapper id="resume">
       <div className="max-w-4xl w-full">
         <h1 className="mb-12" style={{ fontSize: '60px', lineHeight: '1.1' }}>Resume</h1>
         
@@ -54,6 +56,6 @@ export default function ResumeSection(){
           </p>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   )
 }

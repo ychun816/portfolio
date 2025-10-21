@@ -1,5 +1,7 @@
 'use client';
 
+import SectionWrapper from '../SectionWrapper';
+
 const projects = [
   {
     id: 1,
@@ -33,7 +35,7 @@ const projects = [
 
 export default function ProjectsSection(){
   return (
-    <section id="projects" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
+    <SectionWrapper id="projects">
       <div className="w-full max-w-7xl">
         <h1 className="mb-16" style={{ fontSize: '60px', lineHeight: '1.1' }}>Projects</h1>
         
@@ -113,6 +115,6 @@ export default function ProjectsSection(){
           }
         }
       `}</style>
-    </section>
+    </SectionWrapper>
   )
 }

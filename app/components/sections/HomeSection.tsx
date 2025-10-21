@@ -1,10 +1,11 @@
 "use client";
 
 import SocialLinks from '../SocialLinks';
+import SectionWrapper from '../SectionWrapper';
 
 export default function HomeSection(){
   return (
-    <section id="home" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
+    <SectionWrapper id="home">
       <div className="text-center max-w-4xl w-full">
         {/* Main Title */}
         <h1 className="text-[60px] md:text-[60px]" style={{ fontSize: '60px', lineHeight: '1.1' }}>
@@ -62,6 +63,6 @@ export default function HomeSection(){
           </svg>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   )
 }
