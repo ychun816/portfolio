@@ -1,3 +1,5 @@
+"use client";
+
 export default function IntroSection(){
   return (
     <section id="intro" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
@@ -12,8 +14,10 @@ export default function IntroSection(){
             At École 42 Paris, I gained solid, practical experience in programming and scripting including C, C++, TypeScript, JavaScript, and Bash. I also mastered DevOps and infrastructure tools like Docker, Docker Compose, Kubernetes, and CI/CD pipelines (GitHub Actions, GitLab CI), as well as system administration and monitoring with Linux (Debian, Ubuntu), networking, web servers (NGINX, Apache), file systems, shell scripting, and Prometheus/Grafana. Check out{' '}
             <a 
               href="#projects" 
-              className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
-              style={{ textDecorationColor: 'var(--foreground)' }}
+              className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+              style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
             >
               my Projects
             </a>
@@ -34,8 +38,10 @@ export default function IntroSection(){
               href="https://www.linkedin.com/in/sophia-lin-profile/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
-              style={{ textDecorationColor: 'var(--foreground)' }}
+              className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+              style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
             >
               connect
             </a>

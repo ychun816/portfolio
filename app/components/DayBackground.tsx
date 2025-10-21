@@ -113,17 +113,25 @@ export default function DayBackground() {
       />
 
       {/* Animated grain overlay on blobs */}
-      <svg className="absolute inset-0 w-full h-full grain-overlay" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <svg className="absolute inset-0 w-full h-full grain-overlay opacity-25" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>
           <filter id="noiseGrainDay">
             <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" />
             <feColorMatrix type="saturate" values="0" />
             <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0.12" />
+              <feFuncA type="table" tableValues="0 0.20" />
+            </feComponentTransfer>
+          </filter>
+          <filter id="noiseGrainDayFine">
+            <feTurbulence type="fractalNoise" baseFrequency="2.0" numOctaves="5" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+              <feFuncA type="table" tableValues="0 0.15" />
             </feComponentTransfer>
           </filter>
         </defs>
-        <rect width="100%" height="100%" filter="url(#noiseGrainDay)" />
+        <rect width="100%" height="100%" filter="url(#noiseGrainDay)" opacity="0.18" />
+        <rect width="100%" height="100%" filter="url(#noiseGrainDayFine)" opacity="0.10" />
       </svg>
 
       {/* Subtle vignette - lighter for day mode */}

@@ -97,25 +97,33 @@ export default function NightBackground() {
       />
 
       {/* Animated SVG noise overlay */}
-      <svg className="absolute inset-0 w-full h-full opacity-15" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <svg className="absolute inset-0 w-full h-full opacity-20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>
           <filter id="noiseCoarse">
             <feTurbulence type="fractalNoise" baseFrequency="0.30" numOctaves="2" stitchTiles="stitch" result="turbc" />
             <feColorMatrix type="saturate" values="0" />
             <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0.15" />
+              <feFuncA type="table" tableValues="0 0.25" />
             </feComponentTransfer>
           </filter>
           <filter id="noiseFine">
             <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="3" stitchTiles="stitch" result="turbf" />
             <feColorMatrix type="saturate" values="0" />
             <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0.20" />
+              <feFuncA type="table" tableValues="0 0.30" />
+            </feComponentTransfer>
+          </filter>
+          <filter id="noiseUltraFine">
+            <feTurbulence type="fractalNoise" baseFrequency="2.8" numOctaves="4" stitchTiles="stitch" result="turbu" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+              <feFuncA type="table" tableValues="0 0.15" />
             </feComponentTransfer>
           </filter>
         </defs>
-        <rect width="100%" height="100%" filter="url(#noiseCoarse)" opacity="0.12" />
-        <rect width="100%" height="100%" filter="url(#noiseFine)" opacity="0.08" />
+        <rect width="100%" height="100%" filter="url(#noiseCoarse)" opacity="0.15" />
+        <rect width="100%" height="100%" filter="url(#noiseFine)" opacity="0.12" />
+        <rect width="100%" height="100%" filter="url(#noiseUltraFine)" opacity="0.08" />
         <animate xlinkHref="#noiseFine feTurbulence" attributeName="baseFrequency" dur="10s" values="1.4;1.2;1.4" repeatCount="indefinite" />
       </svg>
 

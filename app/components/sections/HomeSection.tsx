@@ -1,3 +1,5 @@
+"use client";
+
 import SocialLinks from '../SocialLinks';
 
 export default function HomeSection(){
@@ -16,8 +18,10 @@ export default function HomeSection(){
             href="https://42.fr" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
-            style={{ textDecorationColor: 'var(--foreground)' }}
+            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+            style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
             Ecole 42 in Paris
           </a>
@@ -28,8 +32,10 @@ export default function HomeSection(){
           Please check out my{' '}
           <a 
             href="#projects" 
-            className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
-            style={{ textDecorationColor: 'var(--foreground)' }}
+            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+            style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
             PROJECTS!
           </a>
@@ -39,8 +45,10 @@ export default function HomeSection(){
            Or {' '}
           <a 
             href="mailto:ychun8lin@gmail.com"
-            className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
-            style={{ textDecorationColor: 'var(--foreground)' }}
+            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+            style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
             EMAIL ME
           </a>
