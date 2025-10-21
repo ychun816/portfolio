@@ -25,13 +25,12 @@
   --font-secondary: 'FuturaLocal', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
-  --font-display: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
-  --font-secondary: var(--font-secondary);
-  --font-mono: var(--font-geist-mono);
+html[data-theme="day"] {
+  --foreground: #d1d5db; /* light grey for day */
+}
+
+html[data-theme="night"] {
+  --foreground: #4b5563; /* dark grey for night */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,18 +41,31 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Heading / caption styles: use Clash Display medium for titles and captions */
-h1, h2, h3, h4, .title, .caption {
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+@layer base {
+  /* Heading / caption styles: use Clash Display medium for titles and captions */
+  h1, h2, h3, h4, .title, .caption {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* H1 specific sizing for hero titles */
+  h1 {
+    font-size: 100px;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 56px;
+    }
+  }
 }
 
 /* Secondary context / meta: use Futura if available */

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import DarkBackground from '../components/DarkBackground';
+import ThemeToggle from '../components/ThemeToggle';
+import { ThemeProvider } from '@/context/ThemeContext';
+import BackgroundRenderer from '@/components/BackgroundRenderer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,8 +52,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased clash-font`}
       >
-        <DarkBackground />
-        {children}
+        <ThemeProvider>
+          <BackgroundRenderer />
+          <ThemeToggle />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

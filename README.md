@@ -75,3 +75,14 @@ There's a ready workflow at `.github/workflows/deploy-to-vercel.yml` which:
 ```npm run dev``` — runs the "dev" script defined in package.json (usually starts a development server with hot reload). Use this while developing.
 
 ```npm run build``` (or ```npm run build --silent```) — runs the "build" script (usually produces an optimized production build). Use this to compile and check the app before deploying. The --silent flag silences npm's own log noise.
+
+
+dev test commands 
+```
+#kill dev container to restart
+pkill -f "next dev" || true && sleep 2
+
+#restart dev container
+npm run dev --prefix=./app
+
+```
