@@ -22,7 +22,7 @@ export default function ResumeSection(){
           <a
             href="/LIN-Yichun_Resume_20251021.pdf"
             download="LIN-Yichun_Resume_20251021.pdf"
-            className="px-8 py-3 rounded-lg font-semibold hover:opacity-60 transition-opacity"
+            className="px-8 py-3 rounded-lg font-semibold transition-colors hover:text-[#C3F0CD]"
             style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}
           >
             Download PDF
@@ -35,9 +35,9 @@ export default function ResumeSection(){
             Feel free to reach out via {' '}
             <a 
               href="#contact" 
-              className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+              className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
               style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
             >
               contact form
@@ -45,9 +45,9 @@ export default function ResumeSection(){
             {' '}or{' '}
             <a 
               href="mailto:ychun8lin@gmail.com"
-              className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+              className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
               style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
             >
               email me

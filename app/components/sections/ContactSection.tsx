@@ -11,7 +11,7 @@ export default function ContactSection(){
           <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Your name" />
           <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Email" />
           <textarea className="p-3 rounded bg-transparent border border-white/6" rows={4} placeholder="Message" />
-          <button className="px-4 py-2 rounded font-semibold hover:opacity-60 transition-opacity" style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}>Send</button>
+          <button className="px-4 py-2 rounded font-semibold transition-colors hover:text-[#C3F0CD]" style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}>Send</button>
         </form>
 
         {/* Social Icons */}
