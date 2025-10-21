@@ -52,8 +52,19 @@ export default function SocialLinks() {
           href={link.url}
           target={link.url.startsWith('http') ? '_blank' : undefined}
           rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-          className="transition-colors duration-200 text-[color:var(--foreground)] hover:text-[#C3F0CD]"
+          className="transition-all duration-200 text-[color:var(--foreground)]"
           aria-label={link.name}
+          style={{
+            filter: 'drop-shadow(0 0 0px rgba(195, 240, 205, 0))',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = '#C3F0CD';
+            e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(195, 240, 205, 0.6)) drop-shadow(0 0 16px rgba(195, 240, 205, 0.3))';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = 'var(--foreground)';
+            e.currentTarget.style.filter = 'drop-shadow(0 0 0px rgba(195, 240, 205, 0))';
+          }}
         >
           {link.icon}
         </a>

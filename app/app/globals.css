@@ -83,6 +83,7 @@ body {
 /* Global hyperlink hover effect - Soft Mint Green */
 a {
   --mint-green: #C3F0CD;
+  text-decoration-color: #C3F0CD;
 }
 
 a:hover {
