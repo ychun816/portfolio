@@ -35,7 +35,7 @@ export default function HomeSection(){
           </a>
         </p>
         <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
-          Or {' '}
+           Or {' '}
           <a 
             href="mailto:ychun8lin@gmail.com"
             className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
