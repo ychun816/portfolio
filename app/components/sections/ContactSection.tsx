@@ -1,21 +1,29 @@
 "use client";
 
 import SectionWrapper from '../SectionWrapper';
+import SVGTextClip from '../SVGTextClip';
+import FadeInUp from '../FadeInUp';
 
 export default function ContactSection(){
   return (
     <SectionWrapper id="contact">
       <div className="max-w-2xl w-full">
-        <h1 style={{ fontSize: '60px', lineHeight: '1.1' }}>Contact</h1>
-        <form className="mt-4 flex flex-col gap-3">
-          <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Your name" />
-          <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Email" />
-          <textarea className="p-3 rounded bg-transparent border border-white/6" rows={4} placeholder="Message" />
-          <button className="px-4 py-2 rounded font-semibold transition-colors hover:text-[#C3F0CD]" style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}>Send</button>
-        </form>
+        <SVGTextClip
+          text="Contact"
+          style={{ fontSize: '60px', lineHeight: '1.1' }}
+        />
+        <FadeInUp delay={200}>
+          <form className="mt-4 flex flex-col gap-3">
+            <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Your name" />
+            <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Email" />
+            <textarea className="p-3 rounded bg-transparent border border-white/6" rows={4} placeholder="Message" />
+            <button className="px-4 py-2 rounded font-semibold transition-colors hover:text-[#C3F0CD]" style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}>Send</button>
+          </form>
+        </FadeInUp>
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-8 mt-12">
+        <FadeInUp delay={300}>
+          <div className="flex justify-center gap-8 mt-12">
           {/* LinkedIn Icon */}
           <a
             href="https://www.linkedin.com/in/sophia-lin-profile/"
@@ -85,7 +93,8 @@ export default function ContactSection(){
               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
             </svg>
           </a>
-        </div>
+          </div>
+        </FadeInUp>
       </div>
     </SectionWrapper>
   )

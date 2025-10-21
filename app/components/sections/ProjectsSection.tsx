@@ -1,6 +1,8 @@
 'use client';
 
 import SectionWrapper from '../SectionWrapper';
+import SVGTextClip from '../SVGTextClip';
+import FadeInUp from '../FadeInUp';
 
 const projects = [
   {
@@ -37,11 +39,16 @@ export default function ProjectsSection(){
   return (
     <SectionWrapper id="projects">
       <div className="w-full max-w-7xl">
-        <h1 className="mb-16" style={{ fontSize: '60px', lineHeight: '1.1' }}>Projects</h1>
+        <SVGTextClip
+          text="Projects"
+          className="mb-16"
+          style={{ fontSize: '60px', lineHeight: '1.1' }}
+        />
         
         {/* Horizontal Scrolling Container */}
-        <div className="overflow-x-auto scroll-smooth">
-          <div className="flex gap-6 min-w-min">
+        <FadeInUp delay={200}>
+          <div className="overflow-x-auto scroll-smooth">
+            <div className="flex gap-6 min-w-min">
             {projects.map((project, index) => (
               <a
                 key={project.id}
@@ -99,8 +106,9 @@ export default function ProjectsSection(){
                 </div>
               </a>
             ))}
+            </div>
           </div>
-        </div>
+        </FadeInUp>
       </div>
 
       <style jsx>{`

@@ -2,18 +2,23 @@
 
 import SocialLinks from '../SocialLinks';
 import SectionWrapper from '../SectionWrapper';
+import SVGTextClip from '../SVGTextClip';
+import FadeInUp from '../FadeInUp';
 
 export default function HomeSection(){
   return (
     <SectionWrapper id="home">
       <div className="text-center max-w-4xl w-full">
-        {/* Main Title */}
-        <h1 className="text-[60px] md:text-[60px]" style={{ fontSize: '60px', lineHeight: '1.1' }}>
-          Hello! I'm <span className="text-[color:var(--accent)]">Yichun LIN</span>
-        </h1>
+        {/* Main Title with SVG Clip Animation */}
+        <SVGTextClip
+          text="Hello! I'm Yichun LIN"
+          highlightSpans={[2, 3]} // "Yichun LIN" (indices 2 and 3)
+          className="mb-8"
+          style={{ fontSize: '60px', lineHeight: '1.1' }}
+        />
         
-        {/* Subtitle / Description */}
-        <p className="text-base md:text-lg leading-relaxed mb-6 text-[color:var(--foreground)] opacity-90">
+        {/* Subtitle / Description with Fade-In-Up */}
+        <FadeInUp className="text-base md:text-lg leading-relaxed mb-6 text-[color:var(--foreground)] opacity-90" delay={200}>
           I'm a Junior Cloud/DevOps Software Engineer from{' '}
           <a 
             href="https://42.fr" 
@@ -27,9 +32,9 @@ export default function HomeSection(){
             Ecole 42 Paris
           </a>
           , eager to adapt to new challenges and create effective solutions.
-        </p>
+        </FadeInUp>
         
-        <p className="text-base md:text-lg leading-relaxed mb-12 text-[color:var(--foreground)] opacity-90">
+        <FadeInUp className="text-base md:text-lg leading-relaxed mb-12 text-[color:var(--foreground)] opacity-90" delay={300}>
           Please check out my{' '}
           <a 
             href="#projects" 
@@ -51,10 +56,12 @@ export default function HomeSection(){
             resume
           </a>
           !
-        </p>
+        </FadeInUp>
 
         {/* Social Links / Icons */}
-        <SocialLinks />
+        <FadeInUp delay={400}>
+          <SocialLinks />
+        </FadeInUp>
 
         {/* Scroll Indicator */}
         <div className="mt-16 flex justify-center">
