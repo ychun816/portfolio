@@ -39,6 +39,8 @@ export default function RootLayout({
   <link rel="preload" href="/fonts/recife/Recife-Medium.woff2" as="font" type="font/woff2" crossOrigin="" />
   <link rel="preload" href="/fonts/recife/Recife-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
   <link rel="stylesheet" href="/fonts/recife/recife.css" />
+    {/* Explicit favicon link to ensure browsers request it */}
+    <link rel="icon" href="/favicon.ico" />
         <script dangerouslySetInnerHTML={{ __html: `
           setTimeout(() => {
             try {
