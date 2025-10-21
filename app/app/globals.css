@@ -26,11 +26,11 @@
 }
 
 html[data-theme="day"] {
-  --foreground: #d1d5db; /* light grey for day */
+  --foreground: #4b5563; /* dark grey for day */
 }
 
 html[data-theme="night"] {
-  --foreground: #4b5563; /* dark grey for night */
+  --foreground: #d1d5db; /* light grey for night */
 }
 
 @media (prefers-color-scheme: dark) {
