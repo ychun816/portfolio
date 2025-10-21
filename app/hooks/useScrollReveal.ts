@@ -21,25 +21,31 @@ export function useScrollReveal(options = {}) {
 
     // Find the scrollable main container
     const scrollContainer = document.querySelector('main');
+    if (!scrollContainer) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Element is visible when it enters viewport
+        // Element is visible when it enters viewport - keep it visible once triggered
         if (entry.isIntersecting) {
           setIsVisible(true);
           // Calculate progress based on how much of the element is visible
           const progress = Math.min(1, entry.intersectionRatio * 2);
           setTriggerProgress(progress);
-        } else if (entry.boundingClientRect.top > 0) {
-          // Element hasn't reached viewport yet
-          setIsVisible(false);
-          setTriggerProgress(0);
+        } else {
+          // Only set invisible if element is above the viewport (scrolled past)
+          // This prevents flickering and allows animations to stay visible
+          if (entry.boundingClientRect.bottom < 0) {
+            // Element is above viewport, but we keep it visible (one-time animation)
+            // Uncomment below if you want animations to reset when scrolling back up
+            // setIsVisible(false);
+            // setTriggerProgress(0);
+          }
         }
       },
       {
         root: scrollContainer, // Use the main container as the viewport
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-        rootMargin: '0px 0px -100px 0px', // Trigger animation slightly before element is fully visible
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+        rootMargin: '0px 0px 0px 0px', // Trigger animation when element enters viewport
       }
     );
 
