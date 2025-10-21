@@ -68,12 +68,12 @@ export default function DayBackground() {
         @media (prefers-reduced-motion: reduce) { .blob-1, .blob-2, .blob-3, .blob-4, .blob-5, .grain-overlay { animation: none !important; } }
       `}</style>
 
-      {/* Gradient blobs — soft blue, pink, purple palette */}
+      {/* Gradient blobs — aesthetic dreamy blue, pink and purple palette */}
       <div
         className={`absolute -left-80 -top-60 w-[2000px] h-[2000px] rounded-full opacity-95 bg-blob blob-1 ${reduced ? '' : 'animate-rotate-fast'}`}
         style={{
           mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 30% 30%, rgba(196, 181, 253, 0.75), rgba(196, 181, 253, 0.60) 20%, rgba(196, 181, 253, 0.45) 35%, rgba(196, 181, 253, 0.20) 60%, transparent 85%)'
+          background: 'radial-gradient(closest-corner at 30% 30%, rgba(180, 160, 240, 0.75), rgba(185, 165, 245, 0.60) 20%, rgba(190, 170, 250, 0.45) 35%, rgba(195, 175, 255, 0.20) 60%, transparent 85%)'
         }}
       />
 
@@ -81,7 +81,7 @@ export default function DayBackground() {
         className={`absolute -right-80 -bottom-60 w-[1800px] h-[1800px] rounded-full opacity-90 bg-blob blob-2 ${reduced ? '' : 'animate-rotate-fast-reverse'}`}
         style={{
           mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 28% 25%, rgba(165, 200, 255, 0.70), rgba(165, 200, 255, 0.55) 15%, rgba(165, 200, 255, 0.40) 30%, rgba(165, 200, 255, 0.18) 55%, transparent 82%)'
+          background: 'radial-gradient(closest-corner at 28% 25%, rgba(255, 160, 210, 0.70), rgba(250, 170, 215, 0.55) 15%, rgba(245, 180, 220, 0.40) 30%, rgba(240, 190, 225, 0.18) 55%, transparent 82%)'
         }}
       />
 
@@ -89,25 +89,25 @@ export default function DayBackground() {
         className={`absolute left-1/2 top-1/4 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full opacity-90 bg-blob blob-3 ${reduced ? '' : 'animate-rotate-fast'}`}
         style={{
           mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 45% 45%, rgba(249, 168, 212, 0.70), rgba(249, 168, 212, 0.55) 20%, rgba(249, 168, 212, 0.40) 40%, rgba(249, 168, 212, 0.18) 65%, transparent 85%)'
+          background: 'radial-gradient(closest-corner at 45% 45%, rgba(140, 180, 255, 0.70), rgba(150, 185, 255, 0.55) 20%, rgba(160, 190, 260, 0.40) 40%, rgba(170, 195, 265, 0.18) 65%, transparent 85%)'
         }}
       />
 
-      {/* Blob 4 - right side, lower position - soft purple */}
+      {/* Blob 4 - right side, lower position - soft pink */}
       <div
         className={`absolute -right-60 top-1/3 w-[1200px] h-[1200px] rounded-full opacity-90 bg-blob blob-4 ${reduced ? '' : 'animate-rotate-fast-reverse'}`}
         style={{
           mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 32% 35%, rgba(196, 181, 253, 0.70), rgba(196, 181, 253, 0.55) 18%, rgba(196, 181, 253, 0.40) 35%, rgba(196, 181, 253, 0.18) 60%, transparent 82%)'
+          background: 'radial-gradient(closest-corner at 32% 35%, rgba(230, 150, 200, 0.70), rgba(235, 160, 210, 0.55) 18%, rgba(240, 170, 220, 0.40) 35%, rgba(245, 180, 230, 0.18) 60%, transparent 82%)'
         }}
       />
 
-      {/* Blob 5 - left side, bottom area - soft blue */}
+      {/* Blob 5 - left side, bottom area - dreamy blue */}
       <div
         className={`absolute -left-60 bottom-0 w-[1300px] h-[1300px] rounded-full opacity-85 bg-blob blob-5 ${reduced ? '' : 'animate-rotate-fast'}`}
         style={{
           mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 36% 40%, rgba(165, 200, 255, 0.65), rgba(165, 200, 255, 0.50) 20%, rgba(165, 200, 255, 0.35) 40%, rgba(165, 200, 255, 0.15) 65%, transparent 85%)'
+          background: 'radial-gradient(closest-corner at 36% 40%, rgba(150, 175, 250, 0.65), rgba(160, 185, 260, 0.50) 20%, rgba(170, 195, 265, 0.35) 40%, rgba(180, 205, 270, 0.15) 65%, transparent 85%)'
         }}
       />
 
