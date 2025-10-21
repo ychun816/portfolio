@@ -1,8 +1,8 @@
 export default function ContactSection(){
   return (
-    <section id="contact" className="min-h-screen snap-start flex items-center justify-center">
-      <div className="max-w-2xl p-8 glass">
-        <h2 className="text-3xl font-bold mb-2">Contact</h2>
+    <section id="contact" className="min-h-screen snap-start flex items-center justify-center px-4">
+      <div className="max-w-2xl">
+        <h1 className="mb-12">Contact</h1>
         <form className="mt-4 flex flex-col gap-3">
           <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Your name" />
           <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Email" />

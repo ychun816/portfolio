@@ -1,8 +1,8 @@
 export default function ProjectsSection(){
   return (
-    <section id="projects" className="min-h-screen snap-start flex items-center justify-center">
-      <div className="max-w-4xl p-8">
-        <h2 className="text-3xl font-bold mb-4">Projects</h2>
+    <section id="projects" className="min-h-screen snap-start flex items-center justify-center px-4">
+      <div className="max-w-4xl">
+        <h1 className="mb-12">Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 rounded-lg glass">
             <h3 className="font-semibold">Project One</h3>

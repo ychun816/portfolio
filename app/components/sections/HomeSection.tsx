@@ -5,10 +5,10 @@ export default function HomeSection(){
     <section id="home" className="min-h-screen snap-start flex items-center justify-center px-4">
       <div className="text-center max-w-4xl">
         {/* Main Title */}
-        <h1 className="mb-12 md:mb-16">
+        <h1 className="text-[80px] md:text-[80px] mb-12 md:mb-16" style={{ fontSize: '80px', lineHeight: '1.1' }}>
           Hello! I'm <span className="text-[color:var(--accent)]">Yichun LIN</span>
         </h1>
-        
+        <br />
         {/* Subtitle / Description */}
         <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
           I'm a Junior Cloud/DevOps Software Engineer from{' '}
@@ -16,41 +16,32 @@ export default function HomeSection(){
             href="https://42.fr" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="relative inline-block group cursor-pointer"
+            className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
+            style={{ textDecorationColor: 'var(--foreground)' }}
           >
-            <span className="relative">
-              Ecole 42 in Paris
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[color:var(--foreground)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{
-                backgroundImage: 'repeating-linear-gradient(90deg, currentColor 0px, currentColor 2px, transparent 2px, transparent 4px)'
-              }}></span>
-            </span>
+            Ecole 42 in Paris
           </a>
           , eager to adapt to any new challenges to create effective solutions.
         </p>
+        <br />
         <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
           Please check out my{' '}
           <a 
             href="#projects" 
-            className="relative inline-block group cursor-pointer"
+            className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
+            style={{ textDecorationColor: 'var(--foreground)' }}
           >
-            <span className="relative">
-              PROJECTS
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[color:var(--foreground)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{
-                backgroundImage: 'repeating-linear-gradient(90deg, currentColor 0px, currentColor 2px, transparent 2px, transparent 4px)'
-              }}></span>
-            </span>
+            PROJECTS!
           </a>
-          ! Always passionate to{' '}
+        </p>
+        <p className="text-lg md:text-xl leading-relaxed mb-8 text-[color:var(--foreground)] opacity-90">
+          Or {' '}
           <a 
             href="mailto:ychun8lin@gmail.com"
-            className="relative inline-block group cursor-pointer"
+            className="underline decoration-solid underline-offset-2 hover:opacity-70 transition-opacity"
+            style={{ textDecorationColor: 'var(--foreground)' }}
           >
-            <span className="relative">
-              connect
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[color:var(--foreground)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{
-                backgroundImage: 'repeating-linear-gradient(90deg, currentColor 0px, currentColor 2px, transparent 2px, transparent 4px)'
-              }}></span>
-            </span>
+            EMAIL ME
           </a>
           !
         </p>
