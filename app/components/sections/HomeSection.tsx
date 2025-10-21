@@ -5,7 +5,7 @@ export default function HomeSection(){
     <section id="home" className="min-h-screen snap-start flex items-center justify-center px-4">
       <div className="text-center max-w-4xl">
         {/* Main Title */}
-        <h1 className="text-[80px] md:text-[80px] mb-12 md:mb-16" style={{ fontSize: '80px', lineHeight: '1.1' }}>
+        <h1 className="text-[70px] md:text-[70px] mb-12 md:mb-16" style={{ fontSize: '70px', lineHeight: '1.1' }}>
           Hello! I'm <span className="text-[color:var(--accent)]">Yichun LIN</span>
         </h1>
         <br />

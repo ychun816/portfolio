@@ -2,7 +2,7 @@ export default function IntroSection(){
   return (
     <section id="intro" className="min-h-screen snap-start flex items-center justify-center px-4">
       <div className="max-w-4xl">
-        <h1 className="text-[80px] md:text-[80px] mb-12" style={{ fontSize: '80px', lineHeight: '1.1' }}>About Me</h1>
+        <h1 className="text-[70px] md:text-[70px] mb-12" style={{ fontSize: '70px', lineHeight: '1.1' }}>About Me</h1>
         <div className="space-y-6 text-lg md:text-xl leading-relaxed text-[color:var(--foreground)] opacity-90">
           <p>
             Hi! I'm Yichun Lin, a Taiwan-born engineer blending my love for art with my passion for cloud and DevOps. I transitioned from project management in the art world to software engineering, and moved to Paris, the city where creativity meets technology, to build a career in DevOps and cloud engineering.

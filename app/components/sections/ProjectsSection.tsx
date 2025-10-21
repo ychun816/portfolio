@@ -35,7 +35,7 @@ export default function ProjectsSection(){
   return (
     <section id="projects" className="min-h-screen snap-start flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-7xl">
-        <h1 className="mb-16" style={{ fontSize: '80px', lineHeight: '1.1' }}>Projects</h1>
+        <h1 className="mb-16" style={{ fontSize: '70px', lineHeight: '1.1' }}>Projects</h1>
         
         {/* Horizontal Scrolling Container */}
         <div className="overflow-x-auto scroll-smooth">
