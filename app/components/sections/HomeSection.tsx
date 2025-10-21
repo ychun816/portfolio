@@ -19,9 +19,9 @@ export default function HomeSection(){
             href="https://42.fr" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
             style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
             Ecole 42 Paris
@@ -33,9 +33,9 @@ export default function HomeSection(){
           Please check out my{' '}
           <a 
             href="#projects" 
-            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
             style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
             projects
@@ -43,9 +43,9 @@ export default function HomeSection(){
           , or{' '}
           <a 
             href="#resume" 
-            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-opacity"
+            className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
             style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
             resume

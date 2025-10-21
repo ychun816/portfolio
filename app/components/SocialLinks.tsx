@@ -52,7 +52,7 @@ export default function SocialLinks() {
           href={link.url}
           target={link.url.startsWith('http') ? '_blank' : undefined}
           rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-          className="hover:opacity-60 transition-opacity duration-200 text-[color:var(--foreground)]"
+          className="transition-colors duration-200 text-[color:var(--foreground)] hover:text-[#C3F0CD]"
           aria-label={link.name}
         >
           {link.icon}

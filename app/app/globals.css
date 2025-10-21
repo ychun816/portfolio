@@ -79,4 +79,14 @@ body {
   border: 1px solid rgba(255,255,255,0.06);
   backdrop-filter: blur(8px) saturate(120%);
 }
+
+/* Global hyperlink hover effect - Soft Mint Green */
+a {
+  --mint-green: #C3F0CD;
+}
+
+a:hover {
+  color: var(--mint-green);
+}
+
 @import "tailwindcss";

@@ -79,7 +79,7 @@ export default function ProjectsSection(){
                       style={{
                         color: 'var(--foreground)',
                       }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(57, 255, 20, 0.4)'}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#C3F0CD'}
                       onMouseLeave={(e) => e.currentTarget.style.color = 'var(--foreground)'}
                     >
                       {project.name}
@@ -89,7 +89,7 @@ export default function ProjectsSection(){
                     </p>
                     
                     {/* GitHub Link Indicator */}
-                    <div className="mt-2 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: 'rgba(57, 255, 20, 0.4)' }}>
+                    <div className="mt-2 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: '#C3F0CD' }}>
                       <span>View on GitHub</span>
                       <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

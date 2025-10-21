@@ -21,7 +21,7 @@ export default function ContactSection(){
             href="https://www.linkedin.com/in/sophia-lin-profile/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-60 transition-opacity duration-200 text-[color:var(--foreground)]"
+            className="transition-colors duration-200 text-[color:var(--foreground)] hover:text-[#C3F0CD]"
             aria-label="LinkedIn"
           >
             <svg className="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -34,7 +34,7 @@ export default function ContactSection(){
             href="https://github.com/ychun816"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-60 transition-opacity duration-200 text-[color:var(--foreground)]"
+            className="transition-colors duration-200 text-[color:var(--foreground)] hover:text-[#C3F0CD]"
             aria-label="GitHub"
           >
             <svg className="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ export default function ContactSection(){
           {/* Email Icon */}
           <a
             href="mailto:ychun8lin@gmail.com"
-            className="hover:opacity-60 transition-opacity duration-200 text-[color:var(--foreground)]"
+            className="transition-colors duration-200 text-[color:var(--foreground)] hover:text-[#C3F0CD]"
             aria-label="Email"
           >
             <svg className="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24">
