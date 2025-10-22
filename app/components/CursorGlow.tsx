@@ -5,15 +5,34 @@ import { useTheme } from '@/context/ThemeContext';
 
 export default function CursorGlow() {
   const glowRef = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
+  const blob3Ref = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
-  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      const { clientX, clientY } = e;
+      
+      // Primary blob follows cursor exactly
       if (glowRef.current) {
-        glowRef.current.style.left = `${e.clientX}px`;
-        glowRef.current.style.top = `${e.clientY}px`;
+        glowRef.current.style.left = `${clientX}px`;
+        glowRef.current.style.top = `${clientY}px`;
+      }
+
+      // Secondary blob with offset and slight lag
+      if (blob2Ref.current) {
+        setTimeout(() => {
+          blob2Ref.current!.style.left = `${clientX + 80}px`;
+          blob2Ref.current!.style.top = `${clientY - 80}px`;
+        }, 30);
+      }
+
+      // Tertiary blob with different offset
+      if (blob3Ref.current) {
+        setTimeout(() => {
+          blob3Ref.current!.style.left = `${clientX - 100}px`;
+          blob3Ref.current!.style.top = `${clientY + 60}px`;
+        }, 60);
       }
     };
 
@@ -21,47 +40,123 @@ export default function CursorGlow() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Night mode: accent green glow
-  const nightGradient = `radial-gradient(
+  // Night mode: sapphire blue palette (matching NightBackground)
+  const nightGradient1 = `radial-gradient(
     circle,
-    rgba(195, 240, 205, 0.25) 0%,
-    rgba(195, 240, 205, 0.15) 25%,
-    rgba(195, 240, 205, 0.08) 50%,
+    rgba(100, 180, 240, 0.45) 0%,
+    rgba(110, 190, 255, 0.35) 20%,
+    rgba(120, 200, 260, 0.20) 40%,
+    transparent 65%
+  )`;
+
+  const nightGradient2 = `radial-gradient(
+    circle,
+    rgba(75, 160, 220, 0.40) 0%,
+    rgba(95, 180, 250, 0.25) 25%,
+    rgba(115, 200, 265, 0.12) 45%,
     transparent 70%
   )`;
 
-  // Day mode: soft purple/lavender blend
-  const dayGradient = `radial-gradient(
+  const nightGradient3 = `radial-gradient(
     circle,
-    rgba(200, 180, 240, 0.20) 0%,
-    rgba(220, 190, 250, 0.12) 30%,
-    rgba(210, 185, 245, 0.06) 50%,
+    rgba(195, 240, 205, 0.35) 0%,
+    rgba(200, 245, 210, 0.20) 30%,
+    rgba(205, 250, 215, 0.10) 50%,
+    transparent 75%
+  )`;
+
+  // Day mode: dreamy purple, pink, blue palette (matching DayBackground)
+  const dayGradient1 = `radial-gradient(
+    circle,
+    rgba(180, 160, 240, 0.45) 0%,
+    rgba(190, 170, 250, 0.35) 20%,
+    rgba(200, 180, 260, 0.20) 40%,
+    transparent 65%
+  )`;
+
+  const dayGradient2 = `radial-gradient(
+    circle,
+    rgba(255, 160, 210, 0.40) 0%,
+    rgba(245, 180, 220, 0.25) 25%,
+    rgba(235, 200, 230, 0.12) 45%,
     transparent 70%
+  )`;
+
+  const dayGradient3 = `radial-gradient(
+    circle,
+    rgba(140, 180, 255, 0.35) 0%,
+    rgba(160, 195, 260, 0.20) 30%,
+    rgba(180, 210, 270, 0.10) 50%,
+    transparent 75%
   )`;
 
   return (
     <>
       <style>{`
         @keyframes blobPulse {
-          0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-          25% { transform: translate(-50%, -50%) scale(1.1) rotate(90deg); }
-          50% { transform: translate(-50%, -50%) scale(0.95) rotate(180deg); }
-          75% { transform: translate(-50%, -50%) scale(1.05) rotate(270deg); }
+          0%, 100% { transform: translate(-50%, -50%) scale(1); }
+          25% { transform: translate(-50%, -50%) scale(1.15); }
+          50% { transform: translate(-50%, -50%) scale(0.9); }
+          75% { transform: translate(-50%, -50%) scale(1.1); }
         }
-        .cursor-glow-blob {
-          animation: blobPulse 4s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+        @keyframes blobWave {
+          0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+          33% { transform: translate(-50%, -50%) scale(1.2) rotate(120deg); }
+          66% { transform: translate(-50%, -50%) scale(0.95) rotate(240deg); }
+        }
+        @keyframes blobSway {
+          0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+          50% { transform: translate(-50%, -50%) scale(1.08) rotate(180deg); }
+        }
+        .cursor-glow-blob-1 {
+          animation: blobPulse 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+        }
+        .cursor-glow-blob-2 {
+          animation: blobWave 4s cubic-bezier(0.26, 0.46, 0.44, 0.94) infinite;
+        }
+        .cursor-glow-blob-3 {
+          animation: blobSway 3.5s ease-in-out infinite;
         }
       `}</style>
 
+      {/* Primary blob - main accent color */}
       <div
         ref={glowRef}
-        className="pointer-events-none fixed z-40 cursor-glow-blob"
+        className="pointer-events-none fixed z-40 cursor-glow-blob-1"
         style={{
-          width: '600px',
-          height: '600px',
-          background: theme === 'night' ? nightGradient : dayGradient,
-          filter: 'blur(50px)',
-          opacity: theme === 'night' ? 0.7 : 0.5,
+          width: '700px',
+          height: '700px',
+          background: theme === 'night' ? nightGradient1 : dayGradient1,
+          filter: 'blur(60px)',
+          opacity: theme === 'night' ? 0.85 : 0.75,
+          mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
+        }}
+      />
+
+      {/* Secondary blob - offset, different color */}
+      <div
+        ref={blob2Ref}
+        className="pointer-events-none fixed z-35 cursor-glow-blob-2"
+        style={{
+          width: '550px',
+          height: '550px',
+          background: theme === 'night' ? nightGradient2 : dayGradient2,
+          filter: 'blur(55px)',
+          opacity: theme === 'night' ? 0.65 : 0.60,
+          mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
+        }}
+      />
+
+      {/* Tertiary blob - accent green for night / blue for day */}
+      <div
+        ref={blob3Ref}
+        className="pointer-events-none fixed z-30 cursor-glow-blob-3"
+        style={{
+          width: '480px',
+          height: '480px',
+          background: theme === 'night' ? nightGradient3 : dayGradient3,
+          filter: 'blur(45px)',
+          opacity: theme === 'night' ? 0.70 : 0.55,
           mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
         }}
       />
