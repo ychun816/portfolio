@@ -253,20 +253,56 @@ Examples:
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Vercel (Recommended - Step by Step)
+
+#### Option 1: Using Vercel Dashboard (Easiest)
+
+1. **Open Vercel**: Go to https://vercel.com/new in your browser
+
+2. **Connect GitHub**:
+   - Click "Import Project" or "Continue with GitHub"
+   - Authorize Vercel to access your GitHub account
+   - Select your repository: `ychun816/portfolio`
+
+3. **Configure Project Settings**:
+   - **Project Name**: Keep as is or rename (e.g., `portfolio`)
+   - **Framework**: Next.js (auto-detected) ✓
+   - **Root Directory**: Change from `.` to `app` ⚠️ **Important!**
+   - **Build Command**: `npm run build` (auto-detected) ✓
+   - **Install Command**: `npm ci` (auto-detected) ✓
+   - **Output Directory**: `.next` (auto-detected) ✓
+
+4. **Click "Deploy"**
+   - Wait 2-5 minutes for build to complete
+   - You'll get a live URL like `https://portfolio-xyz.vercel.app` 🎉
+
+#### Option 2: Using Vercel CLI
+
 ```bash
 npm install -g vercel
+cd app
 vercel deploy
 ```
 
-The recommended way is to connect your GitHub repo to Vercel:
-1. Go to https://vercel.com/new and import your GitHub repository
-2. Vercel will detect the Next.js app in the `app/` directory
-3. Set the Root Directory to `app` if needed
-4. Every push to `master` will trigger automatic deployment
+### Auto-Deployment with GitHub
 
-### GitHub Actions
-Push to master branch to trigger automatic deployment (if configured with `VERCEL_TOKEN`).
+Once connected to Vercel:
+- ✅ Every push to `master` branch automatically deploys
+- ✅ No manual steps needed
+- ✅ See deployment status in GitHub Actions
+
+### Rollback & History
+
+- Vercel keeps deployment history
+- You can rollback to previous versions from Vercel dashboard
+- Each push creates a new deployment
+
+### Environment Variables (If Needed)
+
+If you add environment variables later:
+1. Go to Vercel Dashboard → Your Project → Settings
+2. Add variables under "Environment Variables"
+3. Redeploy to apply changes
 
 ## 📞 Contact & Links
 
