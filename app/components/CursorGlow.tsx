@@ -43,51 +43,57 @@ export default function CursorGlow() {
   // Night mode: sapphire blue palette (matching NightBackground)
   const nightGradient1 = `radial-gradient(
     circle,
-    rgba(100, 180, 240, 0.45) 0%,
-    rgba(110, 190, 255, 0.35) 20%,
-    rgba(120, 200, 260, 0.20) 40%,
-    transparent 65%
+    rgba(100, 180, 240, 0.65) 0%,
+    rgba(110, 190, 255, 0.55) 20%,
+    rgba(120, 200, 260, 0.40) 40%,
+    rgba(130, 210, 270, 0.20) 60%,
+    transparent 80%
   )`;
 
   const nightGradient2 = `radial-gradient(
     circle,
-    rgba(75, 160, 220, 0.40) 0%,
-    rgba(95, 180, 250, 0.25) 25%,
-    rgba(115, 200, 265, 0.12) 45%,
-    transparent 70%
+    rgba(75, 160, 220, 0.60) 0%,
+    rgba(95, 180, 250, 0.45) 25%,
+    rgba(115, 200, 265, 0.30) 45%,
+    rgba(125, 210, 270, 0.15) 65%,
+    transparent 85%
   )`;
 
   const nightGradient3 = `radial-gradient(
     circle,
-    rgba(195, 240, 205, 0.35) 0%,
-    rgba(200, 245, 210, 0.20) 30%,
-    rgba(205, 250, 215, 0.10) 50%,
-    transparent 75%
+    rgba(195, 240, 205, 0.55) 0%,
+    rgba(200, 245, 210, 0.40) 30%,
+    rgba(205, 250, 215, 0.25) 50%,
+    rgba(210, 255, 220, 0.12) 70%,
+    transparent 90%
   )`;
 
   // Day mode: dreamy purple, pink, blue palette (matching DayBackground)
   const dayGradient1 = `radial-gradient(
     circle,
-    rgba(180, 160, 240, 0.45) 0%,
-    rgba(190, 170, 250, 0.35) 20%,
-    rgba(200, 180, 260, 0.20) 40%,
-    transparent 65%
+    rgba(180, 160, 240, 0.60) 0%,
+    rgba(190, 170, 250, 0.50) 20%,
+    rgba(200, 180, 260, 0.38) 40%,
+    rgba(210, 190, 265, 0.20) 60%,
+    transparent 80%
   )`;
 
   const dayGradient2 = `radial-gradient(
     circle,
-    rgba(255, 160, 210, 0.40) 0%,
-    rgba(245, 180, 220, 0.25) 25%,
-    rgba(235, 200, 230, 0.12) 45%,
-    transparent 70%
+    rgba(255, 160, 210, 0.58) 0%,
+    rgba(245, 180, 220, 0.45) 25%,
+    rgba(235, 200, 230, 0.30) 45%,
+    rgba(225, 210, 240, 0.15) 65%,
+    transparent 85%
   )`;
 
   const dayGradient3 = `radial-gradient(
     circle,
-    rgba(140, 180, 255, 0.35) 0%,
-    rgba(160, 195, 260, 0.20) 30%,
-    rgba(180, 210, 270, 0.10) 50%,
-    transparent 75%
+    rgba(140, 180, 255, 0.55) 0%,
+    rgba(160, 195, 260, 0.40) 30%,
+    rgba(180, 210, 270, 0.25) 50%,
+    rgba(200, 225, 280, 0.12) 70%,
+    transparent 90%
   )`;
 
   return (
@@ -124,11 +130,11 @@ export default function CursorGlow() {
         ref={glowRef}
         className="pointer-events-none fixed z-40 cursor-glow-blob-1"
         style={{
-          width: '700px',
-          height: '700px',
+          width: '900px',
+          height: '900px',
           background: theme === 'night' ? nightGradient1 : dayGradient1,
-          filter: 'blur(60px)',
-          opacity: theme === 'night' ? 0.85 : 0.75,
+          filter: 'blur(80px)',
+          opacity: theme === 'night' ? 1.0 : 0.90,
           mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
         }}
       />
@@ -138,11 +144,11 @@ export default function CursorGlow() {
         ref={blob2Ref}
         className="pointer-events-none fixed z-35 cursor-glow-blob-2"
         style={{
-          width: '550px',
-          height: '550px',
+          width: '750px',
+          height: '750px',
           background: theme === 'night' ? nightGradient2 : dayGradient2,
-          filter: 'blur(55px)',
-          opacity: theme === 'night' ? 0.65 : 0.60,
+          filter: 'blur(75px)',
+          opacity: theme === 'night' ? 0.85 : 0.80,
           mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
         }}
       />
@@ -152,11 +158,11 @@ export default function CursorGlow() {
         ref={blob3Ref}
         className="pointer-events-none fixed z-30 cursor-glow-blob-3"
         style={{
-          width: '480px',
-          height: '480px',
+          width: '650px',
+          height: '650px',
           background: theme === 'night' ? nightGradient3 : dayGradient3,
-          filter: 'blur(45px)',
-          opacity: theme === 'night' ? 0.70 : 0.55,
+          filter: 'blur(65px)',
+          opacity: theme === 'night' ? 0.90 : 0.75,
           mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
         }}
       />
