@@ -10,7 +10,7 @@ export default function ResumeSection(){
       <div className="max-w-4xl w-full">
         <SVGTextClip
           text="Resume"
-          className="mb-12"
+          className="mb-12 class-display"
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         

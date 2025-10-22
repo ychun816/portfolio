@@ -5,6 +5,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Embedded Clash Display @font-face rules (copied from public/fonts/clash-display/clash-display.css)
+   Placing them here ensures the font-family names are defined immediately when globals.css loads. */
+@font-face {
+  font-family: 'ClashDisplay-Regular';
+  src: url('/fonts/clash-display/ClashDisplay-Regular.woff2') format('woff2'), url('/fonts/clash-display/ClashDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('/fonts/clash-display/ClashDisplay-Medium.woff2') format('woff2'), url('/fonts/clash-display/ClashDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('/fonts/clash-display/ClashDisplay-Bold.woff2') format('woff2'), url('/fonts/clash-display/ClashDisplay-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Variable';
+  src: url('/fonts/clash-display/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Convenience aliases (so --clash-medium etc. still works) */
+:root {
+  --clash-regular: 'ClashDisplay-Regular', sans-serif;
+  --clash-medium: 'ClashDisplay-Medium', sans-serif;
+  --clash-bold: 'ClashDisplay-Bold', sans-serif;
+  --clash-var: 'ClashDisplay-Variable', sans-serif;
+}
+
 /* If you'd like Futura to be used from local files, place Futura .woff2/.woff in public/fonts and keep the @font-face below. */
 @font-face {
   font-family: 'FuturaLocal';
@@ -20,8 +62,10 @@
   --muted: #94a3b8; /* slate-400 */
   --accent: #8b5cf6; /* purple */
   /* Use built-in Futura with system fallbacks */
-  /* Prefer self-hosted Clash Display for headings; fallback to Futura/system */
-  --font-display: var(--clash-medium, 'Futura', 'Trebuchet MS', system-ui, sans-serif);
+  /* Prefer self-hosted Clash Display for headings; fallback to Futura/system.
+    Use the font-family name directly so headings render once the font file loads,
+    even if the CSS variable from clash-display.css isn't available immediately. */
+  --font-display: 'ClashDisplay-Medium', 'Futura', 'Trebuchet MS', system-ui, sans-serif;
   --font-sans: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
   --font-secondary: 'FuturaLocal', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 }
@@ -51,6 +95,13 @@ body {
 @layer base {
   /* Heading / caption styles: use Clash Display medium for titles and captions */
   h1, h2, h3, h4, .title, .caption {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* Utility class for elements that should use the display font (useful for SVGTextClip divs) */
+  .class-display {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.01em;

@@ -13,7 +13,7 @@ export default function HomeSection(){
         <SVGTextClip
           text="Hello! I'm Yichun LIN"
           highlightSpans={[2, 3]} // "Yichun LIN" (indices 2 and 3)
-          className="mb-8"
+          className="mb-8 class-display"
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         

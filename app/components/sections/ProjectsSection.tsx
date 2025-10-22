@@ -41,7 +41,7 @@ export default function ProjectsSection(){
       <div className="w-full max-w-7xl">
         <SVGTextClip
           text="Projects"
-          className="mb-16"
+          className="mb-16 class-display"
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         

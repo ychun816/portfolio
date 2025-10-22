@@ -51,7 +51,7 @@ export default function NavBar() {
         }
       `}</style>
 
-      <ul className="flex gap-6" style={{ color: 'inherit' }}>
+  <ul className="flex gap-6 class-display" style={{ color: 'inherit' }}>
         <li>
           <a 
             href="#home" 

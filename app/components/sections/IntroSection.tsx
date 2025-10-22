@@ -10,7 +10,7 @@ export default function IntroSection(){
       <div className="max-w-4xl w-full">
         <SVGTextClip
           text="About Me"
-          className="mb-12"
+          className="mb-12 class-display"
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         <div className="space-y-6 text-base md:text-lg leading-relaxed text-[color:var(--foreground)] opacity-90">

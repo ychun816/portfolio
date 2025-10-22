@@ -10,6 +10,7 @@ export default function ContactSection(){
       <div className="max-w-2xl w-full">
         <SVGTextClip
           text="Contact"
+          className="class-display"
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         <FadeInUp delay={200}>
