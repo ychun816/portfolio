@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-dev",
+  "image": "node:20-bullseye",
+  "workspaceFolder": "/workspaces/portfolio",
+  "forwardPorts": [3000],
+  "postCreateCommand": "cd /workspaces/portfolio/app && npm ci",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
