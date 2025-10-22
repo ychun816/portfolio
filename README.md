@@ -1,6 +1,22 @@
-# Yichun LIN - Portfolio Website
+# My Portfolio Website
 
 A modern, responsive portfolio website built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and featuring **day/night theme switching** with interactive cursor-tracking animations.
+
+# Table of Contents
+
+- [🚀 Quick Start](#-quick-start)
+- [🔧 Technology Stack](#-technology-stack)
+- [📁 Project Structure](#-project-structure)
+- [🎨 Features](#-features)
+- [📝 Styling Architecture](#-styling-architecture)
+- [📚 Key Components](#-key-components)
+- [🎯 Workflow Best Practices](#-workflow-best-practices)
+- [🌐 Responsive Breakpoints](#-responsive-breakpoints)
+- [🚀 Deployment](#-deployment)
+- [📞 Contact & Links](#-contact--links)
+- [📜 License](#-license)
+
+
 
 ## 🚀 Quick Start
 
@@ -20,6 +36,16 @@ cd app
 npm run build
 npm run start
 ```
+
+## 🔧 Technology Stack
+
+- **Framework**: Next.js 15.5.6 with Turbopack compiler
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + Custom CSS (globals.css with embedded `@font-face`)
+- **State Management**: React Context API (ThemeContext)
+- **Fonts**: Self-hosted Clash Display (Regular, Medium, Bold, Variable), Futura
+- **Animations**: CSS @keyframes with cubic-bezier easing, JavaScript mousemove events
+- **Dev Container**: Docker with Node 20, build tools (build-essential, git, curl, jq)
 
 ## 📁 Project Structure
 
@@ -69,33 +95,19 @@ portfolio/
 └── STRUCTURE.md                     # Detailed documentation
 ```
 
+
+
 ## 🎨 Features
 
-### ✨ Interactive Cursor Glow Animation
+### ✨ Interactive Cursor Animation
 
-- **4-Layer Blob Effect**: Multi-layered animated blobs follow cursor with staggered timing
-- **Theme-Aware Colors**:
-  - **Night Mode**: Sapphire blue, indigo, accent green, and amber tones with `screen` blend mode
-  - **Day Mode**: Pink, soft blue, purple, and peachy amber tones with `multiply` blend mode
-- **Smooth Animations**: Different keyframes for each blob (1.4-1.8s cycles)
+- **Theme-Aware Settings**:
+  - **Night Mode**
+  - **Day Mode**
 - **Performance**: Using `pointer-events-none` and CSS animations for smooth tracking
 - **Smart Positioning**: Primary blob at cursor, additional blobs with staggered offsets and delays
-
-### 🌓 Day/Night Theme System
-
-- **Toggle Button**: Located in top-right corner
-- **Persistent**: Saved to localStorage and synced across tabs
-- **Adaptive Colors**: Text and UI elements change based on theme
-  - Day: Light grey text on light background
-  - Night: Dark grey text on dark background
-- **Smooth Transitions**: Theme changes apply instantly
-
-### 🎬 Animated Backgrounds
-
-- **Day Mode**: Pastel purple, blue, and pink gradient blobs with `multiply` blend
-- **Night Mode**: Soft sapphire blue and accent green blobs with `screen` blend mode
-- **Continuous Animation**: 13-20 second animation cycles for depth
 - **Responsive**: Scales appropriately with viewport
+
 
 ### 📱 Responsive Design
 
@@ -106,56 +118,30 @@ portfolio/
 
 ### 🔤 Typography
 
-- **Display Font**: Clash Display (self-hosted, embedded via `@font-face`)
-  - Variants: Regular, Medium, Bold, Variable weight
-  - Sizes: 80px on desktop, 56px on mobile
-  - Applied to all headings via `.class-display` utility
-- **Body Font**: Futura with system fallbacks
-- **Adaptive**: All text colors respond to theme changes
+- **Display Font**: self-hosted, embedded via `@font-face`
+- **Body Font**: Built-in font with system fallbacks
 
 ### 🎯 Interactive Elements
 
-- **Hover Effects**: Underlined links with opacity transitions
-- **Social Icons**: Theme-aware colors with drop-shadow glow animations
-- **Scroll Animations**: Sections fade in and animate on reveal
-- **Navigation**: Active section highlighting during scroll
-- **Buttons**: Styled buttons with theme-aware colors
-- **PDF Viewer**: Embedded, responsive resume viewer
+- **Hover Effects**
+- **Scroll Animations**
+- **Navigation**
+- **PDF Viewer**
 
-## 🔧 Technology Stack
-
-- **Framework**: Next.js 15.5.6 with Turbopack compiler
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + Custom CSS (globals.css with embedded `@font-face`)
-- **State Management**: React Context API (ThemeContext)
-- **Fonts**: Self-hosted Clash Display (Regular, Medium, Bold, Variable), Futura
-- **Animations**: CSS @keyframes with cubic-bezier easing, JavaScript mousemove events
-- **Dev Container**: Docker with Node 20, build tools (build-essential, git, curl, jq)
 
 ## 📝 Styling Architecture
 
 ### CSS Variables & Theme System
 
 ```css
-:root {
-  --font-display: 'ClashDisplay-Medium', 'Futura', sans-serif;
-  --font-sans: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
-  --foreground: #e6eef8;
-  --accent: #8b5cf6;
-}
-
-html[data-theme="day"] {
-  --foreground: #4b5563;
-}
-
-html[data-theme="night"] {
-  --foreground: #e5e7eb;
-}
+:root {}
+html[data-theme="day"] {}
+html[data-theme="night"] {}
 ```
 
 ### Utility Classes
 
-- `.class-display`: Applies Clash Display font with proper letter-spacing and weight
+- `.class-display`: Applies self-host font with proper letter-spacing and weight
 - `.cursor-glow-blob-*`: Animated blob positioning and styling
 - Tailwind utilities for responsive spacing, sizing, and layout
 
@@ -184,8 +170,10 @@ html[data-theme="night"] {
 - Call-to-action footer
 
 ### ContactSection
-- Contact form with name, email, message
-- Theme-aware submit button
+- Contact form with email, subject, and message fields
+- FormBold integration for direct email submission
+- Social media links (LinkedIn, GitHub)
+- Theme-aware submit button with hover effects
 
 ### CursorGlow
 - Real-time cursor tracking with mousemove event
@@ -207,20 +195,6 @@ html[data-theme="night"] {
 - ❌ Avoid global CSS overrides
 - ❌ Never use !important flags
 
-### Git Workflow
-```bash
-# Commit changes
-git add .
-git commit -m "feat: Describe changes"
-
-# Pull with conflict resolution
-git stash
-git pull
-git stash pop
-
-# Push changes
-git push origin master
-```
 
 ### Dev Commands
 ```bash
@@ -234,13 +208,6 @@ npm run build --prefix=./app
 # Run production build
 npm run start --prefix=./app
 ```
-
-## 📄 Resume PDF Setup
-
-Your resume PDF is stored in the public directory:
-- **Path**: `/app/public/LIN-Yichun_Resume_20251021.pdf`
-- **Viewer**: Embedded in ResumeSection via iframe
-- **Download**: Visitors can download with the "Download PDF" button
 
 ## 🌐 Responsive Breakpoints
 
