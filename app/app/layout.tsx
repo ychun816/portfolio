@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeToggle from '../components/ThemeToggle';
 import { ThemeProvider } from '@/context/ThemeContext';
 import BackgroundRenderer from '@/components/BackgroundRenderer';
+import CursorGlow from '@/components/CursorGlow';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,6 +60,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <BackgroundRenderer />
+          <CursorGlow />
           <ThemeToggle />
           {children}
         </ThemeProvider>

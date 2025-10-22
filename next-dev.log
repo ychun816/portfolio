@@ -1,3 +1,4 @@
+nohup: ignoring input
 
 > app@0.1.0 dev
 > next dev --turbopack
@@ -14,24 +15,39 @@
    - Network:      http://10.0.2.5:3000
 
  ✓ Starting...
- ✓ Ready in 1263ms
+ ✓ Ready in 1146ms
  ○ Compiling / ...
- ✓ Compiled / in 8.3s
- GET / 200 in 855ms
- HEAD / 200 in 221ms
- GET / 200 in 136ms
- GET / 200 in 171ms
- ✓ Compiled in 1382ms
- ✓ Compiled / in 442ms
- GET / 200 in 802ms
- GET / 200 in 122ms
- GET / 200 in 136ms
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 597ms
- GET /favicon.ico 200 in 878ms
- GET /favicon.ico?favicon.11e11027.ico 200 in 919ms
+ ✓ Compiled / in 5.8s
+ GET / 200 in 6395ms
+ GET / 200 in 371ms
+ GET / 200 in 135ms
+ ✓ Compiled /_not-found/page in 313ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 571ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 85ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 94ms
  GET / 200 in 141ms
- ✓ Compiled /_not-found/page in 367ms
- GET /fonts/clash-display/ClashDisplay-Medium.woff 404 in 611ms
- GET / 200 in 140ms
- GET /fonts/clash-display/ClashDisplay-Medium.woff 404 in 94ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 91ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 246ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 113ms
+ ✓ Compiled in 172ms
+ GET / 200 in 344ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 93ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 115ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 203ms
+ ✓ Compiled in 92ms
+ ✓ Compiled in 184ms
+ ✓ Compiled in 135ms
+ ✓ Compiled in 126ms
+ GET / 200 in 340ms
+ GET / 200 in 148ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 106ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 81ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 112ms
+ ✓ Compiled /favicon.ico in 452ms
+ HEAD /favicon.ico 200 in 750ms
+ GET / 200 in 229ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 124ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 91ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 94ms
+ ✓ Compiled in 153ms
+ ✓ Compiled in 257ms
