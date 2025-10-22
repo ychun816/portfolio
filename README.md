@@ -306,7 +306,7 @@ If you add environment variables later:
 
 ## 📞 Contact & Links
 
-- **Email**: ychun8lin@gmail.com
+- **Email**: sophia.lin168@protonmail.com
 - **LinkedIn**: https://www.linkedin.com/in/sophia-lin-profile/
 - **GitHub**: https://github.com/ychun816
 - **School**: École 42 Paris

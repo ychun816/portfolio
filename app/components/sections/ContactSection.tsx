@@ -15,7 +15,7 @@ export default function ContactSection(){
         />
         <FadeInUp delay={200}>
           <form 
-            action="https://formbold.com/s/oa0M4" 
+            action="https://formbold.com/s/3wgq4" 
             method="POST" 
             encType="multipart/form-data"
             className="mt-4 flex flex-col gap-3"
@@ -25,7 +25,7 @@ export default function ContactSection(){
               name="email"
               required
               className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
-              placeholder="Your email" 
+              placeholder="Email" 
             />
             <input 
               type="text"
@@ -38,7 +38,7 @@ export default function ContactSection(){
               type="file"
               name="file"
               className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-white/10 file:text-[color:var(--foreground)] file:cursor-pointer" 
-              placeholder="Attach file" 
+              placeholder="File" 
             />
             <textarea 
               name="message"
