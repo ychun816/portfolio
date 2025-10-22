@@ -17,7 +17,6 @@ A modern, responsive portfolio website built with **Next.js 15**, **TypeScript**
 - [📜 License](#-license)
 
 
-
 ## 🚀 Quick Start
 
 ### Development
@@ -281,3 +280,4 @@ If you add environment variables later:
 ## 📜 License
 
 MIT
+
