@@ -55,7 +55,7 @@ export default function ResumeSection(){
               </a>
               {' '}or{' '}
               <a 
-                href="mailto:ychun8lin@gmail.com"
+                href="mailto:sophia.lin168@protonmail.com"
                 className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
                 style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
