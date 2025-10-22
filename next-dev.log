@@ -145,3 +145,138 @@ nohup: ignoring input
  GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 93ms
  GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 175ms
  GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 118ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.2r8du03016e'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.2r8du03016e'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 4.8s
+ ⨯ [Error: ENOENT: no such file or directory, open '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.nrqydo0bbh'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.nrqydo0bbh'
+}
+[Error: ENOENT: no such file or directory, open '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.2r8du03016e'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.2r8du03016e'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.hb4jvy1v79i'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.hb4jvy1v79i'
+}
+[Error: ENOENT: no such file or directory, open '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.49imkn13z23'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/workspaces/portfolio/app/.next/static/development/_buildManifest.js.tmp.49imkn13z23'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ GET / 500 in 2233ms
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ GET / 500 in 1843ms
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '2951611225'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ ⨯ Error: Could not find the module "[project]/app/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2057104470'
+}
+ GET / 500 in 1505ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.6 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.0.2.5:3000
+
+ ✓ Starting...
+ ✓ Ready in 1305ms
