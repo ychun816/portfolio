@@ -20,7 +20,8 @@
   --muted: #94a3b8; /* slate-400 */
   --accent: #8b5cf6; /* purple */
   /* Use built-in Futura with system fallbacks */
-  --font-display: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
+  /* Prefer self-hosted Clash Display for headings; fallback to Futura/system */
+  --font-display: var(--clash-medium, 'Futura', 'Trebuchet MS', system-ui, sans-serif);
   --font-sans: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
   --font-secondary: 'FuturaLocal', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 }

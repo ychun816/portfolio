@@ -30,3 +30,8 @@
  ✓ Compiled /favicon.ico in 597ms
  GET /favicon.ico 200 in 878ms
  GET /favicon.ico?favicon.11e11027.ico 200 in 919ms
+ GET / 200 in 141ms
+ ✓ Compiled /_not-found/page in 367ms
+ GET /fonts/clash-display/ClashDisplay-Medium.woff 404 in 611ms
+ GET / 200 in 140ms
+ GET /fonts/clash-display/ClashDisplay-Medium.woff 404 in 94ms
