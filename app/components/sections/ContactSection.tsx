@@ -14,11 +14,46 @@ export default function ContactSection(){
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         <FadeInUp delay={200}>
-          <form className="mt-4 flex flex-col gap-3">
-            <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Your name" />
-            <input className="p-3 rounded bg-transparent border border-white/6" placeholder="Email" />
-            <textarea className="p-3 rounded bg-transparent border border-white/6" rows={4} placeholder="Message" />
-            <button className="px-4 py-2 rounded font-semibold transition-colors hover:text-[#C3F0CD]" style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}>Send</button>
+          <form 
+            action="https://formbold.com/s/oa0M4" 
+            method="POST" 
+            encType="multipart/form-data"
+            className="mt-4 flex flex-col gap-3"
+          >
+            <input 
+              type="email"
+              name="email"
+              required
+              className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
+              placeholder="Your email" 
+            />
+            <input 
+              type="text"
+              name="subject"
+              required
+              className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
+              placeholder="Subject" 
+            />
+            <input 
+              type="file"
+              name="file"
+              className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-white/10 file:text-[color:var(--foreground)] file:cursor-pointer" 
+              placeholder="Attach file" 
+            />
+            <textarea 
+              name="message"
+              required
+              className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
+              rows={4} 
+              placeholder="Type your message" 
+            />
+            <button 
+              type="submit"
+              className="px-4 py-2 rounded font-semibold transition-all hover:text-[#C3F0CD] hover:shadow-lg" 
+              style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}
+            >
+              Send Message
+            </button>
           </form>
         </FadeInUp>
 
