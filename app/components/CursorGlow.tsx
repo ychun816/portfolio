@@ -7,6 +7,7 @@ export default function CursorGlow() {
   const glowRef = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
   const blob3Ref = useRef<HTMLDivElement>(null);
+  const blob4Ref = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -33,6 +34,14 @@ export default function CursorGlow() {
           blob3Ref.current!.style.left = `${clientX - 100}px`;
           blob3Ref.current!.style.top = `${clientY + 60}px`;
         }, 60);
+      }
+
+      // Quaternary blob - mustard/amber accent
+      if (blob4Ref.current) {
+        setTimeout(() => {
+          blob4Ref.current!.style.left = `${clientX - 60}px`;
+          blob4Ref.current!.style.top = `${clientY - 60}px`;
+        }, 45);
       }
     };
 
@@ -90,6 +99,23 @@ export default function CursorGlow() {
     transparent 60%
   )`;
 
+  // Mustard/Amber accent for both themes
+  const nightAmberGradient = `radial-gradient(
+    circle,
+    rgba(220, 160, 80, 0.55) 0%,
+    rgba(210, 150, 70, 0.40) 20%,
+    rgba(200, 140, 60, 0.22) 40%,
+    transparent 60%
+  )`;
+
+  const dayAmberGradient = `radial-gradient(
+    circle,
+    rgba(240, 180, 100, 0.50) 0%,
+    rgba(230, 170, 90, 0.35) 20%,
+    rgba(220, 160, 80, 0.20) 40%,
+    transparent 60%
+  )`;
+
   return (
     <>
       <style>{`
@@ -110,13 +136,20 @@ export default function CursorGlow() {
           75% { transform: translate(-50%, -50%) scale(1.04) rotate(180deg); }
         }
         .cursor-glow-blob-1 {
-          animation: blobPulse 2.5s cubic-bezier(0.4, 0.0, 0.6, 1.0) infinite;
+          animation: blobPulse 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
         }
         .cursor-glow-blob-2 {
           animation: blobWave 3.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
         }
         .cursor-glow-blob-3 {
-          animation: blobSway 2.8s cubic-bezier(0.42, 0.0, 0.58, 1.0) infinite;
+          animation: blobSway 2.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+        @keyframes blobAmber {
+          0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+          50% { transform: translate(-50%, -50%) scale(1.12) rotate(180deg); }
+        }
+        .cursor-glow-blob-4 {
+          animation: blobAmber 2.2s ease-in-out infinite;
         }
       `}</style>
 
@@ -158,6 +191,20 @@ export default function CursorGlow() {
           background: theme === 'night' ? nightGradient3 : dayGradient3,
           filter: 'blur(65px)',
           opacity: theme === 'night' ? 0.90 : 0.75,
+          mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
+        }}
+      />
+
+      {/* Quaternary blob - mustard/amber accent */}
+      <div
+        ref={blob4Ref}
+        className="pointer-events-none fixed z-25 cursor-glow-blob-4"
+        style={{
+          width: '550px',
+          height: '550px',
+          background: theme === 'night' ? nightAmberGradient : dayAmberGradient,
+          filter: 'blur(70px)',
+          opacity: theme === 'night' ? 0.70 : 0.65,
           mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
         }}
       />
