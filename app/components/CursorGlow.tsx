@@ -95,27 +95,28 @@ export default function CursorGlow() {
       <style>{`
         @keyframes blobPulse {
           0%, 100% { transform: translate(-50%, -50%) scale(1); }
-          25% { transform: translate(-50%, -50%) scale(1.15); }
-          50% { transform: translate(-50%, -50%) scale(0.9); }
-          75% { transform: translate(-50%, -50%) scale(1.1); }
+          50% { transform: translate(-50%, -50%) scale(1.08); }
         }
         @keyframes blobWave {
           0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-          33% { transform: translate(-50%, -50%) scale(1.2) rotate(120deg); }
-          66% { transform: translate(-50%, -50%) scale(0.95) rotate(240deg); }
+          25% { transform: translate(-50%, -50%) scale(1.06) rotate(45deg); }
+          50% { transform: translate(-50%, -50%) scale(1.1) rotate(90deg); }
+          75% { transform: translate(-50%, -50%) scale(1.05) rotate(180deg); }
         }
         @keyframes blobSway {
           0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-          50% { transform: translate(-50%, -50%) scale(1.08) rotate(180deg); }
+          25% { transform: translate(-50%, -50%) scale(1.03) rotate(45deg); }
+          50% { transform: translate(-50%, -50%) scale(1.07) rotate(90deg); }
+          75% { transform: translate(-50%, -50%) scale(1.04) rotate(180deg); }
         }
         .cursor-glow-blob-1 {
-          animation: blobPulse 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+          animation: blobPulse 2.5s cubic-bezier(0.4, 0.0, 0.6, 1.0) infinite;
         }
         .cursor-glow-blob-2 {
-          animation: blobWave 1.8s cubic-bezier(0.26, 0.46, 0.44, 0.94) infinite;
+          animation: blobWave 3.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
         }
         .cursor-glow-blob-3 {
-          animation: blobSway 1.6s ease-in-out infinite;
+          animation: blobSway 2.8s cubic-bezier(0.42, 0.0, 0.58, 1.0) infinite;
         }
       `}</style>
 

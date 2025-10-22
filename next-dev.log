@@ -75,3 +75,8 @@ nohup: ignoring input
  GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 85ms
  ✓ Compiled in 332ms
  ✓ Compiled in 152ms
+ GET / 200 in 324ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 100ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 96ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 108ms
+ ✓ Compiled in 161ms
