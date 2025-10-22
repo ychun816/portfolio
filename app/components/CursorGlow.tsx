@@ -36,11 +36,11 @@ export default function CursorGlow() {
         }, 60);
       }
 
-      // Quaternary blob - mustard/amber accent
+      // Quaternary blob - mustard/amber accent at lower right
       if (blob4Ref.current) {
         setTimeout(() => {
-          blob4Ref.current!.style.left = `${clientX - 60}px`;
-          blob4Ref.current!.style.top = `${clientY - 60}px`;
+          blob4Ref.current!.style.left = `${clientX + 180}px`;
+          blob4Ref.current!.style.top = `${clientY + 180}px`;
         }, 45);
       }
     };
@@ -110,10 +110,9 @@ export default function CursorGlow() {
 
   const dayAmberGradient = `radial-gradient(
     circle,
-    rgba(230, 170, 200, 0.60) 0%,
-    rgba(220, 160, 190, 0.45) 20%,
-    rgba(210, 150, 180, 0.28) 40%,
-    transparent 60%
+    rgba(255, 200, 200, 0.72) 0%,
+    rgba(245, 190, 185, 0.48) 15%,
+    transparent 45%
   )`;
 
   return (
@@ -146,10 +145,12 @@ export default function CursorGlow() {
         }
         @keyframes blobAmber {
           0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-          50% { transform: translate(-50%, -50%) scale(1.12) rotate(180deg); }
+          25% { transform: translate(-50%, -50%) scale(1.08) rotate(90deg); }
+          50% { transform: translate(-50%, -50%) scale(1.14) rotate(180deg); }
+          75% { transform: translate(-50%, -50%) scale(1.10) rotate(270deg); }
         }
         .cursor-glow-blob-4 {
-          animation: blobAmber 2.2s ease-in-out infinite;
+          animation: blobAmber 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
         }
       `}</style>
 
@@ -204,7 +205,7 @@ export default function CursorGlow() {
           height: '550px',
           background: theme === 'night' ? nightAmberGradient : dayAmberGradient,
           filter: 'blur(70px)',
-          opacity: theme === 'night' ? 0.40 : 0.78,
+          opacity: theme === 'night' ? 0.40 : 0.35,
           mixBlendMode: theme === 'night' ? 'screen' : 'multiply',
         }}
       />

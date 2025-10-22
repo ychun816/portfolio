@@ -106,3 +106,42 @@ nohup: ignoring input
  GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 108ms
  GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 80ms
  GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 102ms
+ ✓ Compiled in 149ms
+ ✓ Compiled in 121ms
+ GET / 200 in 311ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 97ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 107ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 109ms
+ ✓ Compiled in 120ms
+ GET / 200 in 283ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 95ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 87ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 208ms
+ ✓ Compiled in 181ms
+ GET / 200 in 334ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 99ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 102ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 87ms
+ GET / 200 in 180ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 94ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 203ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 87ms
+ ✓ Compiled in 115ms
+ GET / 200 in 307ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 101ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 95ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 114ms
+ ✓ Compiled in 200ms
+ GET / 200 in 343ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 120ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 135ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 91ms
+ ✓ Compiled in 222ms
+ GET / 200 in 340ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 70ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 98ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 81ms
+ GET / 200 in 135ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 93ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 175ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 118ms
