@@ -34,12 +34,6 @@ export default function ContactSection(){
               className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
               placeholder="Subject" 
             />
-            <input 
-              type="file"
-              name="file"
-              className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-white/10 file:text-[color:var(--foreground)] file:cursor-pointer" 
-              placeholder="File" 
-            />
             <textarea 
               name="message"
               required
