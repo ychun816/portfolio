@@ -74,28 +74,28 @@ export default function CursorGlow() {
     transparent 60%
   )`;
 
-  // Day mode: mustard yellow and blue palette
+  // Day mode: matching DayBackground palette with more pink and soft blue
   const dayGradient1 = `radial-gradient(
     circle,
-    rgba(220, 160, 80, 0.68) 0%,
-    rgba(210, 150, 70, 0.58) 15%,
-    rgba(200, 140, 60, 0.42) 30%,
+    rgba(255, 180, 220, 0.68) 0%,
+    rgba(245, 170, 210, 0.58) 15%,
+    rgba(235, 160, 200, 0.42) 30%,
     transparent 50%
   )`;
 
   const dayGradient2 = `radial-gradient(
     circle,
-    rgba(140, 180, 255, 0.65) 0%,
-    rgba(160, 195, 260, 0.55) 18%,
-    rgba(180, 210, 270, 0.35) 35%,
+    rgba(170, 200, 255, 0.65) 0%,
+    rgba(180, 210, 260, 0.55) 18%,
+    rgba(190, 220, 270, 0.35) 35%,
     transparent 55%
   )`;
 
   const dayGradient3 = `radial-gradient(
     circle,
-    rgba(230, 190, 100, 0.62) 0%,
-    rgba(220, 180, 90, 0.48) 20%,
-    rgba(210, 170, 80, 0.32) 40%,
+    rgba(220, 180, 240, 0.62) 0%,
+    rgba(210, 170, 230, 0.48) 20%,
+    rgba(200, 160, 220, 0.32) 40%,
     transparent 60%
   )`;
 
@@ -110,9 +110,9 @@ export default function CursorGlow() {
 
   const dayAmberGradient = `radial-gradient(
     circle,
-    rgba(255, 200, 100, 0.60) 0%,
-    rgba(240, 185, 85, 0.45) 20%,
-    rgba(225, 170, 70, 0.28) 40%,
+    rgba(230, 170, 200, 0.60) 0%,
+    rgba(220, 160, 190, 0.45) 20%,
+    rgba(210, 150, 180, 0.28) 40%,
     transparent 60%
   )`;
 

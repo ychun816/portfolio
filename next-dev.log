@@ -92,3 +92,17 @@ nohup: ignoring input
  ✓ Compiled in 94ms
  ✓ Compiled in 128ms
  ✓ Compiled in 131ms
+ GET / 200 in 329ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 87ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 136ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 81ms
+ ✓ Compiled in 241ms
+ ✓ Compiled in 157ms
+ GET / 200 in 327ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 102ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 106ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 87ms
+ GET / 200 in 144ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff2 404 in 108ms
+ GET /fonts/fonts/ClashDisplay-Medium.woff 404 in 80ms
+ GET /fonts/fonts/ClashDisplay-Medium.ttf 404 in 102ms
