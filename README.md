@@ -1,219 +1,168 @@
-# Yichun LIN - Portfolio Website# portfolio
+# Yichun LIN - Portfolio Website
 
+A modern, responsive portfolio website built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and featuring **day/night theme switching** with interactive cursor-tracking animations.
 
+## 🚀 Quick Start
 
-A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and featuring day/night theme switching.
+### Development
 
-初始化 Next.js 專案 (TypeScript + TailwindCSS)
-
-## 🚀 Quick Start```bash
-
-# 在 Codespace 內的 repo 資料夾初始化 Next.js 專案
-
-### Developmentnpx create-next-app@latest . --typescript
-
-
-
-```bash# 安裝 TailwindCSS 與 Framer Motion（動畫庫）
-
-cd appnpm install tailwindcss framer-motion
-
+```bash
+cd app
 npm install
-
-npm run dev# 初始化 TailwindCSS 配置檔
-
-# Open http://localhost:3000npx tailwindcss init -p
-
-``````
-
-
-
-### Production Build配置 TailwindCSS
-
-編輯  tailwind.config.js ，設定掃描內容：
-
-```bash```js
-
-cd appmodule.exports = {
-
-npm run build  content: [
-
-npm run start    "./pages/**/*.{js,ts,jsx,tsx}",
-
-```    "./components/**/*.{js,ts,jsx,tsx}"
-
-  ],
-
-## 📁 Project Structure  theme: { extend: {} },
-
-  plugins: []
-
-```};
-
-portfolio/```
-
-├── app/                              # Next.js 15 Application
-
-│   ├── app/編輯  styles/globals.css ，加入 Tailwind 指令：
-
-│   │   ├── layout.tsx               # Root layout (ThemeProvider, BackgroundRenderer)```css
-
-│   │   ├── page.tsx                 # Home page (renders all sections)@tailwind base;
-
-│   │   └── globals.css              # Global styles (SINGLE source)@tailwind components;
-
-│   ├── components/@tailwind utilities;
-
-│   │   ├── sections/```
-
-│   │   │   ├── HomeSection.tsx      # Hero section with title & social links
-
-│   │   │   ├── IntroSection.tsx     # About Me section## Local development
-
-│   │   │   ├── ProjectsSection.tsx  # Projects showcase
-
-│   │   │   ├── ResumeSection.tsx    # Resume with PDF viewer & downloadTo run the scaffolded Next.js app locally (the app lives in the `app/` folder):
-
-│   │   │   ├── ContactSection.tsx   # Contact form
-
-│   │   ├── BackgroundRenderer.tsx   # Day/Night background switcher1. Install dependencies and start the dev server:
-
-│   │   ├── DayBackground.tsx        # Light mode background
-
-│   │   ├── NightBackground.tsx      # Dark mode background```bash
-
-│   │   ├── NavBar.tsx               # Navigation barcd app
-
-│   │   ├── ThemeToggle.tsx          # Theme toggle buttonnpm install
-
-│   │   └── SocialLinks.tsx          # Social media iconsnpm run dev
-
-│   ├── context/# open http://localhost:3000
-
-│   │   └── ThemeContext.tsx         # Global theme state (localStorage)```
-
-│   ├── public/
-
-│   │   ├── resume.pdf               # Resume PDF file2. Tailwind is already configured (`app/tailwind.config.js`, `app/postcss.config.js`, and `app/app/globals.css`). If you change the Tailwind config, restart the dev server.
-
-│   │   └── fonts/
-
-│   │       ├── clash-display/       # Clash Display font files## Automated deploys (Vercel)
-
-│   │       └── recife/              # Recife font files
-
-│   ├── package.jsonThe recommended way to host a Next.js app is Vercel. There are two simple options:
-
-│   ├── tsconfig.json
-
-│   ├── next.config.ts- Connect the GitHub repo to Vercel using the Vercel dashboard (recommended):
-
-│   ├── tailwind.config.js  1. Go to https://vercel.com/new and import your GitHub repository.
-
-│   └── postcss.config.js  2. Vercel will detect the Next.js app inside the `app/` directory — set the Root Directory to `app` if needed.
-
-├── .github/                         # GitHub Actions workflows 3. Every push to `master` will trigger a deployment automatically.
-
-├── .git/                            # Git repository
-
-├── package.json                     # Root package.json- Or use the included GitHub Actions workflow (below) to deploy with the Vercel Action. You must add these repository secrets in GitHub:
-
-├── README.md                        # This file  - `VERCEL_TOKEN` — a personal token from https://vercel.com/account/tokens
-
-└── STRUCTURE.md                     # Detailed documentation  - `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` — available from your Vercel project settings
-
+npm run dev
+# Open http://localhost:3000
 ```
 
-After adding secrets, pushes to `master` will trigger the workflow and deploy to Vercel.
+### Production Build
+
+```bash
+cd app
+npm run build
+npm run start
+```
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── app/                              # Next.js 15 Application
+│   ├── app/
+│   │   ├── layout.tsx               # Root layout (ThemeProvider, BackgroundRenderer, CursorGlow)
+│   │   ├── page.tsx                 # Home page (renders all sections)
+│   │   └── globals.css              # Global styles with embedded @font-face
+│   ├── components/
+│   │   ├── sections/
+│   │   │   ├── HomeSection.tsx      # Hero section with title & social links
+│   │   │   ├── IntroSection.tsx     # About Me section
+│   │   │   ├── ProjectsSection.tsx  # Projects showcase
+│   │   │   ├── ResumeSection.tsx    # Resume with PDF viewer & download
+│   │   │   └── ContactSection.tsx   # Contact form
+│   │   ├── BackgroundRenderer.tsx   # Day/Night background switcher
+│   │   ├── DayBackground.tsx        # Light mode animated background
+│   │   ├── NightBackground.tsx      # Dark mode animated background
+│   │   ├── CursorGlow.tsx           # Interactive cursor-tracking 4-blob animation
+│   │   ├── NavBar.tsx               # Navigation bar with scroll tracking
+│   │   ├── ThemeToggle.tsx          # Theme toggle button
+│   │   ├── SVGTextClip.tsx          # SVG text clipping for scroll reveal
+│   │   ├── FadeInUp.tsx             # Fade-in-up animation component
+│   │   └── SocialLinks.tsx          # Social media icons
+│   ├── context/
+│   │   └── ThemeContext.tsx         # Global theme state (localStorage persistence)
+│   ├── hooks/
+│   │   ├── useActiveSection.ts      # Track active section during scroll
+│   │   └── useScrollReveal.ts       # Scroll-based reveal animations
+│   ├── public/
+│   │   ├── favicon.ico              # Site favicon
+│   │   ├── LIN-Yichun_Resume_20251021.pdf # Resume PDF
+│   │   └── fonts/
+│   │       ├── clash-display/       # Clash Display font (Regular, Medium, Bold, Variable)
+│   │       └── recife/              # Recife font CSS
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── next.config.ts
+│   ├── tailwind.config.js
+│   └── postcss.config.js
+├── .devcontainer/
+│   ├── devcontainer.json            # VS Code dev container configuration
+│   └── Dockerfile                   # Container image with Node 20 + build tools
+├── README.md                        # This file
+└── STRUCTURE.md                     # Detailed documentation
+```
 
 ## 🎨 Features
 
-## GitHub Actions (optional)
+### ✨ Interactive Cursor Glow Animation
 
-### Day/Night Theme System
+- **4-Layer Blob Effect**: Multi-layered animated blobs follow cursor with staggered timing
+- **Theme-Aware Colors**:
+  - **Night Mode**: Sapphire blue, indigo, accent green, and amber tones with `screen` blend mode
+  - **Day Mode**: Pink, soft blue, purple, and peachy amber tones with `multiply` blend mode
+- **Smooth Animations**: Different keyframes for each blob (1.4-1.8s cycles)
+- **Performance**: Using `pointer-events-none` and CSS animations for smooth tracking
+- **Smart Positioning**: Primary blob at cursor, additional blobs with staggered offsets and delays
 
-- **Toggle Button**: Located in top-right cornerThere's a ready workflow at `.github/workflows/deploy-to-vercel.yml` which:
+### 🌓 Day/Night Theme System
 
-- **Persistent**: Saved to localStorage
+- **Toggle Button**: Located in top-right corner
+- **Persistent**: Saved to localStorage and synced across tabs
+- **Adaptive Colors**: Text and UI elements change based on theme
+  - Day: Light grey text on light background
+  - Night: Dark grey text on dark background
+- **Smooth Transitions**: Theme changes apply instantly
 
-- **Adaptive Colors**:- Installs dependencies inside `app/`.
+### 🎬 Animated Backgrounds
 
-  - Day: Light grey text (#d1d5db) on light background- Builds the Next app.
+- **Day Mode**: Pastel purple, blue, and pink gradient blobs with `multiply` blend
+- **Night Mode**: Soft sapphire blue and accent green blobs with `screen` blend mode
+- **Continuous Animation**: 13-20 second animation cycles for depth
+- **Responsive**: Scales appropriately with viewport
 
-  - Night: Dark grey text (#4b5563) on dark background- Uses the Vercel Action to deploy (requires the secrets above).
+### 📱 Responsive Design
 
+- Mobile-first approach
+- Desktop breakpoints with `md:` utilities
+- Optimized layout for all screen sizes
+- Proper spacing and typography scaling
 
+### 🔤 Typography
 
-### Animated Backgrounds
+- **Display Font**: Clash Display (self-hosted, embedded via `@font-face`)
+  - Variants: Regular, Medium, Bold, Variable weight
+  - Sizes: 80px on desktop, 56px on mobile
+  - Applied to all headings via `.class-display` utility
+- **Body Font**: Futura with system fallbacks
+- **Adaptive**: All text colors respond to theme changes
 
-- **Day Mode**: Pastel purple/blue/pink blobs (50-60% opacity) with grain overlay```npm run dev``` — runs the "dev" script defined in package.json (usually starts a development server with hot reload). Use this while developing.
+### 🎯 Interactive Elements
 
-- **Night Mode**: Soft blue/green blobs with screen blend mode
-
-- Smooth transitions between themes```npm run build``` (or ```npm run build --silent```) — runs the "build" script (usually produces an optimized production build). Use this to compile and check the app before deploying. The --silent flag silences npm's own log noise.
-
-
-
-### Responsive Design
-
-- Mobile-first approachdev test commands 
-
-- Desktop breakpoints (`md:`)```
-
-- Optimized PDF viewer for all screen sizes#kill dev container to restart
-
-pkill -f "next dev" || true && sleep 2
-
-### Typography
-
-- **Display**: Clash Display (80px on desktop, 56px on mobile)#restart dev container
-
-- **Body**: Futura with system fallbacksnpm run dev --prefix=./app
-
-- **Adaptive**: Text colors change with theme
-
-```
-### Interactive Elements
-- Underlined links with hover effects (opacity 70%)
-- Social media icons with theme colors
-- Scroll indicator animation
-- Download button for resume (neon green)
+- **Hover Effects**: Underlined links with opacity transitions
+- **Social Icons**: Theme-aware colors with drop-shadow glow animations
+- **Scroll Animations**: Sections fade in and animate on reveal
+- **Navigation**: Active section highlighting during scroll
+- **Buttons**: Styled buttons with theme-aware colors
+- **PDF Viewer**: Embedded, responsive resume viewer
 
 ## 🔧 Technology Stack
 
-- **Framework**: Next.js 15.5.6 with Turbopack
+- **Framework**: Next.js 15.5.6 with Turbopack compiler
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS + Custom CSS
-- **State Management**: React Context API
-- **Fonts**: Clash Display, Futura
-- **Animations**: CSS keyframes, Tailwind animations
+- **Styling**: Tailwind CSS + Custom CSS (globals.css with embedded `@font-face`)
+- **State Management**: React Context API (ThemeContext)
+- **Fonts**: Self-hosted Clash Display (Regular, Medium, Bold, Variable), Futura
+- **Animations**: CSS @keyframes with cubic-bezier easing, JavaScript mousemove events
+- **Dev Container**: Docker with Node 20, build tools (build-essential, git, curl, jq)
 
 ## 📝 Styling Architecture
 
-### CSS Variables (Theme System)
+### CSS Variables & Theme System
+
 ```css
+:root {
+  --font-display: 'ClashDisplay-Medium', 'Futura', sans-serif;
+  --font-sans: 'Futura', 'Trebuchet MS', system-ui, sans-serif;
+  --foreground: #e6eef8;
+  --accent: #8b5cf6;
+}
+
 html[data-theme="day"] {
-  --foreground: #d1d5db; /* Light grey for day */
+  --foreground: #4b5563;
 }
 
 html[data-theme="night"] {
-  --foreground: #4b5563; /* Dark grey for night */
+  --foreground: #e5e7eb;
 }
 ```
 
-### Usage in Components
-```tsx
-// Text automatically adapts to theme
-className="text-[color:var(--foreground)]"
+### Utility Classes
 
-// Links with theme-aware underlines
-style={{ textDecorationColor: 'var(--foreground)' }}
-```
+- `.class-display`: Applies Clash Display font with proper letter-spacing and weight
+- `.cursor-glow-blob-*`: Animated blob positioning and styling
+- Tailwind utilities for responsive spacing, sizing, and layout
 
 ## 📚 Key Components
 
 ### HomeSection
-- Hero title with accent color on name
+- Hero title with Clash Display font
 - Two-line description with styled links
 - Social media icons (LinkedIn, GitHub, Email, Resume)
 - Scroll indicator animation
@@ -221,21 +170,28 @@ style={{ textDecorationColor: 'var(--foreground)' }}
 ### IntroSection
 - "About Me" title
 - Professional background narrative
-- Links to projects and LinkedIn profile
+- Links to projects and LinkedIn
 - Multiple paragraphs with proper spacing
 
 ### ProjectsSection
 - Projects grid layout
 - Responsive 1-2 column design
+- Scroll reveal animations
 
 ### ResumeSection
-- Embedded PDF viewer (600px height on desktop)
-- Neon green download button (#39ff14)
-- Call-to-action footer with email and contact form links
+- Embedded PDF viewer (responsive height)
+- Download button
+- Call-to-action footer
 
 ### ContactSection
-- Contact form with name, email, message fields
-- Purple submit button matching theme accent
+- Contact form with name, email, message
+- Theme-aware submit button
+
+### CursorGlow
+- Real-time cursor tracking with mousemove event
+- 4 layered blobs with different offsets and delays
+- Dynamic gradient colors based on theme
+- Multiple animation keyframes for organic motion
 
 ## 🎯 Workflow Best Practices
 
@@ -263,7 +219,7 @@ git pull
 git stash pop
 
 # Push changes
-git push
+git push origin master
 ```
 
 ### Dev Commands
@@ -281,10 +237,10 @@ npm run start --prefix=./app
 
 ## 📄 Resume PDF Setup
 
-Store your resume PDF in the public directory:
-- **Path**: `/app/public/resume.pdf` or `/app/public/LIN-Yichun_Resume_20251021.pdf`
-- **Viewer**: Embedded iframe displays PDF in ResumeSection
-- **Download**: Visitors can download with "Download PDF" button
+Your resume PDF is stored in the public directory:
+- **Path**: `/app/public/LIN-Yichun_Resume_20251021.pdf`
+- **Viewer**: Embedded in ResumeSection via iframe
+- **Download**: Visitors can download with the "Download PDF" button
 
 ## 🌐 Responsive Breakpoints
 
@@ -303,8 +259,14 @@ npm install -g vercel
 vercel deploy
 ```
 
+The recommended way is to connect your GitHub repo to Vercel:
+1. Go to https://vercel.com/new and import your GitHub repository
+2. Vercel will detect the Next.js app in the `app/` directory
+3. Set the Root Directory to `app` if needed
+4. Every push to `master` will trigger automatic deployment
+
 ### GitHub Actions
-Push to master branch to trigger automatic deployment (if configured).
+Push to master branch to trigger automatic deployment (if configured with `VERCEL_TOKEN`).
 
 ## 📞 Contact & Links
 
