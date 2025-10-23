@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-A modern, responsive portfolio website built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and featuring **day/night theme switching** with interactive cursor-tracking animations.
+A modern, responsive [**portfolio website**](https://yichun-lin-portfolio.vercel.app) built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and featuring **day/night theme switching** with interactive cursor-tracking animations.
 
 # Table of Contents
 
