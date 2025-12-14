@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "next build"
+  },
   "dependencies": {
     "framer-motion": "^12.23.24"
   },
