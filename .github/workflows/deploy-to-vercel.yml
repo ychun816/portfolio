@@ -18,13 +18,10 @@ jobs:
         run: npm install --global vercel@latest
       
       - name: Pull Vercel Environment Information
-        working-directory: ./app
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --cwd=./app
       
       - name: Build Project Artifacts
-        working-directory: ./app
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd=./app
       
       - name: Deploy Project Artifacts to Vercel
-        working-directory: ./app
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --cwd=./app
