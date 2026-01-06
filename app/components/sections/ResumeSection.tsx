@@ -18,7 +18,8 @@ export default function ResumeSection(){
         <FadeInUp delay={200}>
           <div className="mb-4 rounded-lg overflow-hidden bg-white/5 border border-white/10 p-8">
             <iframe
-              src="/LIN-Yichun_Resume(EN)_20260106.pdf"
+              src="/resume/LIN-Yichun_Resume(EN)_20260106.pdf"
+              type="application/pdf"
               className="w-full h-64 md:h-[400px] rounded-lg"
               title="Resume PDF"
             />
@@ -29,8 +30,8 @@ export default function ResumeSection(){
         <FadeInUp delay={300}>
           <div className="flex justify-center mb-6">
             <a
-              href="/LIN-Yichun_Resume(EN)_20260106.pdf"
-              download="LIN-Yichun_Resume(EN)_20260106.pdf"
+              href="/resume/LIN-Yichun_Resume(EN)_20260106.pdf"
+              download="/resume/LIN-Yichun_Resume(EN)_20260106.pdf"
               className="px-8 py-3 rounded-lg font-semibold transition-colors hover:text-[#C3F0CD]"
               style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}
             >
