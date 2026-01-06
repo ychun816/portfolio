@@ -16,7 +16,7 @@ export function useActiveSection() {
     }
 
     const handleScroll = () => {
-      const sections = ['home', 'intro', 'certificates', 'projects',  'resume', 'contact'];
+      const sections = ['home', 'intro', 'certificates', 'projects', 'resume', 'contact'];
       
       // Get the bounding rect of the scroll container
       const containerRect = scrollContainer.getBoundingClientRect();
@@ -35,7 +35,8 @@ export function useActiveSection() {
           
           console.log(`${section}: distance=${distance.toFixed(0)}, top=${rect.top.toFixed(0)}, bottom=${rect.bottom.toFixed(0)}`);
           
-          if (distance < closestDistance) {
+          // Prioritize earlier sections in the list when distances are very close (within 50px tolerance)
+          if (distance < closestDistance - 50 || (Math.abs(distance - closestDistance) <= 50 && sections.indexOf(section) < sections.indexOf(closestSection))) {
             closestDistance = distance;
             closestSection = section;
           }

@@ -13,7 +13,7 @@ const certificates = [
     description: 'Obtained the certificate and the skills of AWS Cloud Services & Computing',
     url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
     bgColor: '#FFD699', // Pastel orange
-    imageUrl: '/certificates/aws-cloud-practitioner.png',
+    imageUrl: '/certificates/AWS-Certified-Cloud-Practitioner_badge.png',
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const certificates = [
     description: 'Preparing and set to pass in 2026',
     url: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/',
     bgColor: '#B5E7A0', // Pastel green
-    imageUrl: '/certificates/aws-solutions-architect-associate.png',
+    imageUrl: '/certificates/AWS-Certified-Solutions-Architect-Associate_badge.png',
   },
 ];
 

@@ -68,10 +68,10 @@ export default function NavBar() {
             Intro
           </a>
         </li>
-                <li>
+        <li>
           <a 
             href="#certificates" 
-            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'certificates' ? 'active' : ''}`}
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${(activeSection === 'certificates' || activeSection === 'certificate') ? 'active' : ''}`}
           >
             Certificates
           </a>
