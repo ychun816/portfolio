@@ -13,6 +13,7 @@ const certificates = [
     description: 'Obtained the certificate and the skills of AWS Cloud Services & Computing',
     url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
     bgColor: '#FFD699', // Pastel orange
+    imageUrl: '/certificates/aws-cloud-practitioner.png',
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const certificates = [
     description: 'Preparing and set to pass in 2026',
     url: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/',
     bgColor: '#B5E7A0', // Pastel green
+    imageUrl: '/certificates/aws-solutions-architect-associate.png',
   },
 ];
 
@@ -60,11 +62,19 @@ export default function CertificatesSection() {
                       {/* Neon green overlay on hover */}
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300" style={{ backgroundColor: '#39ff14' }} />
                       
-                      {/* Placeholder with icon */}
+                      {/* Badge image or fallback icon */}
                       <div className="text-center relative z-10">
-                        <svg className="w-16 h-16 mx-auto text-gray-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                        </svg>
+                        {cert.imageUrl ? (
+                          <img
+                            src={cert.imageUrl}
+                            alt={`${cert.name} badge`}
+                            className="w-24 h-24 mx-auto mb-4 rounded-md shadow-md transition-transform duration-300 group-hover:scale-105"
+                          />
+                        ) : (
+                          <svg className="w-16 h-16 mx-auto text-gray-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                          </svg>
+                        )}
                         <p className="text-gray-600 text-sm">Certificate</p>
                       </div>
                     </div>
