@@ -68,6 +68,14 @@ export default function NavBar() {
             Intro
           </a>
         </li>
+                <li>
+          <a 
+            href="#certificates" 
+            className={`nav-link ${theme === 'night' ? 'nav-link-night' : 'nav-link-day'} ${activeSection === 'certificates' ? 'active' : ''}`}
+          >
+            Certificates
+          </a>
+        </li>
         <li>
           <a 
             href="#projects" 
@@ -76,6 +84,7 @@ export default function NavBar() {
             Projects
           </a>
         </li>
+
         <li>
           <a 
             href="#resume" 

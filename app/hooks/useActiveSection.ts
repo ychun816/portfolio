@@ -16,7 +16,7 @@ export function useActiveSection() {
     }
 
     const handleScroll = () => {
-      const sections = ['home', 'intro', 'projects', 'resume', 'contact'];
+      const sections = ['home', 'intro', 'certificates', 'projects',  'resume', 'contact'];
       
       // Get the bounding rect of the scroll container
       const containerRect = scrollContainer.getBoundingClientRect();

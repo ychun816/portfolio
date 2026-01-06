@@ -7,14 +7,22 @@ import FadeInUp from '../FadeInUp';
 const certificates = [
   {
     id: 1,
-    name: 'Example Certificate',
-    issuer: 'Certificate Issuer',
-    date: 'Jan 2026',
-    description: 'Brief description of what this certificate represents',
-    url: '#', // Replace with actual certificate URL or verification link
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    date: 'Certified',
+    description: 'Obtained the certificate and the skills of AWS Cloud Services & Computing',
+    url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
+    bgColor: '#FFD699', // Pastel orange
+  },
+  {
+    id: 2,
+    name: 'AWS Certified Solutions Architect - Associate',
+    issuer: 'Amazon Web Services',
+    date: '2026',
+    description: 'Preparing and set to pass in 2026',
+    url: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/',
     bgColor: '#B5E7A0', // Pastel green
   },
-  // Add more certificates here
 ];
 
 export default function CertificatesSection() {
