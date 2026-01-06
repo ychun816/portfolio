@@ -5,6 +5,8 @@ import SVGTextClip from '../SVGTextClip';
 import FadeInUp from '../FadeInUp';
 
 export default function ResumeSection(){
+  const RESUME_FILE = 'LIN-Yichun_Resume(EN)_20260106.pdf';
+  const resumeUrl = `/${encodeURIComponent(RESUME_FILE)}`;
   return (
     <SectionWrapper id="resume">
       <div className="max-w-4xl w-full">
@@ -18,8 +20,7 @@ export default function ResumeSection(){
         <FadeInUp delay={200}>
           <div className="mb-4 rounded-lg overflow-hidden bg-white/5 border border-white/10 p-8">
             <iframe
-              src="/resume/LIN-Yichun_Resume(EN)_20260106.pdf"
-              type="application/pdf"
+              src={resumeUrl}
               className="w-full h-64 md:h-[400px] rounded-lg"
               title="Resume PDF"
             />
@@ -30,8 +31,8 @@ export default function ResumeSection(){
         <FadeInUp delay={300}>
           <div className="flex justify-center mb-6">
             <a
-              href="/resume/LIN-Yichun_Resume(EN)_20260106.pdf"
-              download="/resume/LIN-Yichun_Resume(EN)_20260106.pdf"
+              href={resumeUrl}
+              download={RESUME_FILE}
               className="px-8 py-3 rounded-lg font-semibold transition-colors hover:text-[#C3F0CD]"
               style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}
             >

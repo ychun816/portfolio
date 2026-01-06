@@ -65,7 +65,7 @@ export default function CertificatesSection() {
                           <img
                             src={cert.imageUrl}
                             alt={`${cert.name} badge`}
-                            className="w-56 h-56 mx-auto rounded-md shadow-md transition-transform duration-300 group-hover:scale-105 object-contain"
+                            className="w-40 h-40 mx-auto rounded-md shadow-md transition-transform duration-300 group-hover:scale-105 object-contain"
                           />
                         ) : (
                           <svg className="w-16 h-16 mx-auto text-gray-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
