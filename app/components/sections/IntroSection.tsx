@@ -1,41 +1,42 @@
 "use client";
 
 import SectionWrapper from '../SectionWrapper';
+import SVGTextClip from '../SVGTextClip';
 import FadeInUp from '../FadeInUp';
 
 export default function IntroSection(){
   return (
     <SectionWrapper id="intro">
-      <div className="max-w-4xl w-full">
+      <div className="w-full max-w-7xl">
+        <SVGTextClip
+          text="About Me"
+          className="mb-16 class-display"
+          style={{ fontSize: '60px', lineHeight: '1.1' }}
+        />
+        
+        <div className="max-w-4xl w-full mx-auto">
         <FadeInUp delay={100}>
-          <div
-            className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
-            style={{
-              boxShadow: 'var(--shadow)',
-              backgroundImage:
-                'repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 11px)'
-            }}
-          >
-            <div className="pointer-events-none absolute inset-0">
-              <div
-                className="absolute inset-y-0 -left-1/3 w-1/2 -skew-x-6"
-                style={{
-                  background:
-                    'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(195,240,205,0.25) 50%, rgba(255,255,255,0) 100%)',
-                  filter: 'blur(2px)',
-                  animation: 'scanX 3s linear infinite'
-                }}
-              />
-            </div>
-
+          <div className="relative mb-8">
             <h1
-              className="text-left font-extrabold tracking-tight mb-4"
-              style={{ fontSize: '36px', lineHeight: 1.15, color: 'var(--foreground)' }}
+              className="text-left font-extrabold tracking-tight mb-8 relative overflow-hidden"
+              style={{ fontSize: '42px', lineHeight: 1.15, color: 'var(--foreground)' }}
             >
-              From Art Galleries to Cloud Infrastructure.
+              <span className="relative inline-block">
+                From Art Galleries to Cloud Infrastructure.
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, rgba(195,240,205,0) 0%, rgba(195,240,205,0.4) 50%, rgba(195,240,205,0) 100%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'flowingGlow 3s ease-in-out infinite',
+                    filter: 'blur(8px)',
+                  }}
+                />
+              </span>
             </h1>
 
-            <div className="space-y-4 text-left text-[color:var(--foreground)]/90">
+            <div className="space-y-6 text-left text-[color:var(--foreground)]/90" style={{ fontSize: '18px' }}>
               <p className="leading-relaxed">
                 Hi! I’m Yichun Lin. I swapped curating exhibitions for
                 <span className="text-[#C3F0CD] font-medium"> orchestrating containers</span>, bringing a Project Manager’s mindset to DevOps engineering. Born in Taiwan and forged at École 42 Paris, I build systems that are as resilient as they are elegant.
@@ -56,20 +57,12 @@ export default function IntroSection(){
                 .
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href="#projects"
-                  className="inline-flex items-center px-3 py-1.5 rounded-md border border-white/15 bg-white/5 hover:bg-white/10 transition-colors text-sm font-semibold"
+                  className="inline-flex items-center text-base font-semibold hover:italic hover:font-bold hover:text-[#C3F0CD] transition-all"
                 >
-                  Explore Projects
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/sophia-lin-profile/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm font-semibold underline underline-offset-4 hover:text-[#C3F0CD] transition-colors"
-                >
-                  connect
+                  Explore my projects!
                 </a>
               </div>
             </div>
@@ -77,32 +70,40 @@ export default function IntroSection(){
         </FadeInUp>
 
         <FadeInUp delay={200}>
-          <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-sm">
-            <div className="text-sm md:text-base leading-relaxed text-[color:var(--foreground)]/90">
-              <p>
-                Currently seeking a DevOps/Cloud Internship in Paris. Let’s engineer something beautiful together.
-              </p>
-              <p className="mt-2">
-                Always passionate to connect!
-                <a
-                  href="https://www.linkedin.com/in/sophia-lin-profile/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-1 underline underline-offset-4 hover:text-[#C3F0CD] transition-colors"
-                >
-                  connect
-                </a>
-              </p>
-            </div>
+          <div className="mt-6 text-lg italic leading-relaxed text-[color:var(--foreground)]/90">
+            <p>
+              Currently seeking a DevOps/Cloud Internship in Paris. Let's engineer something beautiful together.
+              Always passionate to{' '}
+              <a
+                href="https://www.linkedin.com/in/sophia-lin-profile/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:italic hover:font-bold hover:text-[#C3F0CD] transition-all"
+              >
+                connect
+              </a>
+              !
+            </p>
           </div>
         </FadeInUp>
 
         <style jsx>{`
-          @keyframes scanX {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(140%); }
+          @keyframes flowingGlow {
+            0% { 
+              background-position: 200% center;
+              opacity: 0.6;
+            }
+            50% { 
+              background-position: 0% center;
+              opacity: 1;
+            }
+            100% { 
+              background-position: -200% center;
+              opacity: 0.6;
+            }
           }
         `}</style>
+        </div>
       </div>
     </SectionWrapper>
   )
