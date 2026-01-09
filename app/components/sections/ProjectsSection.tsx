@@ -66,68 +66,102 @@ export default function ProjectsSection(){
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
         
-        {/* Horizontal Scrolling Container */}
+        {/* Bento Grid Container */}
         <FadeInUp delay={200}>
-          <div className="overflow-x-auto scroll-smooth">
-            <div className="flex gap-6 min-w-min">
-            {projects.map((project, index) => (
-              <a
-                key={project.id}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 w-80 group cursor-pointer"
-                style={{
-                  animation: `slideIn 0.6s ease-out ${index * 0.1}s backwards`,
-                }}
-              >
-                {/* Project Card */}
-                <div className="rounded-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl flex flex-col" style={{ boxShadow: 'var(--shadow)', height: '420px' }}>
-                  {/* Preview Window - 60% height */}
+          <div 
+            className="grid gap-6 auto-rows-[300px]"
+            style={{
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridAutoFlow: 'dense',
+            }}
+          >
+            {projects.map((project, index) => {
+              // Create varying sizes for visual interest
+              const sizes = [
+                { colSpan: 1, rowSpan: 1 },
+                { colSpan: 2, rowSpan: 1 },
+                { colSpan: 1, rowSpan: 1 },
+                { colSpan: 1, rowSpan: 2 },
+                { colSpan: 1, rowSpan: 1 },
+                { colSpan: 1, rowSpan: 1 },
+                { colSpan: 2, rowSpan: 1 },
+              ];
+              
+              const size = sizes[index] || { colSpan: 1, rowSpan: 1 };
+              
+              return (
+                <a
+                  key={project.id}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group cursor-pointer"
+                  style={{
+                    gridColumn: `span ${Math.min(size.colSpan, 2)}`,
+                    gridRow: `span ${Math.min(size.rowSpan, 2)}`,
+                    animation: `fadeInScale 0.6s ease-out ${index * 0.1}s backwards`,
+                  }}
+                >
+                  {/* Project Card */}
                   <div 
-                    className="flex-1 relative overflow-hidden flex items-center justify-center"
-                    style={{ backgroundColor: project.bgColor, minHeight: '252px' }}
+                    className="relative w-full h-full rounded-xl overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
+                    style={{ 
+                      backgroundColor: project.bgColor,
+                      boxShadow: 'var(--shadow)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                    }}
                   >
+                    {/* Animated grid background */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{
+                      backgroundImage: 'linear-gradient(90deg, rgba(57,255,20,0.1) 1px, transparent 1px), linear-gradient(rgba(57,255,20,0.1) 1px, transparent 1px)',
+                      backgroundSize: '20px 20px',
+                    }} />
+                    
                     {/* Neon green overlay on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300" style={{ backgroundColor: '#39ff14' }} />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500" style={{ backgroundColor: '#39ff14' }} />
                     
-                    {/* Placeholder with icon */}
-                    <div className="text-center relative z-10">
-                      <svg className="w-16 h-16 mx-auto text-gray-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                      <p className="text-gray-600 text-sm">GitHub Project</p>
+                    {/* Content container */}
+                    <div className="relative z-10 w-full h-full flex flex-col p-6 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                      {/* Icon and title section */}
+                      <div className="flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-white/20 transition-all duration-300">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                          <h3 
+                            className="font-semibold text-sm transition-colors duration-300 line-clamp-2"
+                            style={{
+                              color: 'var(--foreground)',
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = '#C3F0CD'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--foreground)'}
+                          >
+                            {project.name}
+                          </h3>
+                        </div>
+                        
+                        <p className="text-[color:var(--foreground)] opacity-70 text-xs leading-tight line-clamp-2">
+                          {project.description}
+                        </p>
+                      </div>
+                      
+                      {/* Bottom action indicator */}
+                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
+                        <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: '#C3F0CD' }}>
+                          <span>View</span>
+                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                        <div className="w-2 h-2 rounded-full bg-white/30 group-hover:bg-green-400 transition-colors duration-300" />
+                      </div>
                     </div>
                   </div>
-
-                  {/* Project Info - 40% height */}
-                  <div className="flex-1 p-4 bg-white/5 border border-white/10 backdrop-filter backdrop-blur-md overflow-hidden flex flex-col" style={{ minHeight: '168px' }}>
-                    <h3 
-                      className="font-semibold text-base transition-colors duration-300 line-clamp-2"
-                      style={{
-                        color: 'var(--foreground)',
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = '#C3F0CD'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--foreground)'}
-                    >
-                      {project.name}
-                    </h3>
-                    <p className="text-[color:var(--foreground)] opacity-70 mt-2 text-sm leading-tight line-clamp-2 flex-1">
-                      {project.description}
-                    </p>
-                    
-                    {/* GitHub Link Indicator */}
-                    <div className="mt-2 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: '#C3F0CD' }}>
-                      <span>View on GitHub</span>
-                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
-            </div>
+                </a>
+              );
+            })}
           </div>
         </FadeInUp>
       </div>
@@ -141,6 +175,17 @@ export default function ProjectsSection(){
           to {
             opacity: 1;
             transform: translateX(0);
+          }
+        }
+        
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
           }
         }
       `}</style>
