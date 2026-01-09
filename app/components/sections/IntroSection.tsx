@@ -18,10 +18,10 @@ export default function IntroSection(){
         <FadeInUp delay={100}>
           <div className="relative mb-8">
             <h1
-              className="text-left font-extrabold tracking-tight mb-8 relative overflow-hidden"
+              className="text-right font-extrabold tracking-tight mb-8 relative overflow-hidden"
               style={{ fontSize: '42px', lineHeight: 1.15, color: 'var(--foreground)' }}
             >
-              <span className="relative inline-block">
+              <span className="relative inline-block italic" style={{ animation: 'characterFlow 4s ease-in-out infinite' }}>
                 From Art Galleries to Cloud Infrastructure.
                 <div
                   className="absolute inset-0 pointer-events-none"
@@ -29,7 +29,7 @@ export default function IntroSection(){
                     background:
                       'linear-gradient(90deg, rgba(195,240,205,0) 0%, rgba(195,240,205,0.4) 50%, rgba(195,240,205,0) 100%)',
                     backgroundSize: '200% 100%',
-                    animation: 'flowingGlow 3s ease-in-out infinite',
+                    animation: 'emergingFlow 3s ease-in-out infinite',
                     filter: 'blur(8px)',
                   }}
                 />
@@ -53,7 +53,7 @@ export default function IntroSection(){
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href="#projects"
-                  className="inline-flex items-center text-base font-semibold hover:italic hover:font-bold hover:text-[#C3F0CD] transition-all"
+                  className="inline-flex items-center text-base font-semibold underline underline-offset-4 decoration-[#C3F0CD] hover:italic hover:font-bold hover:text-[#C3F0CD] transition-all"
                 >
                   Explore my projects!
                 </a>
@@ -61,7 +61,6 @@ export default function IntroSection(){
             </div>
           </div>
         </FadeInUp>
- underline underline-offset-4 decoration-[#C3F0CD]
         <FadeInUp delay={200}>
           <div className="mt-6 text-lg italic leading-relaxed text-[color:var(--foreground)]/90">
             <p>
@@ -93,6 +92,54 @@ export default function IntroSection(){
             100% { 
               background-position: -200% center;
               opacity: 0.6;
+            }
+          }
+          
+          @keyframes emergingFlow {
+            0% { 
+              background-position: 200% center;
+              opacity: 0;
+              clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            }
+            20% {
+              opacity: 0.4;
+              clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
+            }
+            50% { 
+              background-position: 0% center;
+              opacity: 1;
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            100% { 
+              background-position: -200% center;
+              opacity: 0.6;
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+          }
+          
+          @keyframes characterFlow {
+            0% {
+              transform: translateY(20px) scaleY(0.95);
+              opacity: 0;
+              letter-spacing: 0.1em;
+            }
+            25% {
+              transform: translateY(10px) scaleY(0.98);
+              opacity: 0.7;
+            }
+            50% {
+              transform: translateY(0) scaleY(1);
+              opacity: 1;
+              letter-spacing: 0.02em;
+            }
+            75% {
+              transform: translateY(-5px) scaleY(1.02);
+              opacity: 0.8;
+            }
+            100% {
+              transform: translateY(0) scaleY(1);
+              opacity: 1;
+              letter-spacing: 0.02em;
             }
           }
         `}</style>

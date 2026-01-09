@@ -14,7 +14,7 @@ export default function CursorGlow() {
 
   useEffect(() => {
     // Hide default cursor
-    document.body.style.cursor = 'none';
+    document.body.style.cursor = 'url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2732%27 height=%2732%27 viewBox=%270 0 24 24%27%3E%3Cpath fill=%22%23C3F0CD%22 d=%27M3 3l18 9-18 9V3z%27/%3E%3C/svg%3E") 8 8, auto';
     
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
@@ -219,10 +219,10 @@ export default function CursorGlow() {
             width: isHovering ? '12px' : '8px',
             height: isHovering ? '12px' : '8px',
             borderRadius: '50%',
-            backgroundColor: theme === 'night' ? '#C3F0CD' : '#FF69B4',
+            backgroundColor: '#C3F0CD',
             transform: 'translate(-50%, -50%)',
             animation: 'cursorGlow 1.5s ease-in-out infinite',
-            color: theme === 'night' ? '#C3F0CD' : '#FF69B4',
+            color: '#C3F0CD',
             transition: 'all 0.2s ease',
           }}
         />
@@ -238,7 +238,7 @@ export default function CursorGlow() {
               width: '4px',
               height: '4px',
               borderRadius: '50%',
-              backgroundColor: theme === 'night' ? '#64B4F0' : '#FFC0CB',
+              backgroundColor: '#C3F0CD',
               animation: `sparkle 2s ease-in-out infinite`,
               animationDelay: `${i * 0.5}s`,
               transform: `translate(-50%, -50%) rotate(${i * 90}deg) translateX(${isHovering ? '18px' : '12px'})`,
@@ -257,7 +257,7 @@ export default function CursorGlow() {
               width: '32px',
               height: '32px',
               borderRadius: '50%',
-              border: `2px solid ${theme === 'night' ? '#C3F0CD' : '#FF69B4'}`,
+              border: '2px solid #C3F0CD',
               transform: 'translate(-50%, -50%)',
               opacity: 0.4,
             }}
