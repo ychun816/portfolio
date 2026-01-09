@@ -39,22 +39,15 @@ export default function IntroSection(){
             <div className="space-y-6 text-left text-[color:var(--foreground)]/90" style={{ fontSize: '18px' }}>
               <p className="leading-relaxed">
                 Hi! I’m Yichun Lin. I swapped curating exhibitions for
-                <span className="text-[#C3F0CD] font-medium"> orchestrating containers</span>, bringing a Project Manager’s mindset to DevOps engineering. Born in Taiwan and forged at École 42 Paris, I build systems that are as resilient as they are elegant.
+                <span className="text-[#C3F0CD] font-bold italic"> orchestrating containers</span>, bringing a Project Manager's mindset to DevOps engineering. Born in Taiwan and forged at École 42 Paris, I build systems that are as resilient as they are elegant.
               </p>
 
               <p className="leading-relaxed">
                 I don't just write scripts; I
-                <span className="text-[#C3F0CD] font-medium"> design workflows</span>. My background in art management taught me how to handle chaos and deadlines, while École 42 gave me the technical grit to master
-                <span className="text-[#C3F0CD] font-medium"> C/C++</span>,
-                <span className="text-[#C3F0CD] font-medium"> Kubernetes</span>, and
-                <span className="text-[#C3F0CD] font-medium"> CI/CD</span>. I view infrastructure as a canvas—it requires structure, automation, and precise execution to truly flow. Check out my
-                <a
-                  href="#projects"
-                  className="ml-1 underline underline-offset-4 decoration-from-font hover:text-[#C3F0CD] transition-colors"
-                >
-                  Projects
-                </a>
-                .
+                <span className="text-[#C3F0CD] font-bold italic"> design workflows</span>. My background in art management taught me how to handle chaos and deadlines, while École 42 gave me the technical grit to master
+                <span className="text-[#C3F0CD] font-bold italic"> C/C++</span>,
+                <span className="text-[#C3F0CD] font-bold italic"> Kubernetes</span>, and
+                <span className="text-[#C3F0CD] font-bold italic"> CI/CD</span>. I view infrastructure as a canvas—it requires structure, automation, and precise execution to truly flow.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -68,7 +61,7 @@ export default function IntroSection(){
             </div>
           </div>
         </FadeInUp>
-
+ underline underline-offset-4 decoration-[#C3F0CD]
         <FadeInUp delay={200}>
           <div className="mt-6 text-lg italic leading-relaxed text-[color:var(--foreground)]/90">
             <p>
