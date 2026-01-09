@@ -19,20 +19,10 @@ export default function IntroSection(){
           <div className="relative mb-8">
             <h1
               className="text-right font-extrabold tracking-tight mb-8 relative overflow-hidden"
-              style={{ fontSize: '42px', lineHeight: 1.15, color: 'var(--foreground)' }}
+              style={{ fontSize: '28px', lineHeight: 1.15, color: 'var(--foreground)' }}
             >
               <span className="relative inline-block italic" style={{ animation: 'characterFlow 4s ease-in-out infinite' }}>
                 From Art Galleries to Cloud Infrastructure.
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      'linear-gradient(90deg, rgba(195,240,205,0) 0%, rgba(195,240,205,0.4) 50%, rgba(195,240,205,0) 100%)',
-                    backgroundSize: '200% 100%',
-                    animation: 'emergingFlow 3s ease-in-out infinite',
-                    filter: 'blur(8px)',
-                  }}
-                />
               </span>
             </h1>
 
