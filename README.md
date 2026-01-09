@@ -78,7 +78,7 @@ portfolio/
 │   │   └── useScrollReveal.ts       # Scroll-based reveal animations
 │   ├── public/
 │   │   ├── favicon.ico              # Site favicon
-│   │   ├── LIN-Yichun_Resume_20251021.pdf # Resume PDF
+│   │   ├── LIN_Yichun_DevOps_CV_EN.pdf # Resume PDF
 │   │   └── fonts/
 │   │       ├── clash-display/       # Clash Display font (Regular, Medium, Bold, Variable)
 │   │       └── recife/              # Recife font CSS

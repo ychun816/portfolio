@@ -5,7 +5,7 @@ import SVGTextClip from '../SVGTextClip';
 import FadeInUp from '../FadeInUp';
 
 export default function ResumeSection(){
-  const RESUME_FILE = 'LIN-Yichun_Resume(EN)_20260106.pdf';
+  const RESUME_FILE = 'LIN_Yichun_DevOps_CV_EN.pdf';
   const resumeUrl = `/${encodeURIComponent(RESUME_FILE)}`;
   return (
     <SectionWrapper id="resume">
