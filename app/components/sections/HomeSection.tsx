@@ -12,7 +12,7 @@ export default function HomeSection(){
         {/* Main Title with SVG Clip Animation */}
         <SVGTextClip
           text="Hello! I'm LIN Yichun"
-          highlightSpans={[1, 2]} // "LIN Yichun" (indices 1 and 2)
+          highlightSpans={[1, 2, 3]}
           className="mb-8 class-display"
           style={{ fontSize: '60px', lineHeight: '1.1' }}
         />
