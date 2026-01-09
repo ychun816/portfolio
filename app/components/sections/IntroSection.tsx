@@ -1,71 +1,108 @@
 "use client";
 
 import SectionWrapper from '../SectionWrapper';
-import SVGTextClip from '../SVGTextClip';
 import FadeInUp from '../FadeInUp';
 
 export default function IntroSection(){
   return (
     <SectionWrapper id="intro">
       <div className="max-w-4xl w-full">
-        <SVGTextClip
-          text="About Me"
-          className="mb-12 class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
-        />
-        <div className="space-y-6 text-base md:text-lg leading-relaxed text-[color:var(--foreground)] opacity-90">
-          <FadeInUp delay={200}>
-            <p>
-              Hi! I'm Yichun Lin, a Taiwan-born engineer blending my love for art with my passion for cloud and DevOps. I transitioned from project management in the art world to software engineering, and moved to Paris, the city where creativity meets technology, to build a career in DevOps and cloud engineering.
-            </p>
-          </FadeInUp>
+        <FadeInUp delay={100}>
+          <div
+            className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 md:p-8"
+            style={{
+              boxShadow: 'var(--shadow)',
+              backgroundImage:
+                'repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 11px)'
+            }}
+          >
+            <div className="pointer-events-none absolute inset-0">
+              <div
+                className="absolute inset-y-0 -left-1/3 w-1/2 -skew-x-6"
+                style={{
+                  background:
+                    'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(195,240,205,0.25) 50%, rgba(255,255,255,0) 100%)',
+                  filter: 'blur(2px)',
+                  animation: 'scanX 3s linear infinite'
+                }}
+              />
+            </div>
 
-          <FadeInUp delay={300}>
-            <p>
-              At École 42 Paris, I gained solid, practical experience in programming and scripting including C, C++, TypeScript, JavaScript, and Bash. I also mastered DevOps and infrastructure tools like Docker, Docker Compose, Kubernetes, and CI/CD pipelines (GitHub Actions, GitLab CI), as well as system administration and monitoring with Linux (Debian, Ubuntu), networking, web servers (NGINX, Apache), file systems, shell scripting, and Prometheus/Grafana. Check out{' '}
-              <a 
-                href="#projects" 
-                className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
-                style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
-              >
-                my Projects
-              </a>
-              .
-            </p>
-          </FadeInUp>
+            <h1
+              className="text-left font-extrabold tracking-tight mb-4"
+              style={{ fontSize: '36px', lineHeight: 1.15, color: 'var(--foreground)' }}
+            >
+              From Art Galleries to Cloud Infrastructure.
+            </h1>
 
-          <FadeInUp delay={400}>
-            <p>
-              I combine creativity from art, leadership from project management, and engineering precision to design cloud solutions that don't just work — they flow.
-            </p>
-          </FadeInUp>
+            <div className="space-y-4 text-left text-[color:var(--foreground)]/90">
+              <p className="leading-relaxed">
+                Hi! I’m Yichun Lin. I swapped curating exhibitions for
+                <span className="text-[#C3F0CD] font-medium"> orchestrating containers</span>, bringing a Project Manager’s mindset to DevOps engineering. Born in Taiwan and forged at École 42 Paris, I build systems that are as resilient as they are elegant.
+              </p>
 
-          <FadeInUp delay={500}>
-            <p>
-              I'm currently seeking a Cloud or DevOps internship in Paris, where I can build, automate, and scale systems in a city that inspires both innovation and creativity.
-            </p>
-          </FadeInUp>
+              <p className="leading-relaxed">
+                I don't just write scripts; I
+                <span className="text-[#C3F0CD] font-medium"> design workflows</span>. My background in art management taught me how to handle chaos and deadlines, while École 42 gave me the technical grit to master
+                <span className="text-[#C3F0CD] font-medium"> C/C++</span>,
+                <span className="text-[#C3F0CD] font-medium"> Kubernetes</span>, and
+                <span className="text-[#C3F0CD] font-medium"> CI/CD</span>. I view infrastructure as a canvas—it requires structure, automation, and precise execution to truly flow. Check out my
+                <a
+                  href="#projects"
+                  className="ml-1 underline underline-offset-4 decoration-from-font hover:text-[#C3F0CD] transition-colors"
+                >
+                  Projects
+                </a>
+                .
+              </p>
 
-          <FadeInUp delay={600} className="pt-4">
-            <p>
-              Always passionate to{' '}
-              <a 
-                href="https://www.linkedin.com/in/sophia-lin-profile/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
-                style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
-              >
-                connect
-              </a>
-              !
-            </p>
-          </FadeInUp>
-        </div>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <a
+                  href="#projects"
+                  className="inline-flex items-center px-3 py-1.5 rounded-md border border-white/15 bg-white/5 hover:bg-white/10 transition-colors text-sm font-semibold"
+                >
+                  Explore Projects
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sophia-lin-profile/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-semibold underline underline-offset-4 hover:text-[#C3F0CD] transition-colors"
+                >
+                  connect
+                </a>
+              </div>
+            </div>
+          </div>
+        </FadeInUp>
+
+        <FadeInUp delay={200}>
+          <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-sm">
+            <div className="text-sm md:text-base leading-relaxed text-[color:var(--foreground)]/90">
+              <p>
+                Currently seeking a DevOps/Cloud Internship in Paris. Let’s engineer something beautiful together.
+              </p>
+              <p className="mt-2">
+                Always passionate to connect!
+                <a
+                  href="https://www.linkedin.com/in/sophia-lin-profile/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-1 underline underline-offset-4 hover:text-[#C3F0CD] transition-colors"
+                >
+                  connect
+                </a>
+              </p>
+            </div>
+          </div>
+        </FadeInUp>
+
+        <style jsx>{`
+          @keyframes scanX {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(140%); }
+          }
+        `}</style>
       </div>
     </SectionWrapper>
   )
