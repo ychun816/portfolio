@@ -69,10 +69,10 @@ export default function ProjectsSection(){
         {/* Bento Grid Container */}
         <FadeInUp delay={200}>
           <div 
-            className="grid gap-4 sm:gap-5 lg:gap-6"
+            className="grid gap-3 sm:gap-4 lg:gap-5"
             style={{
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gridAutoRows: '400px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gridAutoRows: '260px',
               gridAutoFlow: 'dense',
             }}
           >
@@ -134,13 +134,13 @@ export default function ProjectsSection(){
                   </div>
                   
                   {/* Content container */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-8">
+                  <div className="absolute inset-0 flex flex-col justify-between p-5">
                     {/* Top icon and accent */}
                     <div className="flex items-start justify-between">
-                      <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-lg flex items-center justify-center border border-white/20 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg" style={{
+                      <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-lg flex items-center justify-center border border-white/20 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg" style={{
                         boxShadow: 'inset 0 0 20px rgba(255,255,255,0.2)',
                       }}>
-                        <svg className="w-7 h-7 text-black group-hover:text-black transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-black group-hover:text-black transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
@@ -160,9 +160,9 @@ export default function ProjectsSection(){
                       {/* Project title */}
                       <div>
                         <h3 
-                          className="font-bold transition-all duration-300 group-hover:translate-y-0 translate-y-1"
+                          className="font-bold transition-all duration-300 group-hover:translate-y-0 translate-y-1 line-clamp-2"
                           style={{
-                            fontSize: size.colSpan === 2 ? '24px' : '18px',
+                            fontSize: size.colSpan === 2 ? '16px' : '14px',
                             lineHeight: '1.2',
                             color: 'rgba(0,0,0,0.85)',
                           }}
@@ -175,7 +175,7 @@ export default function ProjectsSection(){
                       
                       {/* Project description */}
                       <p 
-                        className="text-sm leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100"
+                        className="text-xs leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100 line-clamp-2"
                         style={{
                           color: 'rgba(0,0,0,0.65)',
                         }}
@@ -184,8 +184,8 @@ export default function ProjectsSection(){
                       </p>
                       
                       {/* Bottom action - appears on hover with glow */}
-                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 pt-2 border-t border-black/10 group-hover:border-black/30">
-                        <span className="text-xs font-semibold text-black/70 group-hover:text-black transition-colors duration-300">View Project</span>
+                      <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 pt-1 border-t border-black/10 group-hover:border-black/30">
+                        <span className="text-xs font-semibold text-black/70 group-hover:text-black transition-colors duration-300">View</span>
                         <svg className="w-4 h-4 text-black/70 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
