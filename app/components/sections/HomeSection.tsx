@@ -25,7 +25,7 @@ export default function HomeSection(){
             target="_blank" 
             rel="noopener noreferrer"
             className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
-            style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+            style={{ textDecorationColor: '#C3F0CD', color: 'inherit' }}
             onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
@@ -39,7 +39,7 @@ export default function HomeSection(){
           <a 
             href="#projects" 
             className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
-            style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+            style={{ textDecorationColor: '#C3F0CD', color: 'inherit' }}
             onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
@@ -49,7 +49,7 @@ export default function HomeSection(){
           <a 
             href="#resume" 
             className="underline decoration-solid underline-offset-2 hover:opacity-100 transition-colors"
-            style={{ textDecorationColor: 'var(--foreground)', color: 'inherit' }}
+            style={{ textDecorationColor: '#C3F0CD', color: 'inherit' }}
             onMouseEnter={(e) => { e.currentTarget.style.color = '#C3F0CD'; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
           >
