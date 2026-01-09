@@ -69,14 +69,15 @@ export default function ProjectsSection(){
         {/* Bento Grid Container */}
         <FadeInUp delay={200}>
           <div 
-            className="grid gap-6 auto-rows-[300px]"
+            className="grid gap-4 sm:gap-5 lg:gap-6"
             style={{
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridAutoRows: '400px',
               gridAutoFlow: 'dense',
             }}
           >
             {projects.map((project, index) => {
-              // Create varying sizes for visual interest
+              // Create varying sizes for masonry effect like techunt.fr
               const sizes = [
                 { colSpan: 1, rowSpan: 1 },
                 { colSpan: 2, rowSpan: 1 },
@@ -95,67 +96,99 @@ export default function ProjectsSection(){
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group cursor-pointer"
+                  className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:shadow-2xl"
                   style={{
                     gridColumn: `span ${Math.min(size.colSpan, 2)}`,
                     gridRow: `span ${Math.min(size.rowSpan, 2)}`,
-                    animation: `fadeInScale 0.6s ease-out ${index * 0.1}s backwards`,
+                    animation: `floatIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.12}s backwards`,
                   }}
                 >
-                  {/* Project Card */}
+                  {/* Glowing border effect */}
                   <div 
-                    className="relative w-full h-full rounded-xl overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
-                    style={{ 
-                      backgroundColor: project.bgColor,
-                      boxShadow: 'var(--shadow)',
-                      border: '1px solid rgba(255,255,255,0.1)',
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background: `conic-gradient(from 0deg, ${project.bgColor}, rgba(255,255,255,0.5), ${project.bgColor})`,
+                      padding: '1px',
                     }}
                   >
-                    {/* Animated grid background */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{
-                      backgroundImage: 'linear-gradient(90deg, rgba(57,255,20,0.1) 1px, transparent 1px), linear-gradient(rgba(57,255,20,0.1) 1px, transparent 1px)',
-                      backgroundSize: '20px 20px',
-                    }} />
-                    
-                    {/* Neon green overlay on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500" style={{ backgroundColor: '#39ff14' }} />
-                    
-                    {/* Content container */}
-                    <div className="relative z-10 w-full h-full flex flex-col p-6 bg-gradient-to-b from-transparent via-transparent to-black/40">
-                      {/* Icon and title section */}
-                      <div className="flex-1 flex flex-col justify-between">
-                        <div>
-                          <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-white/20 transition-all duration-300">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                          </div>
-                          <h3 
-                            className="font-semibold text-sm transition-colors duration-300 line-clamp-2"
-                            style={{
-                              color: 'var(--foreground)',
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.color = '#C3F0CD'}
-                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--foreground)'}
-                          >
-                            {project.name}
-                          </h3>
-                        </div>
-                        
-                        <p className="text-[color:var(--foreground)] opacity-70 text-xs leading-tight line-clamp-2">
-                          {project.description}
-                        </p>
+                    <div className="absolute inset-1 rounded-2xl" style={{ backgroundColor: project.bgColor }} />
+                  </div>
+                  
+                  {/* Background with gradient overlay */}
+                  <div 
+                    className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
+                    style={{ 
+                      backgroundColor: project.bgColor,
+                      backgroundImage: `linear-gradient(135deg, ${project.bgColor} 0%, rgba(255,255,255,0.1) 100%)`,
+                    }}
+                  />
+                  
+                  {/* Animated floating particles/lights on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500">
+                    <div 
+                      className="absolute w-full h-full"
+                      style={{
+                        background: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Content container */}
+                  <div className="absolute inset-0 flex flex-col justify-between p-8">
+                    {/* Top icon and accent */}
+                    <div className="flex items-start justify-between">
+                      <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-lg flex items-center justify-center border border-white/20 group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg" style={{
+                        boxShadow: 'inset 0 0 20px rgba(255,255,255,0.2)',
+                      }}>
+                        <svg className="w-7 h-7 text-black group-hover:text-black transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                       </div>
                       
-                      {/* Bottom action indicator */}
-                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
-                        <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: '#C3F0CD' }}>
-                          <span>View</span>
-                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                        <div className="w-2 h-2 rounded-full bg-white/30 group-hover:bg-green-400 transition-colors duration-300" />
+                      {/* Accent line with glow */}
+                      <div 
+                        className="w-8 h-1 rounded-full group-hover:w-12 transition-all duration-300"
+                        style={{
+                          backgroundColor: 'rgba(255,255,255,0.3)',
+                          boxShadow: '0 0 12px rgba(255,255,255,0.3), 0 0 24px rgba(255,255,255,0.1)',
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Content area - positioned at bottom */}
+                    <div className="flex flex-col gap-3">
+                      {/* Project title */}
+                      <div>
+                        <h3 
+                          className="font-bold transition-all duration-300 group-hover:translate-y-0 translate-y-1"
+                          style={{
+                            fontSize: size.colSpan === 2 ? '24px' : '18px',
+                            lineHeight: '1.2',
+                            color: 'rgba(0,0,0,0.85)',
+                          }}
+                          onMouseEnter={(e) => e.currentTarget.style.color = '#000'}
+                          onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(0,0,0,0.85)'}
+                        >
+                          {project.name}
+                        </h3>
+                      </div>
+                      
+                      {/* Project description */}
+                      <p 
+                        className="text-sm leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100"
+                        style={{
+                          color: 'rgba(0,0,0,0.65)',
+                        }}
+                      >
+                        {project.description}
+                      </p>
+                      
+                      {/* Bottom action - appears on hover with glow */}
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 pt-2 border-t border-black/10 group-hover:border-black/30">
+                        <span className="text-xs font-semibold text-black/70 group-hover:text-black transition-colors duration-300">View Project</span>
+                        <svg className="w-4 h-4 text-black/70 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -186,6 +219,28 @@ export default function ProjectsSection(){
           to {
             opacity: 1;
             transform: scale(1);
+          }
+        }
+        
+        @keyframes floatIn {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.9);
+            filter: blur(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
           }
         }
       `}</style>
