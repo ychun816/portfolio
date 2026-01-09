@@ -4,15 +4,26 @@ import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function CursorGlow() {
+  const cursorRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
   const blob3Ref = useRef<HTMLDivElement>(null);
   const blob4Ref = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+    
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
+      
+      // Custom cursor follows exactly
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${clientX}px`;
+        cursorRef.current.style.top = `${clientY}px`;
+      }
       
       // Primary blob follows cursor exactly
       if (glowRef.current) {
@@ -45,8 +56,26 @@ export default function CursorGlow() {
       }
     };
 
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
+    
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    
+    // Add hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"]');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', handleMouseEnter);
+      el.addEventListener('mouseleave', handleMouseLeave);
+    });
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.body.style.cursor = 'auto';
+      interactiveElements.forEach(el => {
+        el.removeEventListener('mouseenter', handleMouseEnter);
+        el.removeEventListener('mouseleave', handleMouseLeave);
+      });
+    };
   }, []);
 
   // Night mode: sapphire blue palette (matching NightBackground)
@@ -118,6 +147,23 @@ export default function CursorGlow() {
   return (
     <>
       <style>{`
+        * {
+          cursor: none !important;
+        }
+        @keyframes cursorGlow {
+          0%, 100% { 
+            box-shadow: 0 0 15px 3px currentColor, 0 0 30px 6px currentColor, 0 0 45px 9px currentColor;
+            transform: translate(-50%, -50%) scale(1);
+          }
+          50% { 
+            box-shadow: 0 0 20px 5px currentColor, 0 0 40px 10px currentColor, 0 0 60px 15px currentColor;
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+        @keyframes sparkle {
+          0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(0deg); }
+          50% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(180deg); }
+        }
         @keyframes blobPulse {
           0%, 100% { transform: translate(-50%, -50%) scale(1); }
           50% { transform: translate(-50%, -50%) scale(1.08); }
@@ -153,6 +199,71 @@ export default function CursorGlow() {
           animation: blobAmber 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
         }
       `}</style>
+
+      {/* Custom Cursor */}
+      <div
+        ref={cursorRef}
+        className="pointer-events-none fixed z-50"
+        style={{
+          width: isHovering ? '24px' : '16px',
+          height: isHovering ? '24px' : '16px',
+          transition: 'width 0.2s, height 0.2s',
+        }}
+      >
+        {/* Main cursor dot */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: isHovering ? '12px' : '8px',
+            height: isHovering ? '12px' : '8px',
+            borderRadius: '50%',
+            backgroundColor: theme === 'night' ? '#C3F0CD' : '#FF69B4',
+            transform: 'translate(-50%, -50%)',
+            animation: 'cursorGlow 1.5s ease-in-out infinite',
+            color: theme === 'night' ? '#C3F0CD' : '#FF69B4',
+            transition: 'all 0.2s ease',
+          }}
+        />
+        
+        {/* Sparkle particles */}
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '4px',
+              height: '4px',
+              borderRadius: '50%',
+              backgroundColor: theme === 'night' ? '#64B4F0' : '#FFC0CB',
+              animation: `sparkle 2s ease-in-out infinite`,
+              animationDelay: `${i * 0.5}s`,
+              transform: `translate(-50%, -50%) rotate(${i * 90}deg) translateX(${isHovering ? '18px' : '12px'})`,
+              transition: 'transform 0.2s',
+            }}
+          />
+        ))}
+        
+        {/* Outer ring on hover */}
+        {isHovering && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              border: `2px solid ${theme === 'night' ? '#C3F0CD' : '#FF69B4'}`,
+              transform: 'translate(-50%, -50%)',
+              opacity: 0.4,
+            }}
+          />
+        )}
+      </div>
 
       {/* Primary blob - main accent color */}
       <div
