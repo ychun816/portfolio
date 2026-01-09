@@ -7,31 +7,52 @@ import FadeInUp from '../FadeInUp';
 const projects = [
   {
     id: 1,
-    name: 'Ft_transcendence-2FA-Authentication',
-    description: 'Two-factor authentication system for secure user access and verification',
-    url: 'https://github.com/ychun816/Ft_transcendence-2FA-Authentication',
-    bgColor: '#ADD8E6', // Pastel blue
+    name: 'cloud-1',
+    description: 'Deployed with AWS EC2 Cloud, Terraform, Ansible, Docker.',
+    url: 'https://github.com/ychun816/cloud-1',
+    bgColor: '#B0E0B0', // Pastel green
   },
   {
     id: 2,
+    name: 'Inception of Things',
+    description: 'Exploring Kubernetes clusters (K3s) and orchestration.',
+    url: 'https://github.com/ychun816/inception-of-things',
+    bgColor: '#FFD4B2', // Pastel orange
+  },
+  {
+    id: 3,
+    name: 'inception',
+    description: 'Docker containerization and orchestration for microservices deployment',
+    url: 'https://github.com/ychun816/inception',
+    bgColor: '#FFFFE0', // Pastel yellow
+  },
+  {
+    id: 4,
+    name: 'Vue-la-la: Serverless Geospatial Platform',
+    description: 'Architect a scalable AWS solution using Lambda and DynamoDB to power "Map-moiselle," a low-latency microservice for real-time location mapping.',
+    url: 'https://github.com/ychun816/vue-la-la',
+    bgColor: '#E6E6FA', // Pastel lavender
+  },
+  {
+    id: 5,
     name: 'FT_transcendence-monitoring-system',
     description: 'Real-time monitoring and analytics system for application performance tracking',
     url: 'https://github.com/ychun816/FT_transcendence-monitoring-system',
     bgColor: '#DDA0DD', // Pastel purple
   },
   {
-    id: 3,
+    id: 6,
+    name: 'Ft_transcendence-2FA-Authentication',
+    description: 'Two-factor authentication system for secure user access and verification',
+    url: 'https://github.com/ychun816/Ft_transcendence-2FA-Authentication',
+    bgColor: '#ADD8E6', // Pastel blue
+  },
+  {
+    id: 7,
     name: 'webserv',
     description: 'Custom HTTP web server implementation with request/response handling',
     url: 'https://github.com/ychun816/webserv',
     bgColor: '#FFB6D9', // Pastel pink
-  },
-  {
-    id: 4,
-    name: 'inception',
-    description: 'Docker containerization and orchestration for microservices deployment',
-    url: 'https://github.com/ychun816/inception',
-    bgColor: '#FFFFE0', // Pastel yellow
   },
 ];
 
