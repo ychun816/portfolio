@@ -65,10 +65,10 @@
 }
 
 :root {
-  --background: #0d0a17;
-  --foreground: #ede8f7;
-  --muted: #a89cc8;
-  --accent: #c084fc;
+  --background: #0b1020; /* very dark */
+  --foreground: #e6eef8; /* light text */
+  --muted: #94a3b8; /* slate-400 */
+  --accent: #8b5cf6; /* purple */
   /* Use built-in Futura with system fallbacks */
   /* Prefer self-hosted Clash Display for headings; fallback to Futura/system.
     Use the font-family name directly so headings render once the font file loads,
@@ -86,10 +86,7 @@ html[data-theme="day"] {
 }
 
 html[data-theme="night"] {
-  --background: #0d0a17;
-  --foreground: #ede8f7; /* light lavender-white */
-  --accent: #c084fc;   /* bright lilac */
-  --muted: #a89cc8;
+  --foreground: #e5e7eb; /* lighter grey for night */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -107,14 +104,14 @@ body {
 }
 
 /* Custom Scrollbar Styles */
-/* Night (default) scrollbar — purple/violet tones */
+/* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(192, 132, 252, 0.35) transparent;
+  scrollbar-color: rgba(195, 240, 205, 0.3) transparent;
 }
 
 html[data-theme="day"] * {
-  scrollbar-color: rgba(180, 138, 242, 0.35) transparent;
+  scrollbar-color: rgba(255, 105, 180, 0.3) transparent;
 }
 
 /* Webkit browsers (Chrome, Safari, Edge) */
@@ -128,35 +125,35 @@ html[data-theme="day"] * {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(192,132,252,0.45) 0%, rgba(105,45,210,0.40) 100%);
+  background: linear-gradient(180deg, rgba(195, 240, 205, 0.4) 0%, rgba(100, 180, 240, 0.4) 100%);
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(192,132,252,0.65) 0%, rgba(105,45,210,0.60) 100%);
+  background: linear-gradient(180deg, rgba(195, 240, 205, 0.6) 0%, rgba(100, 180, 240, 0.6) 100%);
   background-clip: padding-box;
 }
 
 /* Day theme scrollbar */
 html[data-theme="day"] ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(180,138,242,0.45) 0%, rgba(124,58,237,0.38) 100%);
+  background: linear-gradient(180deg, rgba(255, 105, 180, 0.4) 0%, rgba(255, 180, 220, 0.4) 100%);
   background-clip: padding-box;
 }
 
 html[data-theme="day"] ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(180,138,242,0.65) 0%, rgba(124,58,237,0.58) 100%);
+  background: linear-gradient(180deg, rgba(255, 105, 180, 0.6) 0%, rgba(255, 180, 220, 0.6) 100%);
   background-clip: padding-box;
 }
 
 /* Add glow effect to scrollbar on hover */
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+  box-shadow: 0 0 10px rgba(195, 240, 205, 0.5);
 }
 
 html[data-theme="day"] ::-webkit-scrollbar-thumb:hover {
-  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
 }
 
 @layer base {
