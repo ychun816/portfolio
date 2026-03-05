@@ -20,121 +20,102 @@ export default function DayBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden" style={{ backgroundColor: '#faf8f6ff' }}>
+    <div className="fixed inset-0 -z-10 overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
       <style>{`
-        @keyframes rotate-fast {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+        @keyframes blobFloat1  { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(3%,4%) scale(1.04);} 66%{transform:translate(-4%,2%) scale(0.97);} }
+        @keyframes blobFloat2  { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(-5%,-3%) scale(1.05);} 66%{transform:translate(3%,5%) scale(0.97);} }
+        @keyframes blobFloat3  { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(4%,-4%) scale(0.97);} 66%{transform:translate(-2%,3%) scale(1.04);} }
+        @keyframes blobFloat4  { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(-3%,4%) scale(1.03);} 66%{transform:translate(5%,-2%) scale(0.98);} }
+        @keyframes blobFloat5  { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(4%,3%) scale(1.04);} 66%{transform:translate(-3%,-4%) scale(0.97);} }
+        .day-blob { filter: blur(70px); }
+        .db1 { animation: blobFloat1 18s ease-in-out infinite; }
+        .db2 { animation: blobFloat2 22s ease-in-out infinite; }
+        .db3 { animation: blobFloat3 20s ease-in-out infinite; }
+        .db4 { animation: blobFloat4 24s ease-in-out infinite; }
+        .db5 { animation: blobFloat5 19s ease-in-out infinite; }
+        @keyframes filmGrain {
+          0%,100%{ transform:translate(0,0); }
+          10%{ transform:translate(-5%,-5%); }
+          20%{ transform:translate(-10%,5%); }
+          30%{ transform:translate(5%,-10%); }
+          40%{ transform:translate(-5%,15%); }
+          50%{ transform:translate(-10%,5%); }
+          60%{ transform:translate(15%,0); }
+          70%{ transform:translate(0,10%); }
+          80%{ transform:translate(-15%,0); }
+          90%{ transform:translate(10%,5%); }
         }
-        @keyframes rotate-fast-reverse {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-        .animate-rotate-fast {
-          animation: rotate-fast 24s linear infinite;
-        }
-        .animate-rotate-fast-reverse {
-          animation: rotate-fast-reverse 24s linear infinite;
+        .day-grain { animation: filmGrain 0.7s steps(1) infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .db1,.db2,.db3,.db4,.db5,.day-grain { animation: none !important; }
         }
       `}</style>
-      <style>{`
-        .bg-blob { filter: blur(30px); transform-origin: center; }
-        @keyframes blobMove1 { 0% { transform: translate(-8%, -6%) scale(0.98); } 35% { transform: translate(10%, 8%) scale(1.02); } 100% { transform: translate(-8%, -6%) scale(0.98); } }
-        @keyframes blobMove2 { 0% { transform: translate(12%, 4%) scale(1); } 40% { transform: translate(-10%, -12%) scale(1.06); } 100% { transform: translate(12%, 4%) scale(1); } }
-        @keyframes blobMove3 { 0% { transform: translate(-4%, 16%) scale(1.03); } 38% { transform: translate(12%, -6%) scale(0.99); } 100% { transform: translate(-4%, 16%) scale(1.03); } }
-        @keyframes blobMove4 { 0% { transform: translate(6%, -10%) scale(1.01); } 42% { transform: translate(-6%, 8%) scale(0.97); } 100% { transform: translate(6%, -10%) scale(1.01); } }
-        @keyframes blobMove5 { 0% { transform: translate(-12%, 8%) scale(0.99); } 45% { transform: translate(8%, -4%) scale(1.03); } 100% { transform: translate(-12%, 8%) scale(0.99); } }
-        .blob-1 { animation: blobMove1 13s cubic-bezier(.2,.6,.3,.8) infinite; }
-        .blob-2 { animation: blobMove2 15s cubic-bezier(.2,.6,.3,.8) infinite; }
-        .blob-3 { animation: blobMove3 14s cubic-bezier(.2,.6,.3,.8) infinite; }
-        .blob-4 { animation: blobMove4 16s cubic-bezier(.2,.6,.3,.8) infinite; }
-        .blob-5 { animation: blobMove5 17s cubic-bezier(.2,.6,.3,.8) infinite; }
-        @keyframes grain {
-          0%, 100% { transform: translate(0, 0); }
-          10% { transform: translate(-5%, -5%); }
-          20% { transform: translate(-10%, 5%); }
-          30% { transform: translate(5%, -10%); }
-          40% { transform: translate(-5%, 15%); }
-          50% { transform: translate(-10%, 5%); }
-          60% { transform: translate(15%, 0); }
-          70% { transform: translate(0, 10%); }
-          80% { transform: translate(-15%, 0); }
-          90% { transform: translate(10%, 5%); }
-        }
-        .grain-overlay {
-          opacity: 0.15;
-          mix-blend-mode: overlay;
-        }
-        @media (prefers-reduced-motion: reduce) { .blob-1, .blob-2, .blob-3, .blob-4, .blob-5, .grain-overlay { animation: none !important; } }
-      `}</style>
 
-      {/* Gradient blobs — aesthetic dreamy blue, pink and purple palette */}
+      {/* Blob 1 — soft violet/lavender, top-left */}
       <div
-        className={`absolute -left-80 -top-60 w-[2000px] h-[2000px] rounded-full opacity-95 bg-blob blob-1 ${reduced ? '' : 'animate-rotate-fast'}`}
+        className={`day-blob absolute rounded-full ${reduced ? '' : 'db1'}`}
         style={{
-          mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 30% 30%, rgba(180, 160, 240, 0.75), rgba(185, 165, 245, 0.60) 20%, rgba(190, 170, 250, 0.45) 35%, rgba(195, 175, 255, 0.20) 60%, transparent 85%)'
+          left: '-28vw', top: '-18vh', width: '78vw', height: '78vh',
+          mixBlendMode: 'multiply', opacity: 0.95,
+          background: 'radial-gradient(ellipse at 42% 42%, rgba(180,138,242,0.82) 0%, rgba(200,160,255,0.52) 40%, transparent 75%)',
         }}
       />
 
+      {/* Blob 2 — warm rose/pink, bottom-right */}
       <div
-        className={`absolute -right-80 -bottom-60 w-[1800px] h-[1800px] rounded-full opacity-90 bg-blob blob-2 ${reduced ? '' : 'animate-rotate-fast-reverse'}`}
+        className={`day-blob absolute rounded-full ${reduced ? '' : 'db2'}`}
         style={{
-          mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 28% 25%, rgba(255, 160, 210, 0.70), rgba(250, 170, 215, 0.55) 15%, rgba(245, 180, 220, 0.40) 30%, rgba(240, 190, 225, 0.18) 55%, transparent 82%)'
+          right: '-24vw', bottom: '-18vh', width: '74vw', height: '74vh',
+          mixBlendMode: 'multiply', opacity: 0.90,
+          background: 'radial-gradient(ellipse at 40% 40%, rgba(255,148,205,0.80) 0%, rgba(255,170,220,0.50) 40%, transparent 75%)',
         }}
       />
 
+      {/* Blob 3 — periwinkle blue, center */}
       <div
-        className={`absolute left-1/2 top-1/4 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full opacity-90 bg-blob blob-3 ${reduced ? '' : 'animate-rotate-fast'}`}
+        className={`day-blob absolute rounded-full ${reduced ? '' : 'db3'}`}
         style={{
-          mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 45% 45%, rgba(140, 180, 255, 0.70), rgba(150, 185, 255, 0.55) 20%, rgba(160, 190, 260, 0.40) 40%, rgba(170, 195, 265, 0.18) 65%, transparent 85%)'
+          left: '28vw', top: '22vh', width: '60vw', height: '60vh',
+          mixBlendMode: 'multiply', opacity: 0.88,
+          background: 'radial-gradient(ellipse at 45% 46%, rgba(115,168,255,0.75) 0%, rgba(140,188,255,0.46) 40%, transparent 75%)',
         }}
       />
 
-      {/* Blob 4 - right side, lower position - soft pink */}
+      {/* Blob 4 — blush/light magenta, right-center */}
       <div
-        className={`absolute -right-60 top-1/3 w-[1200px] h-[1200px] rounded-full opacity-90 bg-blob blob-4 ${reduced ? '' : 'animate-rotate-fast-reverse'}`}
+        className={`day-blob absolute rounded-full ${reduced ? '' : 'db4'}`}
         style={{
-          mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 32% 35%, rgba(230, 150, 200, 0.70), rgba(235, 160, 210, 0.55) 18%, rgba(240, 170, 220, 0.40) 35%, rgba(245, 180, 230, 0.18) 60%, transparent 82%)'
+          right: '4vw', top: '32vh', width: '54vw', height: '54vh',
+          mixBlendMode: 'multiply', opacity: 0.85,
+          background: 'radial-gradient(ellipse at 38% 40%, rgba(232,135,195,0.74) 0%, rgba(248,158,215,0.44) 40%, transparent 75%)',
         }}
       />
 
-      {/* Blob 5 - left side, bottom area - dreamy blue */}
+      {/* Blob 5 — sky blue/lavender, bottom-left */}
       <div
-        className={`absolute -left-60 bottom-0 w-[1300px] h-[1300px] rounded-full opacity-85 bg-blob blob-5 ${reduced ? '' : 'animate-rotate-fast'}`}
+        className={`day-blob absolute rounded-full ${reduced ? '' : 'db5'}`}
         style={{
-          mixBlendMode: 'multiply',
-          background: 'radial-gradient(closest-corner at 36% 40%, rgba(150, 175, 250, 0.65), rgba(160, 185, 260, 0.50) 20%, rgba(170, 195, 265, 0.35) 40%, rgba(180, 205, 270, 0.15) 65%, transparent 85%)'
+          left: '4vw', bottom: '4vh', width: '54vw', height: '54vh',
+          mixBlendMode: 'multiply', opacity: 0.82,
+          background: 'radial-gradient(ellipse at 44% 45%, rgba(142,165,250,0.72) 0%, rgba(162,185,255,0.42) 40%, transparent 75%)',
         }}
       />
 
-      {/* Animated grain overlay on blobs */}
-      <svg className="absolute inset-0 w-full h-full grain-overlay opacity-100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      {/* Animated film-grain overlay */}
+      <svg
+        className={`day-grain absolute pointer-events-none select-none`}
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ width: '150%', height: '150%', top: '-25%', left: '-25%', opacity: 0.30, mixBlendMode: 'overlay' }}
+        aria-hidden="true"
+      >
         <defs>
-          <filter id="noiseGrainDay">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" />
-            <feColorMatrix type="saturate" values="0" />
-            <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0.85" />
-            </feComponentTransfer>
-          </filter>
-          <filter id="noiseGrainDayFine">
-            <feTurbulence type="fractalNoise" baseFrequency="2.0" numOctaves="5" stitchTiles="stitch" />
-            <feColorMatrix type="saturate" values="0" />
-            <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0.80" />
-            </feComponentTransfer>
+          <filter id="grainDay" x="0%" y="0%" width="100%" height="100%" colorInterpolationFilters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch" result="noise" />
+            <feColorMatrix in="noise" type="saturate" values="0" />
           </filter>
         </defs>
-        <rect width="100%" height="100%" filter="url(#noiseGrainDay)" opacity="0.85" />
-        <rect width="100%" height="100%" filter="url(#noiseGrainDayFine)" opacity="0.75" />
+        <rect width="100%" height="100%" filter="url(#grainDay)" />
       </svg>
-
-      {/* Subtle vignette - lighter for day mode */}
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.3) 140%)' }} />
     </div>
   );
 }
