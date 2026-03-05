@@ -10,8 +10,8 @@ export default function IntroSection(){
       <div className="w-full max-w-7xl">
         <SVGTextClip
           text="About Me"
-          className="mb-16 class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
+          className="mb-8 md:mb-16 class-display"
+          style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
         
         <div className="max-w-4xl w-full mx-auto">
@@ -19,14 +19,14 @@ export default function IntroSection(){
           <div className="relative mb-8">
             <h1
               className="text-right font-extrabold tracking-tight mb-8 relative overflow-hidden"
-              style={{ fontSize: '28px', lineHeight: 1.15, color: 'var(--foreground)' }}
+              style={{ fontSize: 'clamp(18px, 4vw, 28px)', lineHeight: 1.15, color: 'var(--foreground)' }}
             >
               <span className="relative inline-block italic" style={{ animation: 'characterFlow 4s ease-in-out infinite' }}>
                 From Art Galleries to Cloud Infrastructure.
               </span>
             </h1>
 
-            <div className="space-y-6 text-left text-[color:var(--foreground)]/90" style={{ fontSize: '18px' }}>
+            <div className="space-y-4 md:space-y-6 text-left text-[color:var(--foreground)]/90 text-sm md:text-base lg:text-lg">
               <p className="leading-relaxed">
                 Hi! I’m Yichun Lin. I swapped curating exhibitions for
                 <span className="text-[#C3F0CD] font-bold italic"> orchestrating containers</span>, bringing a Project Manager's mindset to DevOps engineering. Born in Taiwan and forged at École 42 Paris, I build systems that are as resilient as they are elegant.

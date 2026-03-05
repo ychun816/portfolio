@@ -10,8 +10,8 @@ export default function ContactSection(){
       <div className="max-w-2xl w-full">
         <SVGTextClip
           text="Contact"
-          className="class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
+          className="mb-4 md:mb-6 class-display"
+          style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
         <FadeInUp delay={200}>
           <form 
@@ -53,7 +53,7 @@ export default function ContactSection(){
 
         {/* Social Icons */}
         <FadeInUp delay={300}>
-          <div className="flex justify-center gap-8 mt-12">
+          <div className="flex justify-center gap-8 mt-6 md:mt-12">
           {/* LinkedIn Icon */}
           <a
             href="https://www.linkedin.com/in/sophia-lin-profile/"

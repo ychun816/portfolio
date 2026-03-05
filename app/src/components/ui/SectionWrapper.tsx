@@ -12,7 +12,7 @@ export default function SectionWrapper({ id, children, className = '' }: Section
   return (
     <section 
       id={id} 
-      className={`min-h-screen snap-start flex items-center justify-center px-4 py-16 ${className}`}
+      className={`min-h-screen snap-start flex items-center justify-center px-5 py-16 ${className}`}
     >
       {children}
     </section>

@@ -12,13 +12,13 @@ export default function ResumeSection(){
       <div className="max-w-4xl w-full">
         <SVGTextClip
           text="Resume"
-          className="mb-12 class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
+          className="mb-6 md:mb-12 class-display"
+          style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
         
         {/* Resume PDF Viewer */}
         <FadeInUp delay={200}>
-          <div className="mb-4 rounded-lg overflow-hidden bg-white/5 border border-white/10 p-8">
+          <div className="mb-4 rounded-lg overflow-hidden bg-white/5 border border-white/10 p-3 md:p-8">
             <iframe
               src={resumeUrl}
               className="w-full h-64 md:h-[400px] rounded-lg"

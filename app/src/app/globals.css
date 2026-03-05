@@ -5,6 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Bento grid: on mobile collapse all span-2 cells to span-1 ────────── */
+@media (max-width: 640px) {
+  .bento-item {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
+
 /* Embedded Clash Display @font-face rules (copied from public/fonts/clash-display/clash-display.css)
    Placing them here ensures the font-family names are defined immediately when globals.css loads. */
 @font-face {

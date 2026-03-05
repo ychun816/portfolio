@@ -13,12 +13,12 @@ export default function HomeSection(){
         <SVGTextClip
           text="Hello! I'm LIN Yichun"
           highlightSpans={[1, 2, 3]}
-          className="mb-8 class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
+          className="mb-6 md:mb-8 class-display"
+          style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
         
         {/* Subtitle / Description with Fade-In-Up */}
-        <FadeInUp className="text-base md:text-lg leading-relaxed mb-6 text-[color:var(--foreground)] opacity-90" delay={200}>
+        <FadeInUp className="text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6 text-[color:var(--foreground)] opacity-90" delay={200}>
           I'm a Junior Cloud/DevOps Software Engineer from{' '}
           <a 
             href="https://42.fr" 
@@ -34,7 +34,7 @@ export default function HomeSection(){
           , eager to adapt to new challenges and create effective solutions.
         </FadeInUp>
         
-        <FadeInUp className="text-base md:text-lg leading-relaxed mb-12 text-[color:var(--foreground)] opacity-90" delay={300}>
+        <FadeInUp className="text-sm md:text-base lg:text-lg leading-relaxed mb-8 md:mb-12 text-[color:var(--foreground)] opacity-90" delay={300}>
           Please check out my{' '}
           <a 
             href="#projects" 
@@ -64,7 +64,7 @@ export default function HomeSection(){
         </FadeInUp>
 
         {/* Scroll Indicator */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-8 md:mt-16 flex justify-center">
           <svg className="w-6 h-6 animate-bounce opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>

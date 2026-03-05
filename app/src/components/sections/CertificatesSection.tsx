@@ -31,8 +31,8 @@ export default function CertificatesSection() {
       <div className="w-full max-w-7xl">
         <SVGTextClip
           text="Certificates"
-          className="mb-16 class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
+          className="mb-8 md:mb-16 class-display"
+          style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
         
         {/* Horizontal Scrolling Container */}

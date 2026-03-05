@@ -62,8 +62,8 @@ export default function ProjectsSection(){
       <div className="w-full max-w-7xl">
         <SVGTextClip
           text="Projects"
-          className="mb-16 class-display"
-          style={{ fontSize: '60px', lineHeight: '1.1' }}
+          className="mb-8 md:mb-16 class-display"
+          style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
         
         {/* Bento Grid Container */}
@@ -96,7 +96,7 @@ export default function ProjectsSection(){
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:shadow-2xl"
+                  className="bento-item group relative overflow-hidden rounded-2xl transition-all duration-500 hover:shadow-2xl"
                   style={{
                     gridColumn: `span ${Math.min(size.colSpan, 2)}`,
                     gridRow: `span ${Math.min(size.rowSpan, 2)}`,
