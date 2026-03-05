@@ -1,8 +1,8 @@
 'use client';
 
-import SectionWrapper from '../SectionWrapper';
-import SVGTextClip from '../SVGTextClip';
-import FadeInUp from '../FadeInUp';
+import SectionWrapper from '@/components/ui/SectionWrapper';
+import SVGTextClip from '@/components/ui/SVGTextClip';
+import FadeInUp from '@/components/ui/FadeInUp';
 
 const certificates = [
   {

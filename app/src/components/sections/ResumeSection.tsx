@@ -1,11 +1,11 @@
 "use client";
 
-import SectionWrapper from '../SectionWrapper';
-import SVGTextClip from '../SVGTextClip';
-import FadeInUp from '../FadeInUp';
+import SectionWrapper from '@/components/ui/SectionWrapper';
+import SVGTextClip from '@/components/ui/SVGTextClip';
+import FadeInUp from '@/components/ui/FadeInUp';
+import { RESUME_FILE } from '@/lib/constants';
 
 export default function ResumeSection(){
-  const RESUME_FILE = 'LIN_Yichun_DevOps_CV_EN.pdf';
   const resumeUrl = `/${encodeURIComponent(RESUME_FILE)}`;
   return (
     <SectionWrapper id="resume">

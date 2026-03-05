@@ -1,6 +1,6 @@
 "use client";
 
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface SVGTextClipProps {
   text: string;

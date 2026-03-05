@@ -1,9 +1,9 @@
 "use client";
 
-import SocialLinks from '../SocialLinks';
-import SectionWrapper from '../SectionWrapper';
-import SVGTextClip from '../SVGTextClip';
-import FadeInUp from '../FadeInUp';
+import SocialLinks from '@/components/ui/SocialLinks';
+import SectionWrapper from '@/components/ui/SectionWrapper';
+import SVGTextClip from '@/components/ui/SVGTextClip';
+import FadeInUp from '@/components/ui/FadeInUp';
 
 export default function HomeSection(){
   return (

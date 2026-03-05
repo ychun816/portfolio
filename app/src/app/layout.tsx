@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ThemeToggle from '../components/ThemeToggle';
+import ThemeToggle from '@/components/layout/ThemeToggle';
 import { ThemeProvider } from '@/context/ThemeContext';
-import BackgroundRenderer from '@/components/BackgroundRenderer';
-import CursorGlow from '@/components/CursorGlow';
+import BackgroundRenderer from '@/components/layout/BackgroundRenderer';
+import CursorGlow from '@/components/layout/CursorGlow';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
