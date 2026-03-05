@@ -3,13 +3,17 @@
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import SVGTextClip from '@/components/ui/SVGTextClip';
 import FadeInUp from '@/components/ui/FadeInUp';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/translations';
 
 export default function IntroSection(){
+  const { lang } = useLanguage();
+  const t = translations[lang].intro;
   return (
     <SectionWrapper id="intro">
       <div className="w-full max-w-7xl">
         <SVGTextClip
-          text="About Me"
+          text={t.heading}
           className="mb-8 md:mb-16 class-display"
           style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
@@ -22,22 +26,25 @@ export default function IntroSection(){
               style={{ fontSize: 'clamp(18px, 4vw, 28px)', lineHeight: 1.15, color: 'var(--foreground)' }}
             >
               <span className="relative inline-block italic" style={{ animation: 'characterFlow 4s ease-in-out infinite' }}>
-                From Art Galleries to Cloud Infrastructure.
+                {t.tagline}
               </span>
             </h1>
 
             <div className="space-y-4 md:space-y-6 text-left text-[color:var(--foreground)]/90 text-sm md:text-base lg:text-lg">
               <p className="leading-relaxed">
-                Hi! I’m Yichun Lin. I swapped curating exhibitions for
-                <span className="text-[#C3F0CD] font-bold italic"> orchestrating containers</span>, bringing a Project Manager's mindset to DevOps engineering. Born in Taiwan and forged at École 42 Paris, I build systems that are as resilient as they are elegant.
+                {t.p1Before}
+                <span className="text-[#C3F0CD] font-bold italic">{t.p1Highlight}</span>
+                {t.p1After}
               </p>
 
               <p className="leading-relaxed">
-                I don't just write scripts; I
-                <span className="text-[#C3F0CD] font-bold italic"> design workflows</span>. My background in art management taught me how to handle chaos and deadlines, while École 42 gave me the technical grit to master
-                <span className="text-[#C3F0CD] font-bold italic"> C/C++</span>,
-                <span className="text-[#C3F0CD] font-bold italic"> Kubernetes</span>, and
-                <span className="text-[#C3F0CD] font-bold italic"> CI/CD</span>. I view infrastructure as a canvas—it requires structure, automation, and precise execution to truly flow.
+                {t.p2Before}
+                <span className="text-[#C3F0CD] font-bold italic">{t.p2Highlight1}</span>
+                {t.p2Middle}
+                <span className="text-[#C3F0CD] font-bold italic">{t.p2Highlight2}</span>,{' '}
+                <span className="text-[#C3F0CD] font-bold italic">{t.p2Highlight3}</span>, and{' '}
+                <span className="text-[#C3F0CD] font-bold italic">{t.p2Highlight4}</span>
+                {t.p2After}
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -45,7 +52,7 @@ export default function IntroSection(){
                   href="#projects"
                   className="inline-flex items-center text-base font-semibold underline underline-offset-4 decoration-[#C3F0CD] hover:italic hover:font-bold hover:text-[#C3F0CD] transition-all"
                 >
-                  Explore my projects!
+                  {t.cta}
                 </a>
               </div>
             </div>
@@ -54,17 +61,16 @@ export default function IntroSection(){
         <FadeInUp delay={200}>
           <div className="mt-6 text-lg italic leading-relaxed text-[color:var(--foreground)]/90">
             <p>
-              Currently seeking a DevOps/Cloud Internship in Paris. Let's engineer something beautiful together.
-              Always passionate to{' '}
+              {t.closing}{' '}
               <a
                 href="https://www.linkedin.com/in/sophia-lin-profile/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 hover:italic hover:font-bold hover:text-[#C3F0CD] transition-all"
               >
-                connect
+                {t.connectLink}
               </a>
-              !
+              {t.closingSuffix}
             </p>
           </div>
         </FadeInUp>

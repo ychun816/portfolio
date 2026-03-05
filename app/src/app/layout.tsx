@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeToggle from '@/components/layout/ThemeToggle';
+import LanguageToggle from '@/components/layout/LanguageToggle';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
 import BackgroundRenderer from '@/components/layout/BackgroundRenderer';
 import CursorGlow from '@/components/layout/CursorGlow';
 
@@ -64,10 +66,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased clash-font`}
       >
         <ThemeProvider>
-          <BackgroundRenderer />
-          <CursorGlow />
-          <ThemeToggle />
-          {children}
+          <LanguageProvider>
+            <BackgroundRenderer />
+            <CursorGlow />
+            <ThemeToggle />
+            <LanguageToggle />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

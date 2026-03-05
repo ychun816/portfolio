@@ -3,13 +3,17 @@
 import { useState } from 'react';
 import { NAV_LINKS, type SectionId } from '@/lib/constants';
 import { useTheme } from '@/context/ThemeContext';
+import { useLanguage } from '@/context/LanguageContext';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { translations } from '@/lib/translations';
 
 export default function NavBar() {
   const { theme } = useTheme();
+  const { lang } = useLanguage();
   const activeSection = useActiveSection();
   const isNight = theme === 'night';
   const [isOpen, setIsOpen] = useState(false);
+  const t = translations[lang].nav;
 
   const isActive = (sectionId: SectionId) => {
     if (sectionId === 'certificates') {
@@ -64,13 +68,13 @@ export default function NavBar() {
       {/* ── Desktop nav (md and above) ──────────────────────────────────── */}
       <nav className="hidden md:block fixed top-4 left-1/2 -translate-x-1/2 z-50">
         <ul className="flex gap-6 class-display" style={{ color: 'inherit' }}>
-          {NAV_LINKS.map(({ label, href, sectionId }) => (
+          {NAV_LINKS.map(({ href, sectionId }) => (
             <li key={sectionId}>
               <a
                 href={href}
                 className={`nav-link ${isNight ? 'nav-link-night' : 'nav-link-day'} ${isActive(sectionId) ? 'active' : ''}`}
               >
-                {label}
+                {t[sectionId as keyof typeof t]}
               </a>
             </li>
           ))}
@@ -105,14 +109,14 @@ export default function NavBar() {
           onClick={() => setIsOpen(false)}
         >
           <ul className="flex flex-col items-center gap-1 class-display">
-            {NAV_LINKS.map(({ label, href, sectionId }) => (
+            {NAV_LINKS.map(({ href, sectionId }) => (
               <li key={sectionId}>
                 <a
                   href={href}
                   className={`nav-link-mobile ${isNight ? 'nav-link-night' : 'nav-link-day'} ${isActive(sectionId) ? 'active' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {label}
+                  {t[sectionId as keyof typeof t]}
                 </a>
               </li>
             ))}

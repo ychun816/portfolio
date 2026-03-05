@@ -3,6 +3,8 @@
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import SVGTextClip from '@/components/ui/SVGTextClip';
 import FadeInUp from '@/components/ui/FadeInUp';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/translations';
 
 const projects = [
   {
@@ -57,11 +59,13 @@ const projects = [
 ];
 
 export default function ProjectsSection(){
+  const { lang } = useLanguage();
+  const t = translations[lang].projects;
   return (
     <SectionWrapper id="projects">
       <div className="w-full max-w-7xl">
         <SVGTextClip
-          text="Projects"
+          text={t.heading}
           className="mb-8 md:mb-16 class-display"
           style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
@@ -185,7 +189,7 @@ export default function ProjectsSection(){
                       
                       {/* Bottom action - appears on hover with glow */}
                       <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 pt-1 border-t border-black/10 group-hover:border-black/30">
-                        <span className="text-xs font-semibold text-black/70 group-hover:text-black transition-colors duration-300">View</span>
+                        <span className="text-xs font-semibold text-black/70 group-hover:text-black transition-colors duration-300">{t.viewLabel}</span>
                         <svg className="w-4 h-4 text-black/70 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>

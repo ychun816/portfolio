@@ -3,13 +3,17 @@
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import SVGTextClip from '@/components/ui/SVGTextClip';
 import FadeInUp from '@/components/ui/FadeInUp';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/translations';
 
 export default function ContactSection(){
+  const { lang } = useLanguage();
+  const t = translations[lang].contact;
   return (
     <SectionWrapper id="contact">
       <div className="max-w-2xl w-full">
         <SVGTextClip
-          text="Contact"
+          text={t.heading}
           className="mb-4 md:mb-6 class-display"
           style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
@@ -25,28 +29,28 @@ export default function ContactSection(){
               name="email"
               required
               className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
-              placeholder="Email" 
+              placeholder={t.emailPlaceholder} 
             />
             <input 
               type="text"
               name="subject"
               required
               className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
-              placeholder="Subject" 
+              placeholder={t.subjectPlaceholder} 
             />
             <textarea 
               name="message"
               required
               className="p-3 rounded bg-transparent border border-white/6 text-[color:var(--foreground)] placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors" 
               rows={4} 
-              placeholder="Type your message" 
+              placeholder={t.messagePlaceholder} 
             />
             <button 
               type="submit"
               className="px-4 py-2 rounded font-semibold transition-all hover:text-[#C3F0CD] hover:shadow-lg" 
               style={{ backgroundColor: 'rgba(57, 255, 20, 0.4)', color: 'black' }}
             >
-              Send Message
+              {t.sendButton}
             </button>
           </form>
         </FadeInUp>
@@ -61,9 +65,7 @@ export default function ContactSection(){
             rel="noopener noreferrer"
             className="transition-all duration-200 text-[color:var(--foreground)]"
             aria-label="LinkedIn"
-            style={{
-              filter: 'drop-shadow(0 0 0px rgba(195, 240, 205, 0))',
-            }}
+            style={{ filter: 'drop-shadow(0 0 0px rgba(195, 240, 205, 0))' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = '#C3F0CD';
               e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(195, 240, 205, 0.6)) drop-shadow(0 0 16px rgba(195, 240, 205, 0.3))';
@@ -85,9 +87,7 @@ export default function ContactSection(){
             rel="noopener noreferrer"
             className="transition-all duration-200 text-[color:var(--foreground)]"
             aria-label="GitHub"
-            style={{
-              filter: 'drop-shadow(0 0 0px rgba(195, 240, 205, 0))',
-            }}
+            style={{ filter: 'drop-shadow(0 0 0px rgba(195, 240, 205, 0))' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = '#C3F0CD';
               e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(195, 240, 205, 0.6)) drop-shadow(0 0 16px rgba(195, 240, 205, 0.3))';
@@ -105,6 +105,5 @@ export default function ContactSection(){
         </FadeInUp>
       </div>
     </SectionWrapper>
-  )
+  );
 }
-

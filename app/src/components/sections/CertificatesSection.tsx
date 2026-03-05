@@ -3,34 +3,18 @@
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import SVGTextClip from '@/components/ui/SVGTextClip';
 import FadeInUp from '@/components/ui/FadeInUp';
-
-const certificates = [
-  {
-    id: 1,
-    name: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    date: 'Certified',
-    description: 'Obtained the certificate and the skills of AWS Cloud Services & Computing',
-    url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
-    imageUrl: '/certificates/AWS-Certified-Cloud-Practitioner_badge.png',
-  },
-  {
-    id: 2,
-    name: 'AWS Certified Solutions Architect - Associate',
-    issuer: 'Amazon Web Services',
-    date: '2026',
-    description: 'Preparing and set to pass in 2026',
-    url: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/',
-    imageUrl: '/certificates/AWS-Certified-Solutions-Architect-Associate_badge.png',
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/translations';
 
 export default function CertificatesSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang].certificates;
+
   return (
     <SectionWrapper id="certificates">
       <div className="w-full max-w-7xl">
         <SVGTextClip
-          text="Certificates"
+          text={t.heading}
           className="mb-8 md:mb-16 class-display"
           style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
@@ -39,27 +23,20 @@ export default function CertificatesSection() {
         <FadeInUp delay={200}>
           <div className="overflow-x-auto scroll-smooth">
             <div className="flex gap-6 min-w-min">
-              {certificates.map((cert, index) => (
+              {t.items.map((cert, index) => (
                 <a
                   key={cert.id}
                   href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-shrink-0 w-80 group cursor-pointer"
-                  style={{
-                    animation: `slideIn 0.6s ease-out ${index * 0.1}s backwards`,
-                  }}
+                  style={{ animation: `slideIn 0.6s ease-out ${index * 0.1}s backwards` }}
                 >
                   {/* Certificate Card */}
                   <div className="rounded-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl flex flex-col" style={{ boxShadow: 'var(--shadow)', height: '420px' }}>
-                    {/* Preview Window - 60% height */}
-                    <div 
-                      className="flex-1 relative overflow-hidden flex items-center justify-center"
-                    >
-                      {/* Neon green overlay on hover */}
+                    {/* Badge image */}
+                    <div className="flex-1 relative overflow-hidden flex items-center justify-center">
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300" style={{ backgroundColor: '#39ff14' }} />
-                      
-                      {/* Badge image or fallback icon */}
                       <div className="text-center relative z-10">
                         {cert.imageUrl ? (
                           <img
@@ -75,13 +52,11 @@ export default function CertificatesSection() {
                       </div>
                     </div>
 
-                    {/* Certificate Info - 40% height */}
+                    {/* Certificate Info */}
                     <div className="flex-1 p-4 bg-white/5 border border-white/10 backdrop-filter backdrop-blur-md overflow-hidden flex flex-col" style={{ minHeight: '168px' }}>
-                      <h3 
+                      <h3
                         className="font-semibold text-base transition-colors duration-300 line-clamp-2"
-                        style={{
-                          color: 'var(--foreground)',
-                        }}
+                        style={{ color: 'var(--foreground)' }}
                         onMouseEnter={(e) => e.currentTarget.style.color = '#C3F0CD'}
                         onMouseLeave={(e) => e.currentTarget.style.color = 'var(--foreground)'}
                       >
@@ -93,10 +68,8 @@ export default function CertificatesSection() {
                       <p className="text-[color:var(--foreground)] opacity-70 mt-2 text-sm leading-tight line-clamp-2 flex-1">
                         {cert.description}
                       </p>
-                      
-                      {/* View Certificate Link Indicator */}
                       <div className="mt-2 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-semibold" style={{ color: '#C3F0CD' }}>
-                        <span>View Certificate</span>
+                        <span>{t.viewCert}</span>
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
