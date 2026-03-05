@@ -17,6 +17,9 @@ export default function LanguageToggle() {
 
   const isNight = theme === 'night';
 
+  const activeColor = isNight ? 'rgba(150, 200, 255, 0.95)' : 'rgba(100, 50, 180, 1)';
+  const inactiveColor = isNight ? 'rgba(150, 200, 255, 0.35)' : 'rgba(100, 50, 180, 0.3)';
+
   return (
     <button
       onClick={toggleLang}
@@ -25,11 +28,11 @@ export default function LanguageToggle() {
       style={{
         backgroundColor: isNight ? 'rgba(150, 200, 255, 0.15)' : 'rgba(196, 181, 253, 0.25)',
         border: isNight ? '1px solid rgba(150, 200, 255, 0.3)' : '1px solid rgba(196, 181, 253, 0.4)',
-        color: isNight ? 'rgba(150, 200, 255, 0.85)' : 'rgba(100, 50, 180, 0.9)',
-        minWidth: '2.75rem',
       }}
     >
-      {lang === 'en' ? 'FR' : 'EN'}
+      <span style={{ color: lang === 'en' ? activeColor : inactiveColor }}>EN</span>
+      <span style={{ color: isNight ? 'rgba(150, 200, 255, 0.45)' : 'rgba(100, 50, 180, 0.45)' }}>{' '}|{' '}</span>
+      <span style={{ color: lang === 'fr' ? activeColor : inactiveColor }}>FR</span>
     </button>
   );
 }

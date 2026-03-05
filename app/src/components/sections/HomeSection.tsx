@@ -17,7 +17,7 @@ export default function HomeSection() {
         {/* Main Title */}
         <SVGTextClip
           text={t.title}
-          highlightSpans={[1, 2, 3]}
+          highlightSpans={lang === 'en' ? [2, 3] : [3, 4]}
           className="mb-6 md:mb-8 class-display"
           style={{ fontSize: 'clamp(28px, 8vw, 60px)', lineHeight: '1.1' }}
         />
